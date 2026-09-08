@@ -9,6 +9,7 @@ version pins. The palette is CVD-validated in both light and dark.
 """
 
 import datetime
+from datetime import date, timedelta
 from html import escape
 
 import pandas as pd
@@ -23,6 +24,40 @@ DARK = {"base": "#4A90E2", "cpu": "#BE8430", "gpu": "#159578"}
 
 
 # ----------------------------------------------------------------- helpers
+
+
+def resolve_week_start(year_month, week_number):
+    """Monday of the ISO week a (Year-Month, Week) row belongs to.
+
+    The Otter source groups by month AND week, so a week straddling a month
+    boundary produces two rows -- week 36 of 2026 appears once under 2026-08
+    and once under 2026-09. Both resolve to the same Monday here, which is how
+    they get recombined. Lifted from cloudbank-pilot-hub-users so the two
+    dashboards agree.
+    """
+    year, month = map(int, str(year_month).split("-"))
+    month_anchor = date(year, month, 1)
+    candidates = []
+    for iso_year in (year - 1, year, year + 1):
+        try:
+            week_start = date.fromisocalendar(iso_year, int(week_number), 1)
+        except ValueError:
+            continue
+        week_end = week_start + timedelta(days=6)
+        score = 0
+        if week_start.year == year and week_start.month == month:
+            score += 2
+        if week_end.year == year and week_end.month == month:
+            score += 2
+        if week_start.year == year or week_end.year == year:
+            score += 1
+        distance = min(
+            abs((week_start - month_anchor).days), abs((week_end - month_anchor).days)
+        )
+        candidates.append((score, -distance, week_start.toordinal(), week_start))
+    if not candidates:
+        raise ValueError(f"Unable to resolve week {week_number} for {year_month}")
+    return max(candidates)[-1]
 
 
 def money(x, dp=2):
@@ -179,10 +214,22 @@ def usage_blocks():
     if opath.is_file():
         o = pd.read_csv(opath, skiprows=1, skipinitialspace=True)
         o.columns = [c.strip() for c in o.columns]
-        recent = o.head(12).copy()
-        recent["label"] = recent["Year-Month"].astype(str) + " w" + recent["Week Of Year"].astype(str)
+        # Combine the month-boundary split before display.
+        o["week_start"] = o.apply(
+            lambda r: resolve_week_start(r["Year-Month"], r["Week Of Year"]), axis=1
+        )
+        weekly = (
+            o.groupby("week_start")[["Number of Users", "Number of Notebooks"]]
+            .sum()
+            .sort_index(ascending=False)
+            .head(12)
+            .reset_index()
+        )
+        weekly["label"] = weekly["week_start"].apply(
+            lambda d: f"{d.strftime('%b %-d')} – {(d + timedelta(days=6)).strftime('%b %-d, %Y')}"
+        )
         out["otter"] = {
-            "rows": recent.to_dict("records"),
+            "rows": weekly.to_dict("records"),
             "total": int(o["Number of Notebooks"].sum()),
         }
     return out
@@ -259,7 +306,7 @@ def build():
         )
         usage_html += (
             "<h3>Otter grading, recent weeks</h3>"
-            "<table><thead><tr><th>Week</th><th>Submissions</th>"
+            "<table><thead><tr><th>Week (Mon–Sun)</th><th>Submissions</th>"
             f"<th>Notebooks</th></tr></thead><tbody>{rows}</tbody></table>"
         )
 
