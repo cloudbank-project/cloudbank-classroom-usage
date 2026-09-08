@@ -115,7 +115,10 @@ def usage_blocks():
     if upath.is_file():
         u = pd.read_csv(upath)
         term_cols = [c for c in u.columns if "_20" in c]
-        current = term_cols[-1] if term_cols else None
+        # The rightmost column is a future term that is still all zeros, so
+        # pick the latest term that actually has users rather than the last one.
+        populated = [c for c in term_cols if u[c].sum() > 0]
+        current = populated[-1] if populated else (term_cols[-1] if term_cols else None)
         by = u.groupby("where")
         out["users"] = {
             "institutions": int(u["college"].nunique()),
