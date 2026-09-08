@@ -1,0 +1,99 @@
+# CloudBank node pools -> cost bucket.
+#
+# bucket meanings, and why the split matters:
+#   base  always-on floor. Runs whether or not a single student logs in.
+#         This is the number to quote when asked "what does CloudBank cost
+#         us to simply exist?"
+#   cpu   student notebook pools. Scale with class activity.
+#   gpu   GPU notebook pools. Scale with class activity, ~7x the hourly rate.
+#
+# machine_type / accelerator drive the Cloud Billing Catalog lookup in
+# scripts/pricing.py. disk_gb is the boot disk per node.
+
+clusters:
+  cb-cluster:
+    zone: us-central1-b
+    prometheus: true          # scraped by prometheus.cloudbank.2i2c.cloud
+  oss-cluster:
+    zone: us-central1-b
+    prometheus: false         # NOT scraped -- cost is modeled from node config
+
+pools:
+  core-pool:
+    cluster: cb-cluster
+    bucket: base
+    machine_type: n2-highmem-2
+    disk_gb: 30
+    disk_type: pd-balanced
+    note: >-
+      Hub pods, proxies, support services. Effectively a fixed ~10 nodes;
+      derive the baseline from observed minimums, never from initialNodeCount
+      (it reported 18 while 10 were running).
+
+  nb-n2-highmem-4-a:
+    cluster: cb-cluster
+    bucket: cpu
+    machine_type: n2-highmem-4
+    disk_gb: 150
+    disk_type: pd-balanced
+  nb-n2-highmem-4-b:
+    cluster: cb-cluster
+    bucket: cpu
+    machine_type: n2-highmem-4
+    disk_gb: 150
+    disk_type: pd-balanced
+  nb-n2-highmem-16:
+    cluster: cb-cluster
+    bucket: cpu
+    machine_type: n2-highmem-16
+    disk_gb: 100
+    disk_type: pd-balanced
+  nb-n2-highmem-64:
+    cluster: cb-cluster
+    bucket: cpu
+    machine_type: n2-highmem-64
+    disk_gb: 100
+    disk_type: pd-balanced
+  dask-n2-highmem-16:
+    cluster: cb-cluster
+    bucket: cpu
+    machine_type: n2-highmem-16
+    disk_gb: 100
+    disk_type: pd-balanced
+
+  nb-gpu-t4:
+    cluster: cb-cluster
+    bucket: gpu
+    machine_type: n1-highmem-8
+    disk_gb: 200
+    disk_type: pd-ssd
+    accelerator: nvidia-tesla-t4
+    accelerator_count: 1
+    note: >-
+      TIME_SHARING, maxSharedClientsPerGpu 2 -- so 2 students per node.
+
+  oss-production:
+    cluster: oss-cluster
+    bucket: base
+    machine_type: e2-standard-8
+    disk_gb: 100
+    disk_type: pd-balanced
+    fixed_nodes: 1
+    note: >-
+      oss-cluster has no Prometheus, so node-hours cannot be measured.
+      Cost is modeled as fixed_nodes running 24h/day and is flagged
+      "estimated" everywhere it appears.
+
+  test-pool:
+    cluster: cb-cluster
+    bucket: cpu
+    machine_type: n2-highmem-4
+    disk_gb: 100
+    disk_type: pd-standard
+    note: Scratch pool; usually 0 nodes. Included so its cost is never invisible.
+
+# Flat per-cluster GKE management fee, charged per cluster per hour
+# regardless of node count. One zonal cluster is free under the GKE
+# free tier; verify against the invoice once billing export is live.
+gke_cluster_fee_usd_per_hour: 0.10
+gke_free_clusters: 1
