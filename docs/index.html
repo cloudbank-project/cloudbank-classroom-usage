@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CloudBank Cost &amp; Usage</title>
+<style>
+:root{--bg:#fcfcfb;--panel:#fff;--ink:#1a1d23;--ink2:#464c58;--muted:#6b7280;
+--rule:#e4e4e0;--sunken:#f5f5f3;--base:#2D6BB5;--cpu:#C07A15;--gpu:#0E9177;--warn:#B3402E}
+@media(prefers-color-scheme:dark){:root{--bg:#16181c;--panel:#1c1f25;--ink:#eceef2;
+--ink2:#b9bfcb;--muted:#8d94a2;--rule:#2e323a;--sunken:#212429;--base:#4A90E2;
+--cpu:#BE8430;--gpu:#159578;--warn:#E0705C}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.6 -apple-system,
+BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1080px;margin:0 auto;padding:40px 22px 80px;display:flex;
+flex-direction:column;gap:34px}
+h1{font-size:29px;margin:0;letter-spacing:-.02em}
+h2{font-size:19px;margin:0 0 2px;letter-spacing:-.01em}
+h3{font-size:14px;margin:22px 0 8px;color:var(--ink2)}
+p{margin:0}
+.sub{color:var(--muted);font-size:14px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(168px,1fr));
+gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:4px;overflow:hidden}
+.stat{background:var(--panel);padding:15px 17px;display:flex;flex-direction:column;gap:3px}
+.stat .k{font-size:10.5px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.stat .v{font-size:25px;font-weight:600;font-variant-numeric:tabular-nums;line-height:1.15}
+.stat .s{font-size:12.5px;color:var(--muted)}
+section{background:var(--panel);border:1px solid var(--rule);border-radius:4px;padding:20px 22px}
+.legend{display:flex;gap:16px;flex-wrap:wrap;margin:10px 0 4px;font-size:12.5px;color:var(--ink2)}
+.lg{display:flex;align-items:center;gap:6px}
+.sw{width:11px;height:11px;border-radius:2px;display:inline-block}
+.sw.base,.bar.base{background:var(--base);fill:var(--base)}
+.sw.cpu,.bar.cpu{background:var(--cpu);fill:var(--cpu)}
+.sw.gpu,.bar.gpu{background:var(--gpu);fill:var(--gpu)}
+.chartwrap{overflow-x:auto}
+.chart{display:block;min-width:520px}
+.grid{stroke:var(--rule);stroke-width:1}
+.ylab{fill:var(--muted);font-size:10px;text-anchor:end;font-variant-numeric:tabular-nums}
+.xlab{fill:var(--muted);font-size:10px;text-anchor:middle}
+.bar{rx:2}
+table{border-collapse:collapse;width:100%;font-size:13.5px;margin-top:6px}
+th,td{text-align:left;padding:7px 11px;border-bottom:1px solid var(--rule)}
+thead th{font-size:10.5px;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);
+background:var(--sunken);font-weight:500;white-space:nowrap}
+tbody th{font-weight:500;white-space:nowrap}
+.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.strong{font-weight:600}
+.muted{color:var(--muted);font-size:12.5px;margin-top:8px}
+.note{border-left:3px solid var(--warn);background:var(--sunken);padding:13px 16px;
+border-radius:3px;font-size:13.5px;color:var(--ink2)}
+.note b{color:var(--warn)}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+@media(max-width:760px){.cols{grid-template-columns:1fr}}
+footer{color:var(--muted);font-size:12px;border-top:1px solid var(--rule);padding-top:16px}
+</style></head><body><div class="wrap">
+
+<header>
+  <h1>CloudBank Cost &amp; Usage</h1>
+  <p class="sub">Modeled spend by node pool, and how much of it is being used.
+     Data through 2026-09-07 · generated 2026-09-08 10:00 PDT</p>
+</header>
+
+<div class="stats"><div class='stat'><span class='k'>Always-on base</span><span class='v'>$66.02</span><span class='s'>$1,981/mo · 53% of spend</span></div><div class='stat'><span class='k'>Variable (students)</span><span class='v'>$57.45</span><span class='s'>$1,724/mo · CPU + GPU</span></div><div class='stat'><span class='k'>Total per day</span><span class='v'>$123.47</span><span class='s'>7-day average</span></div><div class='stat'><span class='k'>Last 30 days</span><span class='v'>$1,706</span><span class='s'>through 2026-09-07</span></div><div class='stat'><span class='k'>Users, Spring 2027</span><span class='v'>0</span><span class='s'>120 institutions</span></div><div class='stat'><span class='k'>Notebooks graded</span><span class='v'>70,637</span><span class='s'>all time, Otter standalone</span></div></div>
+
+<div class="note">
+  <b>These are modeled figures, not billed ones.</b> Cost is measured node-hours
+  &times; Cloud Billing Catalog list price. The BigQuery billing export has never
+  been enabled for this project, so there is no invoice to reconcile against.
+  Sustained-use discounts are not modeled (the real bill would be lower); egress,
+  load balancers, logging and Artifact Registry are not modeled (higher).
+  Estimated components: gke-cluster-fee, oss-cluster, storage.
+</div>
+
+<section>
+  <h2>Daily</h2>
+  <p class="sub">Last 30 days. The blue floor is what runs with zero students.</p>
+  <div class="legend"><span class='lg'><i class='sw base'></i>Base (always-on)</span><span class='lg'><i class='sw cpu'></i>CPU notebooks</span><span class='lg'><i class='sw gpu'></i>GPU notebooks</span></div>
+  <div class="chartwrap"><svg viewBox="0 0 540 190" width="100%" height="190" role="img" class="chart"><line x1="52" y1="164.0" x2="532" y2="164.0" class="grid"/><text x="44" y="168.0" class="ylab">$0</text><line x1="52" y1="82.0" x2="532" y2="82.0" class="grid"/><text x="44" y="86.0" class="ylab">$80</text><line x1="52" y1="0.0" x2="532" y2="0.0" class="grid"/><text x="44" y="4.0" class="ylab">$159</text><rect x="52" y="97.7" width="26" height="66.3" class="bar base"><title>2026-08-25 — total $101.31
+Base (always-on) $64.39 · CPU notebooks $33.01 · GPU notebooks $3.91</title></rect><rect x="52" y="63.7" width="26" height="34.0" class="bar cpu"><title>2026-08-25 — total $101.31
+Base (always-on) $64.39 · CPU notebooks $33.01 · GPU notebooks $3.91</title></rect><rect x="52" y="59.6" width="26" height="4.0" class="bar gpu"><title>2026-08-25 — total $101.31
+Base (always-on) $64.39 · CPU notebooks $33.01 · GPU notebooks $3.91</title></rect><text x="65.0" y="182" class="xlab">08-25</text><rect x="86" y="96.3" width="26" height="67.7" class="bar base"><title>2026-08-26 — total $141.93
+Base (always-on) $65.73 · CPU notebooks $71.56 · GPU notebooks $4.64</title></rect><rect x="86" y="22.6" width="26" height="73.7" class="bar cpu"><title>2026-08-26 — total $141.93
+Base (always-on) $65.73 · CPU notebooks $71.56 · GPU notebooks $4.64</title></rect><rect x="86" y="17.8" width="26" height="4.8" class="bar gpu"><title>2026-08-26 — total $141.93
+Base (always-on) $65.73 · CPU notebooks $71.56 · GPU notebooks $4.64</title></rect><text x="99.0" y="182" class="xlab">08-26</text><rect x="120" y="99.5" width="26" height="64.5" class="bar base"><title>2026-08-27 — total $159.21
+Base (always-on) $62.58 · CPU notebooks $38.50 · GPU notebooks $58.13</title></rect><rect x="120" y="59.9" width="26" height="39.7" class="bar cpu"><title>2026-08-27 — total $159.21
+Base (always-on) $62.58 · CPU notebooks $38.50 · GPU notebooks $58.13</title></rect><rect x="120" y="-0.0" width="26" height="59.9" class="bar gpu"><title>2026-08-27 — total $159.21
+Base (always-on) $62.58 · CPU notebooks $38.50 · GPU notebooks $58.13</title></rect><text x="133.0" y="182" class="xlab">08-27</text><rect x="154" y="96.3" width="26" height="67.7" class="bar base"><title>2026-08-28 — total $133.84
+Base (always-on) $65.73 · CPU notebooks $54.77 · GPU notebooks $13.34</title></rect><rect x="154" y="39.9" width="26" height="56.4" class="bar cpu"><title>2026-08-28 — total $133.84
+Base (always-on) $65.73 · CPU notebooks $54.77 · GPU notebooks $13.34</title></rect><rect x="154" y="26.1" width="26" height="13.7" class="bar gpu"><title>2026-08-28 — total $133.84
+Base (always-on) $65.73 · CPU notebooks $54.77 · GPU notebooks $13.34</title></rect><text x="167.0" y="182" class="xlab">08-28</text><rect x="188" y="96.3" width="26" height="67.7" class="bar base"><title>2026-08-29 — total $86.36
+Base (always-on) $65.73 · CPU notebooks $17.59 · GPU notebooks $3.04</title></rect><rect x="188" y="78.2" width="26" height="18.1" class="bar cpu"><title>2026-08-29 — total $86.36
+Base (always-on) $65.73 · CPU notebooks $17.59 · GPU notebooks $3.04</title></rect><rect x="188" y="75.0" width="26" height="3.1" class="bar gpu"><title>2026-08-29 — total $86.36
+Base (always-on) $65.73 · CPU notebooks $17.59 · GPU notebooks $3.04</title></rect><text x="201.0" y="182" class="xlab">08-29</text><rect x="222" y="96.3" width="26" height="67.7" class="bar base"><title>2026-08-30 — total $90.71
+Base (always-on) $65.73 · CPU notebooks $17.80 · GPU notebooks $7.18</title></rect><rect x="222" y="78.0" width="26" height="18.3" class="bar cpu"><title>2026-08-30 — total $90.71
+Base (always-on) $65.73 · CPU notebooks $17.80 · GPU notebooks $7.18</title></rect><rect x="222" y="70.6" width="26" height="7.4" class="bar gpu"><title>2026-08-30 — total $90.71
+Base (always-on) $65.73 · CPU notebooks $17.80 · GPU notebooks $7.18</title></rect><text x="235.0" y="182" class="xlab">08-30</text><rect x="256" y="96.3" width="26" height="67.7" class="bar base"><title>2026-08-31 — total $127.88
+Base (always-on) $65.73 · CPU notebooks $51.50 · GPU notebooks $10.65</title></rect><rect x="256" y="43.2" width="26" height="53.0" class="bar cpu"><title>2026-08-31 — total $127.88
+Base (always-on) $65.73 · CPU notebooks $51.50 · GPU notebooks $10.65</title></rect><rect x="256" y="32.3" width="26" height="11.0" class="bar gpu"><title>2026-08-31 — total $127.88
+Base (always-on) $65.73 · CPU notebooks $51.50 · GPU notebooks $10.65</title></rect><text x="269.0" y="182" class="xlab">08-31</text><rect x="290" y="94.0" width="26" height="70.0" class="bar base"><title>2026-09-01 — total $152.54
+Base (always-on) $67.98 · CPU notebooks $37.16 · GPU notebooks $47.40</title></rect><rect x="290" y="55.7" width="26" height="38.3" class="bar cpu"><title>2026-09-01 — total $152.54
+Base (always-on) $67.98 · CPU notebooks $37.16 · GPU notebooks $47.40</title></rect><rect x="290" y="6.9" width="26" height="48.8" class="bar gpu"><title>2026-09-01 — total $152.54
+Base (always-on) $67.98 · CPU notebooks $37.16 · GPU notebooks $47.40</title></rect><text x="303.0" y="182" class="xlab">09-01</text><rect x="324" y="96.3" width="26" height="67.7" class="bar base"><title>2026-09-02 — total $149.90
+Base (always-on) $65.73 · CPU notebooks $71.70 · GPU notebooks $12.47</title></rect><rect x="324" y="22.4" width="26" height="73.9" class="bar cpu"><title>2026-09-02 — total $149.90
+Base (always-on) $65.73 · CPU notebooks $71.70 · GPU notebooks $12.47</title></rect><rect x="324" y="9.6" width="26" height="12.8" class="bar gpu"><title>2026-09-02 — total $149.90
+Base (always-on) $65.73 · CPU notebooks $71.70 · GPU notebooks $12.47</title></rect><text x="337.0" y="182" class="xlab">09-02</text><rect x="358" y="96.3" width="26" height="67.7" class="bar base"><title>2026-09-03 — total $150.88
+Base (always-on) $65.73 · CPU notebooks $31.15 · GPU notebooks $54.00</title></rect><rect x="358" y="64.2" width="26" height="32.1" class="bar cpu"><title>2026-09-03 — total $150.88
+Base (always-on) $65.73 · CPU notebooks $31.15 · GPU notebooks $54.00</title></rect><rect x="358" y="8.6" width="26" height="55.6" class="bar gpu"><title>2026-09-03 — total $150.88
+Base (always-on) $65.73 · CPU notebooks $31.15 · GPU notebooks $54.00</title></rect><text x="371.0" y="182" class="xlab">09-03</text><rect x="392" y="96.4" width="26" height="67.6" class="bar base"><title>2026-09-04 — total $130.69
+Base (always-on) $65.62 · CPU notebooks $48.70 · GPU notebooks $16.38</title></rect><rect x="392" y="46.2" width="26" height="50.2" class="bar cpu"><title>2026-09-04 — total $130.69
+Base (always-on) $65.62 · CPU notebooks $48.70 · GPU notebooks $16.38</title></rect><rect x="392" y="29.4" width="26" height="16.9" class="bar gpu"><title>2026-09-04 — total $130.69
+Base (always-on) $65.62 · CPU notebooks $48.70 · GPU notebooks $16.38</title></rect><text x="405.0" y="182" class="xlab">09-04</text><rect x="426" y="96.4" width="26" height="67.6" class="bar base"><title>2026-09-05 — total $83.26
+Base (always-on) $65.62 · CPU notebooks $13.52 · GPU notebooks $4.13</title></rect><rect x="426" y="82.5" width="26" height="13.9" class="bar cpu"><title>2026-09-05 — total $83.26
+Base (always-on) $65.62 · CPU notebooks $13.52 · GPU notebooks $4.13</title></rect><rect x="426" y="78.2" width="26" height="4.3" class="bar gpu"><title>2026-09-05 — total $83.26
+Base (always-on) $65.62 · CPU notebooks $13.52 · GPU notebooks $4.13</title></rect><text x="439.0" y="182" class="xlab">09-05</text><rect x="460" y="96.3" width="26" height="67.7" class="bar base"><title>2026-09-06 — total $92.01
+Base (always-on) $65.73 · CPU notebooks $19.62 · GPU notebooks $6.67</title></rect><rect x="460" y="76.1" width="26" height="20.2" class="bar cpu"><title>2026-09-06 — total $92.01
+Base (always-on) $65.73 · CPU notebooks $19.62 · GPU notebooks $6.67</title></rect><rect x="460" y="69.2" width="26" height="6.9" class="bar gpu"><title>2026-09-06 — total $92.01
+Base (always-on) $65.73 · CPU notebooks $19.62 · GPU notebooks $6.67</title></rect><text x="473.0" y="182" class="xlab">09-06</text><rect x="494" y="96.3" width="26" height="67.7" class="bar base"><title>2026-09-07 — total $105.01
+Base (always-on) $65.73 · CPU notebooks $37.39 · GPU notebooks $1.88</title></rect><rect x="494" y="57.8" width="26" height="38.5" class="bar cpu"><title>2026-09-07 — total $105.01
+Base (always-on) $65.73 · CPU notebooks $37.39 · GPU notebooks $1.88</title></rect><rect x="494" y="55.8" width="26" height="1.9" class="bar gpu"><title>2026-09-07 — total $105.01
+Base (always-on) $65.73 · CPU notebooks $37.39 · GPU notebooks $1.88</title></rect><text x="507.0" y="182" class="xlab">09-07</text></svg></div>
+</section>
+
+<div class="cols">
+  <section>
+    <h2>Weekly</h2>
+    <p class="sub">Weeks ending Sunday.</p>
+    <div class="chartwrap"><svg viewBox="0 0 178 190" width="100%" height="190" role="img" class="chart"><line x1="52" y1="164.0" x2="170" y2="164.0" class="grid"/><text x="44" y="168.0" class="ylab">$0</text><line x1="52" y1="82.0" x2="170" y2="82.0" class="grid"/><text x="44" y="86.0" class="ylab">$444</text><line x1="52" y1="0.0" x2="170" y2="0.0" class="grid"/><text x="44" y="4.0" class="ylab">$887</text><rect x="52" y="91.9" width="30" height="72.1" class="bar base"><title>2026-08-30 — total $713.36
+Base (always-on) $389.88 · CPU notebooks $233.24 · GPU notebooks $90.24</title></rect><rect x="52" y="48.8" width="30" height="43.1" class="bar cpu"><title>2026-08-30 — total $713.36
+Base (always-on) $389.88 · CPU notebooks $233.24 · GPU notebooks $90.24</title></rect><rect x="52" y="32.1" width="30" height="16.7" class="bar gpu"><title>2026-08-30 — total $713.36
+Base (always-on) $389.88 · CPU notebooks $233.24 · GPU notebooks $90.24</title></rect><text x="67.0" y="182" class="xlab">Aug 30</text><rect x="90" y="78.6" width="30" height="85.4" class="bar base"><title>2026-09-06 — total $887.18
+Base (always-on) $462.13 · CPU notebooks $273.35 · GPU notebooks $151.70</title></rect><rect x="90" y="28.0" width="30" height="50.5" class="bar cpu"><title>2026-09-06 — total $887.18
+Base (always-on) $462.13 · CPU notebooks $273.35 · GPU notebooks $151.70</title></rect><rect x="90" y="0.0" width="30" height="28.0" class="bar gpu"><title>2026-09-06 — total $887.18
+Base (always-on) $462.13 · CPU notebooks $273.35 · GPU notebooks $151.70</title></rect><text x="105.0" y="182" class="xlab">Sep 6</text><rect x="128" y="151.8" width="30" height="12.2" class="bar base"><title>2026-09-13 — total $105.01
+Base (always-on) $65.73 · CPU notebooks $37.39 · GPU notebooks $1.88</title></rect><rect x="128" y="144.9" width="30" height="6.9" class="bar cpu"><title>2026-09-13 — total $105.01
+Base (always-on) $65.73 · CPU notebooks $37.39 · GPU notebooks $1.88</title></rect><rect x="128" y="144.6" width="30" height="0.6" class="bar gpu"><title>2026-09-13 — total $105.01
+Base (always-on) $65.73 · CPU notebooks $37.39 · GPU notebooks $1.88</title></rect><text x="143.0" y="182" class="xlab">Sep 13</text></svg></div>
+    <table><thead><tr><th scope='col'>Period</th><th>Base (always-on)</th><th>CPU notebooks</th><th>GPU notebooks</th><th scope='col'>Total</th></tr></thead><tbody><tr><th scope='row'>2026-09-13</th><td class='num'>$65.73</td><td class='num'>$37.39</td><td class='num'>$1.88</td><td class='num strong'>$105.01</td></tr><tr><th scope='row'>2026-09-06</th><td class='num'>$462.13</td><td class='num'>$273.35</td><td class='num'>$151.70</td><td class='num strong'>$887.18</td></tr><tr><th scope='row'>2026-08-30</th><td class='num'>$389.88</td><td class='num'>$233.24</td><td class='num'>$90.24</td><td class='num strong'>$713.36</td></tr></tbody></table>
+  </section>
+  <section>
+    <h2>Monthly</h2>
+    <p class="sub">Calendar months.</p>
+    <div class="chartwrap"><svg viewBox="0 0 156 190" width="100%" height="190" role="img" class="chart"><line x1="52" y1="164.0" x2="148" y2="164.0" class="grid"/><text x="44" y="168.0" class="ylab">$0</text><line x1="52" y1="82.0" x2="148" y2="82.0" class="grid"/><text x="44" y="86.0" class="ylab">$432</text><line x1="52" y1="0.0" x2="148" y2="0.0" class="grid"/><text x="44" y="4.0" class="ylab">$864</text><rect x="52" y="77.5" width="38" height="86.5" class="bar base"><title>2026-08-01 — total $841.24
+Base (always-on) $455.61 · CPU notebooks $284.74 · GPU notebooks $100.89</title></rect><rect x="52" y="23.5" width="38" height="54.0" class="bar cpu"><title>2026-08-01 — total $841.24
+Base (always-on) $455.61 · CPU notebooks $284.74 · GPU notebooks $100.89</title></rect><rect x="52" y="4.4" width="38" height="19.1" class="bar gpu"><title>2026-08-01 — total $841.24
+Base (always-on) $455.61 · CPU notebooks $284.74 · GPU notebooks $100.89</title></rect><text x="71.0" y="182" class="xlab">Aug 2026</text><rect x="98" y="76.3" width="38" height="87.7" class="bar base"><title>2026-09-01 — total $864.30
+Base (always-on) $462.13 · CPU notebooks $259.24 · GPU notebooks $142.93</title></rect><rect x="98" y="27.1" width="38" height="49.2" class="bar cpu"><title>2026-09-01 — total $864.30
+Base (always-on) $462.13 · CPU notebooks $259.24 · GPU notebooks $142.93</title></rect><rect x="98" y="0.0" width="38" height="27.1" class="bar gpu"><title>2026-09-01 — total $864.30
+Base (always-on) $462.13 · CPU notebooks $259.24 · GPU notebooks $142.93</title></rect><text x="117.0" y="182" class="xlab">Sep 2026</text></svg></div>
+    <table><thead><tr><th scope='col'>Period</th><th>Base (always-on)</th><th>CPU notebooks</th><th>GPU notebooks</th><th scope='col'>Total</th></tr></thead><tbody><tr><th scope='row'>September 2026</th><td class='num'>$462.13</td><td class='num'>$259.24</td><td class='num'>$142.93</td><td class='num strong'>$864.30</td></tr><tr><th scope='row'>August 2026</th><td class='num'>$455.61</td><td class='num'>$284.74</td><td class='num'>$100.89</td><td class='num strong'>$841.24</td></tr></tbody></table>
+  </section>
+</div>
+
+<section>
+  <h2>Always-on base</h2>
+  <p class="sub">core-pool + oss-cluster + GKE cluster fees + persistent storage.
+     This is the number to quote when asked what CloudBank costs to simply exist.</p>
+  <p style="font-size:31px;font-weight:600;margin:12px 0 2px;font-variant-numeric:tabular-nums">
+     $66.02<span style="font-size:15px;color:var(--muted);font-weight:400"> / day</span>
+     &nbsp;&nbsp;$1,981<span style="font-size:15px;color:var(--muted);font-weight:400"> / month</span></p>
+  <p class="muted">53% of total spend over the last 7 days.
+     Storage alone is provisioned capacity — it costs the same whether or not anyone logs in.</p>
+</section>
+
+<section>
+  <h2>Usage</h2>
+  <p class="sub">Hub accounts and grading volume across CloudBank and Cal-ICOR.</p>
+  <h3>Hubs and users by program</h3><table><thead><tr><th>Program</th><th>Hubs</th><th>Users, spring 2027</th></tr></thead><tbody><tr><th scope='row'>cloudbank</th><td class='num'>96</td><td class='num strong'>0</td></tr><tr><th scope='row'>icor</th><td class='num'>22</td><td class='num strong'>0</td></tr></tbody></table><p class='muted'>9,632 accounts across all hubs; 9,560 have ever been active.</p><h3>Otter grading, recent weeks</h3><table><thead><tr><th>Week</th><th>Submissions</th><th>Notebooks</th></tr></thead><tbody><tr><th scope='row'>2026-09 w36</th><td class='num'>59</td><td class='num'>178</td></tr><tr><th scope='row'>2026-08 w36</th><td class='num'>31</td><td class='num'>222</td></tr><tr><th scope='row'>2026-08 w35</th><td class='num'>117</td><td class='num'>395</td></tr><tr><th scope='row'>2026-08 w34</th><td class='num'>33</td><td class='num'>153</td></tr><tr><th scope='row'>2026-08 w33</th><td class='num'>30</td><td class='num'>80</td></tr><tr><th scope='row'>2026-08 w32</th><td class='num'>24</td><td class='num'>461</td></tr><tr><th scope='row'>2026-08 w31</th><td class='num'>7</td><td class='num'>145</td></tr><tr><th scope='row'>2026-07 w31</th><td class='num'>28</td><td class='num'>510</td></tr><tr><th scope='row'>2026-07 w30</th><td class='num'>150</td><td class='num'>993</td></tr><tr><th scope='row'>2026-07 w29</th><td class='num'>84</td><td class='num'>430</td></tr><tr><th scope='row'>2026-07 w28</th><td class='num'>158</td><td class='num'>1,464</td></tr><tr><th scope='row'>2026-07 w27</th><td class='num'>42</td><td class='num'>467</td></tr></tbody></table>
+</section>
+
+<footer>
+  Sources: CloudBank Prometheus (node-hours, 5-minute samples anchored to Pacific
+  midnight) · Cloud Billing Catalog API (list prices) · <code>gcloud compute disks</code>
+  (provisioned storage) · JupyterHub REST API (users) · Firestore (Otter).
+  Built by <code>cloudbank-classroom-usage</code>.
+</footer>
+
+</div></body></html>
