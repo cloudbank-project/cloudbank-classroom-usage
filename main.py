@@ -8,6 +8,7 @@ STEPS = [
     ("Resolving list prices from the Billing Catalog...", "pricing.py"),
     ("Measuring node-hours per pool...",                  "node_hours.py"),
     ("Measuring persistent-disk storage...",              "storage.py"),
+    ("Measuring always-on extras (snapshots, LBs)...",    "base_extras.py"),
     ("Computing daily costs by bucket...",                "costs.py"),
     ("Fetching hub users...",                             "../users.py"),
     ("Fetching Otter grading counts...",                  "../otter_standalone_use.py"),

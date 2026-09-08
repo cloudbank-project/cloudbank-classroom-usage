@@ -108,6 +108,48 @@ def table(frame, label_fmt="%Y-%m-%d"):
     )
 
 
+BASE_LABELS = {
+    "measured": "core-pool nodes",
+    "estimated:storage": "Persistent disk (home dirs + other)",
+    "estimated:oss-cluster": "oss-cluster (no Prometheus — modeled)",
+    "estimated:snapshots": "Snapshots (GKE PD backups)",
+    "estimated:gke-cluster-fee": "GKE cluster fees",
+    "estimated:load-balancers": "Load balancers",
+    "estimated:idle-static-ips": "Idle static IPs",
+    "estimated:gcs-buckets": "GCS buckets",
+}
+
+
+def base_breakdown(costs):
+    """One row per always-on component for the most recent complete day."""
+    base = costs[costs["bucket"] == "base"]
+    if base.empty:
+        return "", 0.0
+    latest = base["date"].max()
+    day = base[base["date"] == latest].groupby("basis")["usd"].sum().sort_values(ascending=False)
+    total = float(day.sum())
+    rows = []
+    for basis, usd in day.items():
+        label = BASE_LABELS.get(basis, basis)
+        pct = usd / total * 100 if total else 0
+        est = "" if basis == "measured" else " <span class='tag'>modeled</span>"
+        rows.append(
+            f"<tr><th scope='row'>{escape(label)}{est}</th>"
+            f"<td class='num'>{money(usd)}</td>"
+            f"<td class='num'>{money(usd*30, 0)}</td>"
+            f"<td class='num muted-cell'>{pct:.0f}%</td></tr>"
+        )
+    html = (
+        "<table><thead><tr><th>Component</th><th>$/day</th><th>$/month</th>"
+        f"<th>share</th></tr></thead><tbody>{''.join(rows)}"
+        f"<tr class='tot'><th scope='row'>Total always-on</th>"
+        f"<td class='num strong'>{money(total)}</td>"
+        f"<td class='num strong'>{money(total*30,0)}</td><td></td></tr>"
+        "</tbody></table>"
+    )
+    return html, total
+
+
 def usage_blocks():
     """Users by program and Otter grading volume, if those CSVs are present."""
     out = {}
@@ -154,6 +196,7 @@ def build():
     weekly = resample(daily, "W-SUN")
     monthly = resample(daily, "MS")
     usage = usage_blocks()
+    base_table, _ = base_breakdown(costs)
 
     last7 = daily.tail(7)
     base_day = last7["base"].mean()
@@ -268,6 +311,10 @@ tbody th{font-weight:500;white-space:nowrap}
 .num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
 .strong{font-weight:600}
 .muted{color:var(--muted);font-size:12.5px;margin-top:8px}
+.muted-cell{color:var(--muted)}
+.tag{font-size:9.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);
+border:1px solid var(--rule);border-radius:2px;padding:1px 4px;margin-left:6px;font-weight:400}
+tr.tot th,tr.tot td{border-top:2px solid var(--rule);border-bottom:none}
 .note{border-left:3px solid var(--warn);background:var(--sunken);padding:13px 16px;
 border-radius:3px;font-size:13.5px;color:var(--ink2)}
 .note b{color:var(--warn)}
@@ -328,8 +375,13 @@ footer{color:var(--muted);font-size:12px;border-top:1px solid var(--rule);paddin
   <p style="font-size:31px;font-weight:600;margin:12px 0 2px;font-variant-numeric:tabular-nums">
      {money(base_day)}<span style="font-size:15px;color:var(--muted);font-weight:400"> / day</span>
      &nbsp;&nbsp;{money(base_day*30, 0)}<span style="font-size:15px;color:var(--muted);font-weight:400"> / month</span></p>
-  <p class="muted">{base_pct:.0f}% of total spend over the last 7 days.
-     Storage alone is provisioned capacity — it costs the same whether or not anyone logs in.</p>
+  <p class="muted">{base_pct:.0f}% of total spend over the last 7 days.</p>
+  <h3>What makes it up</h3>
+  {base_table}
+  <p class="muted">Only the top line is measured node-hours. Everything below it is
+     provisioned capacity or a flat fee — it costs the same at 3am on a Sunday.
+     <b>Not included:</b> internet egress and Cloud Logging, neither of which can be
+     measured without the billing export; either could exceed several of these lines.</p>
 </section>
 
 <section>

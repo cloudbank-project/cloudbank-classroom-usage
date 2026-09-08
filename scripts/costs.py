@@ -87,12 +87,25 @@ def main():
     )
     stor_usd_day = storage_per_day()
 
+    # Always-on extras (snapshots, load balancers, idle IPs, GCS). Kept as one
+    # row per component rather than a lump, so the dashboard can break the base
+    # down instead of showing an unexplained total.
+    extras = read_data("base_extras.csv")
+    extra_rows = []
+    if not extras.empty:
+        newest = extras.sort_values("date").groupby("component").tail(1)
+        extra_rows = [
+            (r["component"], float(r["usd_per_day"]))
+            for _, r in newest.iterrows()
+            if float(r["usd_per_day"]) > 0
+        ]
+
     for date in dates:
-        for label, usd in (
+        for label, usd in [
             ("oss-cluster", oss_usd_day),
             ("gke-cluster-fee", fee_usd_day),
             ("storage", stor_usd_day),
-        ):
+        ] + extra_rows:
             if usd:
                 rows.append(
                     {
