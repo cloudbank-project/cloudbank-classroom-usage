@@ -6,7 +6,7 @@ more per day than the CPU pool on a quiet day, and comparable to the GPU pool.
 Any "what does CloudBank cost" answer that leaves this out is wrong low.
 
 Disks are billed by provisioned capacity, not usage, so this is one of the few
-figures here that is genuinely exact rather than modeled -- the only modelling
+figures here that is genuinely exact rather than modeled -- the only modeling
 is the list price.
 
 Boot disks attached to nodes are NOT counted here: they are already priced into
@@ -20,7 +20,7 @@ import subprocess
 
 import pandas as pd
 
-from common import PT, PROJECT, read_data, upsert
+from common import PT, PROJECT, load_pools, read_data, upsert
 
 HOURS_PER_MONTH = 730
 
@@ -59,17 +59,10 @@ def main():
     pricing = read_data("pricing.csv")
     if pricing.empty:
         raise SystemExit("Run scripts/pricing.py first -- no data/pricing.csv.")
-    # Per-GB-hour rates were resolved by pricing.py; recover them from any row
-    # that used each disk type so we stay on catalog prices, not constants.
+    # Recover per-GB-hour rates from pricing.csv so storage stays on the same
+    # catalog prices as compute: disk_usd_hr = disk_gb * per_gb_hour, so invert
+    # it using each pool's configured disk size.
     rate = {}
-    for _, r in pricing.iterrows():
-        if r.get("disk_type") and r.get("disk_usd_hr") and r.get("disk_type") not in rate:
-            # disk_usd_hr = disk_gb * per_gb_hour, so invert via the pool config
-            pass
-    # Simpler and less fragile: read the catalog rates straight off pricing.csv
-    # by reconstructing from the pools config.
-    from common import load_pools
-
     cfg = load_pools()
     for _, r in pricing.iterrows():
         spec = cfg["pools"].get(r["pool"])
