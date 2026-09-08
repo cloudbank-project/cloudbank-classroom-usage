@@ -119,17 +119,19 @@ def usage_blocks():
         # pick the latest term that actually has users rather than the last one.
         populated = [c for c in term_cols if u[c].sum() > 0]
         current = populated[-1] if populated else (term_cols[-1] if term_cols else None)
-        by = u.groupby("where")
         out["users"] = {
             "institutions": int(u["college"].nunique()),
-            "by_program": {k: int(v) for k, v in by.size().items()},
+            "hubs": int(len(u)),
             "current_term": current,
             "current_users": int(u[current].sum()) if current else 0,
-            "current_by_program": (
-                {k: int(v) for k, v in by[current].sum().items()} if current else {}
-            ),
             "ever_active": int(u["all-users-ever-active"].sum()),
             "all_users": int(u["all-users"].sum()),
+            # top hubs by users this term, which is more useful than a
+            # one-row program table now that there is only one program
+            "top": (
+                u[["college", current]].sort_values(current, ascending=False)
+                .head(12).values.tolist() if current else []
+            ),
         }
     opath = BASE_DIR / "otter_standalone_use.csv"
     if opath.is_file():
@@ -194,18 +196,16 @@ def build():
     if "users" in usage:
         u = usage["users"]
         rows = "".join(
-            f"<tr><th scope='row'>{escape(k)}</th>"
-            f"<td class='num'>{u['by_program'].get(k,0)}</td>"
-            f"<td class='num strong'>{u['current_by_program'].get(k,0):,}</td></tr>"
-            for k in sorted(u["by_program"])
+            f"<tr><th scope='row'>{escape(str(name))}</th>"
+            f"<td class='num strong'>{int(n):,}</td></tr>"
+            for name, n in u["top"]
         )
         usage_html += (
-            "<h3>Hubs and users by program</h3>"
-            "<table><thead><tr><th>Program</th><th>Hubs</th>"
-            f"<th>Users, {escape((u['current_term'] or '').replace('_',' '))}</th>"
+            f"<h3>Busiest hubs, {escape((u['current_term'] or '').replace('_',' '))}</h3>"
+            "<table><thead><tr><th>Institution</th><th>Users</th>"
             f"</tr></thead><tbody>{rows}</tbody></table>"
-            f"<p class='muted'>{u['all_users']:,} accounts across all hubs; "
-            f"{u['ever_active']:,} have ever been active.</p>"
+            f"<p class='muted'>{u['hubs']} CloudBank hubs · {u['all_users']:,} accounts "
+            f"in total; {u['ever_active']:,} have ever been active.</p>"
         )
     if "otter" in usage:
         rows = "".join(
@@ -334,7 +334,7 @@ footer{color:var(--muted);font-size:12px;border-top:1px solid var(--rule);paddin
 
 <section>
   <h2>Usage</h2>
-  <p class="sub">Hub accounts and grading volume across CloudBank and Cal-ICOR.</p>
+  <p class="sub">CloudBank hub accounts and Otter grading volume.</p>
   {usage_html or "<p class='muted'>No usage data yet — run users.py and otter_standalone_use.py.</p>"}
 </section>
 

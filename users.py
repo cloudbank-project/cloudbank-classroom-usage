@@ -94,8 +94,6 @@ def get_users(url, where, token):
     api_url = f'http://{url}.cloudbank.2i2c.cloud/hub/api'
     if url == "mills":
         api_url = f'http://datahub.{url}.edu/hub/api'
-    if where == "icor":
-        api_url = f'http://{url}.jupyter.cal-icor.org/hub/api'
     offset = 0
     while True:
         r = requests.get(
