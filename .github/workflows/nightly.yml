@@ -1,0 +1,87 @@
+name: Nightly Cost + Usage Update
+
+on:
+  schedule:
+    # 06:17 UTC = 22:17 PT / 23:17 PDT. Off the hour on purpose: :00 is when
+    # every scheduled job on GitHub fires at once and queues get long.
+    - cron: "17 6 * * *"
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v7
+
+      - name: Authenticate to Google Cloud
+        uses: google-github-actions/auth@v3
+        with:
+          credentials_json: ${{ secrets.GOOGLE_CREDENTIALS }}
+
+      # pricing.py calls `gcloud auth print-access-token` and storage.py calls
+      # `gcloud compute disks list`, so the CLI itself has to be present --
+      # the auth action alone only writes ADC.
+      - name: Set up gcloud
+        uses: google-github-actions/setup-gcloud@v2
+        with:
+          project_id: cb-1003-1696
+
+      - name: Install sops
+        run: |
+          curl -Lo /usr/local/bin/sops \
+            https://github.com/getsops/sops/releases/download/v3.8.1/sops-v3.8.1.linux.amd64
+          chmod +x /usr/local/bin/sops
+
+      - name: Set up conda environment
+        uses: conda-incubator/setup-miniconda@v4
+        with:
+          environment-file: environment.yaml
+          activate-environment: cloudbank-classroom-usage
+          auto-activate: false
+
+      - name: Run pipeline
+        id: pipeline
+        shell: bash -el {0}
+        env:
+          # There is no infrastructure/ clone in CI, so the Prometheus basic-auth
+          # secret cannot be read from sops here. common.py prefers these env
+          # vars when set, which is exactly why they exist.
+          PROM_USER: ${{ secrets.PROM_USER }}
+          PROM_PASS: ${{ secrets.PROM_PASS }}
+        run: |
+          set -o pipefail
+          python main.py 2>&1 | tee pipeline_output.txt
+
+      # Rebuild and commit even when a step failed. A few hub tokens 403ing, or
+      # Prometheus being briefly unreachable, should not freeze the dashboard --
+      # the CSVs are upserted, so partial data still lands and history is kept.
+      # The job still goes red and Slack still fires, so failures stay visible.
+      - name: Build dashboard
+        if: always()
+        shell: bash -el {0}
+        run: python scripts/build_dashboard.py
+
+      - name: Commit and push
+        if: always()
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/ docs/ users.csv otter_standalone_use.csv
+          git diff --cached --quiet || \
+            git commit -m "chore: nightly cost + usage update $(date -u +%Y-%m-%d)"
+          git push
+
+      - name: Notify Slack on failure
+        if: failure()
+        run: |
+          SUMMARY=$(tail -20 pipeline_output.txt 2>/dev/null | tail -8)
+          RUN_URL="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
+          TEXT=$(printf ':x: *CloudBank cost/usage nightly failed*\n```\n%s\n```\n<%s|Full run>' \
+                 "$SUMMARY" "$RUN_URL")
+          curl -X POST -H 'Content-type: application/json' \
+            --data "$(jq -n --arg text "$TEXT" '{text: $text}')" \
+            "${{ secrets.CLOUDBANK_SLACK_WEBHOOK_URL }}"
