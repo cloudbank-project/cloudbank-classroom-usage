@@ -2,7 +2,7 @@ date,bucket,node_hours,usd,basis
 2026-08-25,base,0.0,2.4,estimated:gke-cluster-fee
 2026-08-25,base,0.0,0.6083,estimated:load-balancers
 2026-08-25,base,0.0,6.7619,estimated:oss-cluster
-2026-08-25,base,0.0,2.8076,estimated:snapshots
+2026-08-25,base,0.0,2.8151,estimated:snapshots
 2026-08-25,base,0.0,24.137,estimated:storage
 2026-08-25,base,230.08,31.0897,measured
 2026-08-25,cpu,115.67,33.0097,measured
@@ -10,7 +10,7 @@ date,bucket,node_hours,usd,basis
 2026-08-26,base,0.0,2.4,estimated:gke-cluster-fee
 2026-08-26,base,0.0,0.6083,estimated:load-balancers
 2026-08-26,base,0.0,6.7619,estimated:oss-cluster
-2026-08-26,base,0.0,2.8076,estimated:snapshots
+2026-08-26,base,0.0,2.8151,estimated:snapshots
 2026-08-26,base,0.0,24.137,estimated:storage
 2026-08-26,base,240.0,32.4298,measured
 2026-08-26,cpu,253.25,71.5624,measured
@@ -18,7 +18,7 @@ date,bucket,node_hours,usd,basis
 2026-08-27,base,0.0,2.4,estimated:gke-cluster-fee
 2026-08-27,base,0.0,0.6083,estimated:load-balancers
 2026-08-27,base,0.0,6.7619,estimated:oss-cluster
-2026-08-27,base,0.0,2.8076,estimated:snapshots
+2026-08-27,base,0.0,2.8151,estimated:snapshots
 2026-08-27,base,0.0,24.137,estimated:storage
 2026-08-27,base,216.67,29.2769,measured
 2026-08-27,cpu,135.33,38.5014,measured
@@ -26,7 +26,7 @@ date,bucket,node_hours,usd,basis
 2026-08-28,base,0.0,2.4,estimated:gke-cluster-fee
 2026-08-28,base,0.0,0.6083,estimated:load-balancers
 2026-08-28,base,0.0,6.7619,estimated:oss-cluster
-2026-08-28,base,0.0,2.8076,estimated:snapshots
+2026-08-28,base,0.0,2.8151,estimated:snapshots
 2026-08-28,base,0.0,24.137,estimated:storage
 2026-08-28,base,240.0,32.4298,measured
 2026-08-28,cpu,193.83,54.7726,measured
@@ -34,7 +34,7 @@ date,bucket,node_hours,usd,basis
 2026-08-29,base,0.0,2.4,estimated:gke-cluster-fee
 2026-08-29,base,0.0,0.6083,estimated:load-balancers
 2026-08-29,base,0.0,6.7619,estimated:oss-cluster
-2026-08-29,base,0.0,2.8076,estimated:snapshots
+2026-08-29,base,0.0,2.8151,estimated:snapshots
 2026-08-29,base,0.0,24.137,estimated:storage
 2026-08-29,base,240.0,32.4298,measured
 2026-08-29,cpu,62.25,17.5904,measured
@@ -42,7 +42,7 @@ date,bucket,node_hours,usd,basis
 2026-08-30,base,0.0,2.4,estimated:gke-cluster-fee
 2026-08-30,base,0.0,0.6083,estimated:load-balancers
 2026-08-30,base,0.0,6.7619,estimated:oss-cluster
-2026-08-30,base,0.0,2.8076,estimated:snapshots
+2026-08-30,base,0.0,2.8151,estimated:snapshots
 2026-08-30,base,0.0,24.137,estimated:storage
 2026-08-30,base,240.0,32.4298,measured
 2026-08-30,cpu,63.0,17.8023,measured
@@ -50,7 +50,7 @@ date,bucket,node_hours,usd,basis
 2026-08-31,base,0.0,2.4,estimated:gke-cluster-fee
 2026-08-31,base,0.0,0.6083,estimated:load-balancers
 2026-08-31,base,0.0,6.7619,estimated:oss-cluster
-2026-08-31,base,0.0,2.8076,estimated:snapshots
+2026-08-31,base,0.0,2.8151,estimated:snapshots
 2026-08-31,base,0.0,24.137,estimated:storage
 2026-08-31,base,240.0,32.4298,measured
 2026-08-31,cpu,182.25,51.4995,measured
@@ -58,7 +58,7 @@ date,bucket,node_hours,usd,basis
 2026-09-01,base,0.0,2.4,estimated:gke-cluster-fee
 2026-09-01,base,0.0,0.6083,estimated:load-balancers
 2026-09-01,base,0.0,6.7619,estimated:oss-cluster
-2026-09-01,base,0.0,2.8076,estimated:snapshots
+2026-09-01,base,0.0,2.8151,estimated:snapshots
 2026-09-01,base,0.0,24.137,estimated:storage
 2026-09-01,base,256.67,34.6819,measured
 2026-09-01,cpu,131.5,37.1587,measured
@@ -66,7 +66,7 @@ date,bucket,node_hours,usd,basis
 2026-09-02,base,0.0,2.4,estimated:gke-cluster-fee
 2026-09-02,base,0.0,0.6083,estimated:load-balancers
 2026-09-02,base,0.0,6.7619,estimated:oss-cluster
-2026-09-02,base,0.0,2.8076,estimated:snapshots
+2026-09-02,base,0.0,2.8151,estimated:snapshots
 2026-09-02,base,0.0,24.137,estimated:storage
 2026-09-02,base,240.0,32.4298,measured
 2026-09-02,cpu,253.75,71.7037,measured
@@ -74,7 +74,7 @@ date,bucket,node_hours,usd,basis
 2026-09-03,base,0.0,2.4,estimated:gke-cluster-fee
 2026-09-03,base,0.0,0.6083,estimated:load-balancers
 2026-09-03,base,0.0,6.7619,estimated:oss-cluster
-2026-09-03,base,0.0,2.8076,estimated:snapshots
+2026-09-03,base,0.0,2.8151,estimated:snapshots
 2026-09-03,base,0.0,24.137,estimated:storage
 2026-09-03,base,240.0,32.4298,measured
 2026-09-03,cpu,110.25,31.154,measured
@@ -82,7 +82,7 @@ date,bucket,node_hours,usd,basis
 2026-09-04,base,0.0,2.4,estimated:gke-cluster-fee
 2026-09-04,base,0.0,0.6083,estimated:load-balancers
 2026-09-04,base,0.0,6.7619,estimated:oss-cluster
-2026-09-04,base,0.0,2.8076,estimated:snapshots
+2026-09-04,base,0.0,2.8151,estimated:snapshots
 2026-09-04,base,0.0,24.137,estimated:storage
 2026-09-04,base,239.17,32.3172,measured
 2026-09-04,cpu,172.33,48.6972,measured
@@ -90,7 +90,7 @@ date,bucket,node_hours,usd,basis
 2026-09-05,base,0.0,2.4,estimated:gke-cluster-fee
 2026-09-05,base,0.0,0.6083,estimated:load-balancers
 2026-09-05,base,0.0,6.7619,estimated:oss-cluster
-2026-09-05,base,0.0,2.8076,estimated:snapshots
+2026-09-05,base,0.0,2.8151,estimated:snapshots
 2026-09-05,base,0.0,24.137,estimated:storage
 2026-09-05,base,239.17,32.3172,measured
 2026-09-05,cpu,47.83,13.5165,measured
@@ -98,7 +98,7 @@ date,bucket,node_hours,usd,basis
 2026-09-06,base,0.0,2.4,estimated:gke-cluster-fee
 2026-09-06,base,0.0,0.6083,estimated:load-balancers
 2026-09-06,base,0.0,6.7619,estimated:oss-cluster
-2026-09-06,base,0.0,2.8076,estimated:snapshots
+2026-09-06,base,0.0,2.8151,estimated:snapshots
 2026-09-06,base,0.0,24.137,estimated:storage
 2026-09-06,base,240.0,32.4298,measured
 2026-09-06,cpu,69.42,19.6156,measured
@@ -106,7 +106,7 @@ date,bucket,node_hours,usd,basis
 2026-09-07,base,0.0,2.4,estimated:gke-cluster-fee
 2026-09-07,base,0.0,0.6083,estimated:load-balancers
 2026-09-07,base,0.0,6.7619,estimated:oss-cluster
-2026-09-07,base,0.0,2.8076,estimated:snapshots
+2026-09-07,base,0.0,2.8151,estimated:snapshots
 2026-09-07,base,0.0,24.137,estimated:storage
 2026-09-07,base,240.0,32.4298,measured
 2026-09-07,cpu,132.33,37.3941,measured
@@ -114,7 +114,7 @@ date,bucket,node_hours,usd,basis
 2026-09-08,base,0.0,2.4,estimated:gke-cluster-fee
 2026-09-08,base,0.0,0.6083,estimated:load-balancers
 2026-09-08,base,0.0,6.7619,estimated:oss-cluster
-2026-09-08,base,0.0,2.8076,estimated:snapshots
+2026-09-08,base,0.0,2.8151,estimated:snapshots
 2026-09-08,base,0.0,24.137,estimated:storage
 2026-09-08,base,240.0,32.4298,measured
 2026-09-08,cpu,181.08,51.1697,measured
@@ -122,7 +122,7 @@ date,bucket,node_hours,usd,basis
 2026-09-09,base,0.0,2.4,estimated:gke-cluster-fee
 2026-09-09,base,0.0,0.6083,estimated:load-balancers
 2026-09-09,base,0.0,6.7619,estimated:oss-cluster
-2026-09-09,base,0.0,2.8076,estimated:snapshots
+2026-09-09,base,0.0,2.8151,estimated:snapshots
 2026-09-09,base,0.0,24.137,estimated:storage
 2026-09-09,base,240.0,32.4298,measured
 2026-09-09,cpu,174.0,49.1682,measured
@@ -130,8 +130,16 @@ date,bucket,node_hours,usd,basis
 2026-09-10,base,0.0,2.4,estimated:gke-cluster-fee
 2026-09-10,base,0.0,0.6083,estimated:load-balancers
 2026-09-10,base,0.0,6.7619,estimated:oss-cluster
-2026-09-10,base,0.0,2.8076,estimated:snapshots
+2026-09-10,base,0.0,2.8151,estimated:snapshots
 2026-09-10,base,0.0,24.137,estimated:storage
 2026-09-10,base,240.0,32.4298,measured
 2026-09-10,cpu,81.17,22.9358,measured
 2026-09-10,gpu,95.17,82.775,measured
+2026-09-11,base,0.0,2.4,estimated:gke-cluster-fee
+2026-09-11,base,0.0,0.6083,estimated:load-balancers
+2026-09-11,base,0.0,6.7619,estimated:oss-cluster
+2026-09-11,base,0.0,2.8151,estimated:snapshots
+2026-09-11,base,0.0,24.137,estimated:storage
+2026-09-11,base,240.0,32.4298,measured
+2026-09-11,cpu,167.42,47.308,measured
+2026-09-11,gpu,44.17,38.4159,measured
