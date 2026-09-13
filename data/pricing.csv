@@ -44,3 +44,12 @@ date,pool,bucket,machine_type,disk_type,compute_usd_hr,disk_usd_hr,accel_usd_hr,
 2026-09-12,nb-n2-highmem-64,cpu,n2-highmem-64,pd-balanced,4.192448,0.013699,0.0,4.206147
 2026-09-12,oss-production,base,e2-standard-8,pd-balanced,0.268046,0.013699,0.0,0.281745
 2026-09-12,test-pool,cpu,n2-highmem-4,pd-standard,0.262028,0.005479,0.0,0.267508
+2026-09-13,core-pool,base,n2-highmem-2,pd-balanced,0.131014,0.00411,0.0,0.135124
+2026-09-13,dask-n2-highmem-16,cpu,n2-highmem-16,pd-balanced,1.048112,0.013699,0.0,1.061811
+2026-09-13,nb-gpu-t4,gpu,n1-highmem-8,pd-ssd,0.473212,0.046575,0.35,0.869787
+2026-09-13,nb-n2-highmem-16,cpu,n2-highmem-16,pd-balanced,1.048112,0.013699,0.0,1.061811
+2026-09-13,nb-n2-highmem-4-a,cpu,n2-highmem-4,pd-balanced,0.262028,0.020548,0.0,0.282576
+2026-09-13,nb-n2-highmem-4-b,cpu,n2-highmem-4,pd-balanced,0.262028,0.020548,0.0,0.282576
+2026-09-13,nb-n2-highmem-64,cpu,n2-highmem-64,pd-balanced,4.192448,0.013699,0.0,4.206147
+2026-09-13,oss-production,base,e2-standard-8,pd-balanced,0.268046,0.013699,0.0,0.281745
+2026-09-13,test-pool,cpu,n2-highmem-4,pd-standard,0.262028,0.005479,0.0,0.267508
