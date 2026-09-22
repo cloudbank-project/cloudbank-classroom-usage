@@ -41,3 +41,6 @@ date,category,disk_count,total_gb,usd_per_hour,usd_per_day,usd_per_month,counted
 2026-09-21,home-dirs,105,6510,0.89187,21.4049,651.07,True
 2026-09-21,node-boot,43,3344,0.413406,9.9217,301.79,False
 2026-09-21,other,98,1614,0.131345,3.1523,95.88,True
+2026-09-22,home-dirs,105,6510,0.89187,21.4049,651.07,True
+2026-09-22,node-boot,29,1244,0.125706,3.0169,91.77,False
+2026-09-22,other,98,1614,0.131345,3.1523,95.88,True
