@@ -239,3 +239,11 @@ date,bucket,node_hours,usd,basis
 2026-09-23,base,240.0,32.4298,measured
 2026-09-23,cpu,177.0,50.016,measured
 2026-09-23,gpu,81.33,70.7424,measured
+2026-09-24,base,0.0,2.4,estimated:gke-cluster-fee
+2026-09-24,base,0.0,0.6083,estimated:load-balancers
+2026-09-24,base,0.0,6.7619,estimated:oss-cluster
+2026-09-24,base,0.0,2.9117,estimated:snapshots
+2026-09-24,base,0.0,24.5559,estimated:storage
+2026-09-24,base,240.0,32.4298,measured
+2026-09-24,cpu,127.75,36.0991,measured
+2026-09-24,gpu,115.5,100.4604,measured
