@@ -10,6 +10,7 @@ STEPS = [
     ("Measuring persistent-disk storage...",              "storage.py"),
     ("Measuring always-on extras (snapshots, LBs)...",    "base_extras.py"),
     ("Computing daily costs by bucket...",                "costs.py"),
+    ("Checking the pilot list against the registry...",   "pilot_drift.py"),
     ("Fetching hub users...",                             "../users.py"),
     ("Fetching Otter grading counts...",                  "../otter_standalone_use.py"),
     ("Building dashboard...",                             "build_dashboard.py"),

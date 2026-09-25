@@ -72,6 +72,36 @@ directly in CI.
 Backfill further than the default 14 days with
 `python scripts/node_hours.py --days 90` — Prometheus retention is 1098 days.
 
+## Re-syncing the pilot list
+
+`enc-pilots.json` here is **a copy**: the CloudBank subset of
+[`cloudbank-pilot-hub-users`](https://github.com/sean-morris/cloudbank-pilot-hub-users),
+re-encrypted with CloudBank's own KMS key when Cal-ICOR was split out. Nothing
+keeps the two in step automatically, so a hub added to the registry is missing
+here until someone re-syncs — `csusm` went unreported for two and a half weeks
+that way.
+
+`scripts/pilot_drift.py` runs nightly and warns, both in the CI log and on the
+dashboard, when the lists disagree. When it does, re-sync:
+
+```bash
+sops -d ../cloudbank-pilot-hub-users/enc-pilots.json > /tmp/reg.json
+python3 -c "
+import json
+reg = json.load(open('/tmp/reg.json'))['pilots']
+cb  = sorted((p for p in reg if p.get('where') == 'cloudbank'), key=lambda p: p['url'])
+json.dump({'pilots': [{'url': p['url'], 'name': p['name'], 'token': p['token']} for p in cb]},
+          open('pilots.json', 'w'), indent=2)
+"
+sops -e pilots.json > enc-pilots.json.tmp && mv enc-pilots.json.tmp enc-pilots.json
+sops -d enc-pilots.json | head -5     # round-trip check
+rm -f pilots.json /tmp/reg.json       # never leave plaintext tokens around
+```
+
+The `where` field is dropped on the way in — everything here is CloudBank, and
+`users.py` defaults it. Decrypting the registry needs the **cal-icor-hubs** KMS
+key; re-encrypting needs **cb-1003-1696**'s, so you need both to do this.
+
 ## Gotchas worth knowing before you edit this
 
 - **Anchor range queries to Pacific midnight.** Prometheus buckets anchor to
