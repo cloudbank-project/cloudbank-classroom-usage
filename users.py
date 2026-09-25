@@ -127,11 +127,16 @@ def process_pilot(pilot, dates):
     Returns:
         dict: Statistics for the pilot.
     """
-    users = get_users(pilot["url"], pilot["where"], pilot["token"])
+    # `where` discriminated cloudbank from icor deployments. This repo dropped
+    # Cal-ICOR in 05b20a0 and the field went out of enc-pilots.json with it, so
+    # every pilot here is a CloudBank one. It is only a label on the CSV -- it
+    # does not affect the API call -- so default it rather than require it.
+    where = pilot.get("where", "cloudbank")
+    users = get_users(pilot["url"], where, pilot["token"])
     users = list(filter(lambda user: "admin" not in user["roles"] and user['admin'] is False and "service-hub" not in user['name'] and "deployment-service" not in user['name'], users))
     p = {
         "name": pilot["name"],
-        "where": pilot["where"],
+        "where": where,
         "number_all_users": len(users),
         "number_all_users_ever_active": filter_users(lambda user: user["last_activity"], users),
     }
@@ -322,6 +327,12 @@ if __name__ == "__main__":
             f"failed={summary['failed_pilots']} total={summary['total_pilots']}"
         )
         if summary["failed_pilots"]:
+            # Print the actual errors. Without this the CI log shows only a
+            # count, which says a hub failed but never why -- and when every
+            # hub fails at once the cause is always in these messages.
+            print(f"\n{summary['failed_pilots']} pilot(s) failed:")
+            for line in summary["failures"]:
+                print(f"  {line}")
             sys.exit(1)
     except Exception as exc:
         print(f"Finished with failure: {exc}")

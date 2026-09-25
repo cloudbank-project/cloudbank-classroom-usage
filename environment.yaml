@@ -7,3 +7,5 @@ dependencies:
     - pandas
     - pyyaml
     - requests
+    # otter_standalone_use.py reads Firestore
+    - firebase-admin
