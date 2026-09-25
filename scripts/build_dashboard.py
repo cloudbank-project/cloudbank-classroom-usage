@@ -15,7 +15,7 @@ from html import escape
 
 import pandas as pd
 
-from common import DOCS_DIR, PT, BASE_DIR, DATA_DIR, read_data
+from common import DOCS_DIR, PT, BASE_DIR, read_data
 
 # Categorical palette, validated for colour-vision deficiency in both modes.
 BUCKETS = ["base", "cpu", "gpu"]
@@ -186,34 +186,6 @@ def base_breakdown(costs):
     return html, total
 
 
-def drift_note():
-    """Inline warning when the pilot list has drifted from the registry.
-
-    pilot_drift.py writes this file each run. Putting it on the page rather
-    than only in the CI log is the point: csusm went missing for two and a
-    half weeks because nobody reads a green build's output.
-    """
-    path = DATA_DIR / "pilot_drift.json"
-    if not path.is_file():
-        return ""
-    try:
-        d = json.loads(path.read_text())
-    except Exception:
-        return ""
-    missing, extra = d.get("missing") or {}, d.get("extra") or {}
-    if not missing and not extra:
-        return ""
-    bits = []
-    if missing:
-        bits.append("missing " + ", ".join(escape(u) for u in missing))
-    if extra:
-        bits.append("stale " + ", ".join(escape(u) for u in extra))
-    return (
-        f" <strong>Pilot list has drifted from the registry</strong> "
-        f"({'; '.join(bits)}) — these counts are incomplete."
-    )
-
-
 def current_term(today=None):
     """(label, start_date) for the academic term `today` falls in.
 
@@ -359,7 +331,7 @@ def build():
             "<table><thead><tr><th>Institution</th><th>Users</th>"
             f"</tr></thead><tbody>{rows}</tbody></table>"
             f"<p class='muted'>{u['hubs']} CloudBank hubs · {u['all_users']:,} accounts "
-            f"in total; {u['ever_active']:,} have ever been active.{drift_note()}</p>"
+            f"in total; {u['ever_active']:,} have ever been active.</p>"
         )
     if "otter" in usage:
         rows = "".join(

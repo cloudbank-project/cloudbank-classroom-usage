@@ -81,8 +81,9 @@ keeps the two in step automatically, so a hub added to the registry is missing
 here until someone re-syncs — `csusm` went unreported for two and a half weeks
 that way.
 
-`scripts/pilot_drift.py` runs nightly and warns, both in the CI log and on the
-dashboard, when the lists disagree. When it does, re-sync:
+The nightly `check_deployment_sync.py` in **cloudbank-pilot-hub-users** posts
+to Slack when the two lists disagree (category: "Out of sync with
+cloudbank-classroom-usage's copy"). When it does, re-sync:
 
 ```bash
 sops -d ../cloudbank-pilot-hub-users/enc-pilots.json > /tmp/reg.json
