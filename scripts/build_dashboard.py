@@ -185,12 +185,35 @@ def base_breakdown(costs):
     return html, total
 
 
+def current_term(today=None):
+    """(label, start_date) for the academic term `today` falls in.
+
+    Boundaries match generate_dates() in users.py exactly -- summer Jun 15,
+    fall Aug 11, spring Jan 1 -- so the notebook count and the user count on
+    the dashboard are scoped to the same window. If those ever diverge the
+    two figures stop being comparable, which is the whole point of showing
+    them side by side.
+    """
+    today = today or datetime.datetime.now(PT).date()
+    y = today.year
+    if date(y, 6, 15) <= today <= date(y, 8, 10):
+        return f"Summer {y}", date(y, 6, 15)
+    if date(y, 8, 11) <= today <= date(y, 12, 31):
+        return f"Fall {y}", date(y, 8, 11)
+    return f"Spring {y}", date(y, 1, 1)
+
+
 def usage_blocks():
     """Users by program and Otter grading volume, if those CSVs are present."""
     out = {}
     upath = BASE_DIR / "users.csv"
     if upath.is_file():
         u = pd.read_csv(upath)
+        # users.py appends its own summary rows ("Total", "Total Schools > 5
+        # Users") to the bottom of the CSV. Summing the column as-is counts
+        # every user twice and inflates the institution count by two, so drop
+        # them before any aggregate is taken.
+        u = u[~u["college"].astype(str).str.startswith("Total")]
         term_cols = [c for c in u.columns if "_20" in c]
         # The rightmost column is a future term that is still all zeros, so
         # pick the latest term that actually has users rather than the last one.
@@ -228,9 +251,16 @@ def usage_blocks():
         weekly["label"] = weekly["week_start"].apply(
             lambda d: f"{d.strftime('%b %-d')} – {(d + timedelta(days=6)).strftime('%b %-d, %Y')}"
         )
+        term_label, term_start = current_term()
+        # week_start holds date objects, so the column dtype is `object` and
+        # the .dt accessor is unavailable -- normalise before comparing.
+        in_term = o[pd.to_datetime(o["week_start"]).dt.date >= term_start]
         out["otter"] = {
             "rows": weekly.to_dict("records"),
             "total": int(o["Number of Notebooks"].sum()),
+            "term": term_label,
+            "term_total": int(in_term["Number of Notebooks"].sum()),
+            "term_users": int(in_term["Number of Users"].sum()),
         }
     return out
 
@@ -267,8 +297,13 @@ def build():
             (f"Users, {term}", f"{u['current_users']:,}", f"{u['institutions']} institutions")
         )
     if "otter" in usage:
+        ot = usage["otter"]
         stat_cards.append(
-            ("Notebooks graded", f"{usage['otter']['total']:,}", "all time, Otter standalone")
+            (
+                f"Notebooks, {ot['term']}",
+                f"{ot['term_total']:,}",
+                f"{ot['term_users']:,} submissions · {ot['total']:,} all time",
+            )
         )
 
     cards = "".join(
