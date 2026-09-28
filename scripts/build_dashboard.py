@@ -186,6 +186,87 @@ def base_breakdown(costs):
     return html, total
 
 
+CATEGORY_LABELS = {
+    "vm": "Node VMs",
+    "gpu": "GPUs",
+    "disks": "Persistent disks",
+    "snapshots": "Snapshots",
+    "logging": "Cloud Logging",
+    "monitoring": "Cloud Monitoring",
+    "network": "Network & IPs",
+    "gke-fee": "GKE cluster fees",
+    "filestore": "Filestore",
+    "other": "Other",
+}
+
+
+def billed_block(daily):
+    """Modeled vs billed. Returns (html, stats) or (None, None) with no billed data."""
+    billed = read_data("billed_costs.csv")
+    if billed.empty:
+        return None, None
+    # A day counts as complete once the export has rows from 6h past its end;
+    # anything later is still filling in and would read as a huge model error.
+    newest = pd.to_datetime(billed["exported"]).max()
+    net = billed.groupby("date")["net"].sum()
+    done = [
+        d for d in net.index
+        if pd.Timestamp(d).tz_localize(PT) + pd.Timedelta(days=1, hours=6) <= newest
+    ]
+
+    rows = []
+    for d in sorted(set(daily.index) | set(net.index), reverse=True)[:14]:
+        m = daily["total"].get(d)
+        b = net.get(d) if d in done else None
+        diff = f"{(m / b - 1) * 100:+.1f}%" if m is not None and b else ""
+        rows.append(
+            f"<tr><th scope='row'>{escape(str(d))}</th>"
+            f"<td class='num'>{money(m) if m is not None else ''}</td>"
+            f"<td class='num strong'>{money(b) if b is not None else '<span class=muted-cell>pending</span>'}</td>"
+            f"<td class='num'>{diff}</td></tr>"
+        )
+
+    last7 = done[-7:]
+    recent = billed[billed["date"].isin(last7)]
+    cat = (recent.groupby("category")["net"].sum() / max(len(last7), 1)).sort_values(ascending=False)
+    cat_rows = "".join(
+        f"<tr><th scope='row'>{escape(CATEGORY_LABELS.get(k, k))}</th>"
+        f"<td class='num'>{money(v)}</td></tr>"
+        for k, v in cat.items() if abs(v) >= 0.01
+    )
+    both = [d for d in last7 if d in daily.index]
+    m7 = daily.loc[both, "total"].sum()
+    b7 = net.loc[both].sum()
+    credits = recent["credits"].sum() / max(len(last7), 1)
+
+    html = f"""
+<section>
+  <h2>Modeled vs billed</h2>
+  <p class="sub">Billed figures come from CloudBank's billing export, net of
+     sustained-use and other credits. The export runs 1–2 days behind, so recent
+     days show as pending and the model is the only figure for them.</p>
+  <div class="cols">
+    <div>
+      <h3>Daily, last 14 days</h3>
+      <table><thead><tr><th>Day</th><th>Modeled</th><th>Billed</th><th>Model vs billed</th>
+      </tr></thead><tbody>{''.join(rows)}</tbody></table>
+    </div>
+    <div>
+      <h3>Billed per day by category, last {len(last7)} complete days</h3>
+      <table><tbody>{cat_rows}
+      <tr class="tot"><th scope="row">Total</th><td class="num strong">{money(cat.sum())}</td></tr>
+      </tbody></table>
+      <p class="muted">Credits (mostly sustained-use discounts) take
+         {money(-credits)}/day off list price. Over these days the model is
+         {(m7 / b7 - 1) * 100:+.1f}% against the bill.</p>
+    </div>
+  </div>
+</section>"""
+    stats = {"billed_day": b7 / max(len(both), 1), "days": len(both), "through": done[-1] if done else None,
+             "stale_h": (pd.Timestamp.now(tz="UTC") - newest).total_seconds() / 3600}
+    return html, stats
+
+
 def current_term(today=None):
     """(label, start_date) for the academic term `today` falls in.
 
@@ -275,6 +356,7 @@ def build():
     monthly = resample(daily, "MS")
     usage = usage_blocks()
     base_table, _ = base_breakdown(costs)
+    billed_html, billed = billed_block(daily)
 
     last7 = daily.tail(7)
     base_day = last7["base"].mean()
@@ -291,6 +373,12 @@ def build():
         ("Total per day", money(tot_day), "7-day average"),
         ("Last 30 days", money(daily.tail(30)["total"].sum(), 0), f"through {latest}"),
     ]
+    if billed and billed["days"]:
+        stat_cards.insert(3, (
+            "Billed per day",
+            money(billed["billed_day"]),
+            f"{billed['days']}-day average through {billed['through']}",
+        ))
     if "users" in usage:
         u = usage["users"]
         term = (u["current_term"] or "").replace("_", " ").title()
@@ -421,13 +509,14 @@ footer{color:var(--muted);font-size:12px;border-top:1px solid var(--rule);paddin
 <div class="stats">{cards}</div>
 
 <div class="note">
-  <b>These are modeled figures, not billed ones.</b> Cost is measured node-hours
-  &times; Cloud Billing Catalog list price. The BigQuery billing export has never
-  been enabled for this project, so there is no invoice to reconcile against.
-  Sustained-use discounts are not modeled (the real bill would be lower); egress,
-  load balancers, logging and Artifact Registry are not modeled (higher).
+  <b>The charts are modeled figures.</b> Cost is measured node-hours &times; Cloud
+  Billing Catalog list price, which is the only figure for the last 1–2 days.
+  {"Billed figures from the billing export are under <i>Modeled vs billed</i>." if billed_html else "No billed figures yet: this run could not read the billing export."}
+  Sustained-use discounts are not modeled (the real bill is lower); snapshot
+  uploads, egress, logging and monitoring are not modeled (higher).
   {"Estimated components: " + escape(est_note) + "." if est_note else ""}
 </div>
+{billed_html or ""}
 
 <section>
   <h2>Daily</h2>
@@ -463,8 +552,8 @@ footer{color:var(--muted);font-size:12px;border-top:1px solid var(--rule);paddin
   {base_table}
   <p class="muted">Only the top line is measured node-hours. Everything below it is
      provisioned capacity or a flat fee — it costs the same at 3am on a Sunday.
-     <b>Not included:</b> internet egress and Cloud Logging, neither of which can be
-     measured without the billing export; either could exceed several of these lines.</p>
+     <b>Not included:</b> internet egress, Cloud Logging and Monitoring, and snapshot
+     uploads. Their billed amounts are under <i>Modeled vs billed</i>.</p>
 </section>
 
 <section>
@@ -476,7 +565,8 @@ footer{color:var(--muted);font-size:12px;border-top:1px solid var(--rule);paddin
 <footer>
   Sources: CloudBank Prometheus (node-hours, 5-minute samples anchored to Pacific
   midnight) · Cloud Billing Catalog API (list prices) · <code>gcloud compute disks</code>
-  (provisioned storage) · JupyterHub REST API (users) · Firestore (Otter).
+  (provisioned storage) · CloudBank billing export in BigQuery (billed) ·
+  JupyterHub REST API (users) · Firestore (Otter).
   Built by <code>cloudbank-classroom-usage</code>.
 </footer>
 

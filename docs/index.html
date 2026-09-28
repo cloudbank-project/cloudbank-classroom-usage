@@ -60,19 +60,42 @@ footer{color:var(--muted);font-size:12px;border-top:1px solid var(--rule);paddin
 <header>
   <h1>CloudBank Cost &amp; Usage</h1>
   <p class="sub">Modeled spend by node pool, and how much of it is being used.
-     Data through 2026-09-27 · generated 2026-09-28 06:49 PDT</p>
+     Data through 2026-09-27 · generated 2026-09-28 16:38 PDT</p>
 </header>
 
-<div class="stats"><div class='stat'><span class='k'>Always-on base</span><span class='v'>$69.92</span><span class='s'>$2,098/mo · 44% of spend</span></div><div class='stat'><span class='k'>Variable (students)</span><span class='v'>$87.92</span><span class='s'>$2,638/mo · CPU + GPU</span></div><div class='stat'><span class='k'>Total per day</span><span class='v'>$157.85</span><span class='s'>7-day average</span></div><div class='stat'><span class='k'>Last 30 days</span><span class='v'>$4,194</span><span class='s'>through 2026-09-27</span></div><div class='stat'><span class='k'>Users, Fall 2026</span><span class='v'>1,866</span><span class='s'>101 institutions</span></div><div class='stat'><span class='k'>Notebooks, Fall 2026</span><span class='v'>3,875</span><span class='s'>674 submissions · 73,564 all time</span></div></div>
+<div class="stats"><div class='stat'><span class='k'>Always-on base</span><span class='v'>$69.92</span><span class='s'>$2,098/mo · 44% of spend</span></div><div class='stat'><span class='k'>Variable (students)</span><span class='v'>$87.92</span><span class='s'>$2,638/mo · CPU + GPU</span></div><div class='stat'><span class='k'>Total per day</span><span class='v'>$157.85</span><span class='s'>7-day average</span></div><div class='stat'><span class='k'>Billed per day</span><span class='v'>$161.21</span><span class='s'>7-day average through 2026-09-25</span></div><div class='stat'><span class='k'>Last 30 days</span><span class='v'>$4,194</span><span class='s'>through 2026-09-27</span></div><div class='stat'><span class='k'>Users, Fall 2026</span><span class='v'>1,866</span><span class='s'>101 institutions</span></div><div class='stat'><span class='k'>Notebooks, Fall 2026</span><span class='v'>3,875</span><span class='s'>674 submissions · 73,564 all time</span></div></div>
 
 <div class="note">
-  <b>These are modeled figures, not billed ones.</b> Cost is measured node-hours
-  &times; Cloud Billing Catalog list price. The BigQuery billing export has never
-  been enabled for this project, so there is no invoice to reconcile against.
-  Sustained-use discounts are not modeled (the real bill would be lower); egress,
-  load balancers, logging and Artifact Registry are not modeled (higher).
+  <b>The charts are modeled figures.</b> Cost is measured node-hours &times; Cloud
+  Billing Catalog list price, which is the only figure for the last 1–2 days.
+  Billed figures from the billing export are under <i>Modeled vs billed</i>.
+  Sustained-use discounts are not modeled (the real bill is lower); snapshot
+  uploads, egress, logging and monitoring are not modeled (higher).
   Estimated components: gke-cluster-fee, load-balancers, oss-cluster, snapshots, storage.
 </div>
+
+<section>
+  <h2>Modeled vs billed</h2>
+  <p class="sub">Billed figures come from CloudBank's billing export, net of
+     sustained-use and other credits. The export runs 1–2 days behind, so recent
+     days show as pending and the model is the only figure for them.</p>
+  <div class="cols">
+    <div>
+      <h3>Daily, last 14 days</h3>
+      <table><thead><tr><th>Day</th><th>Modeled</th><th>Billed</th><th>Model vs billed</th>
+      </tr></thead><tbody><tr><th scope='row'>2026-09-27</th><td class='num'>$110.91</td><td class='num strong'><span class=muted-cell>pending</span></td><td class='num'></td></tr><tr><th scope='row'>2026-09-26</th><td class='num'>$112.99</td><td class='num strong'><span class=muted-cell>pending</span></td><td class='num'></td></tr><tr><th scope='row'>2026-09-25</th><td class='num'>$171.28</td><td class='num strong'>$168.60</td><td class='num'>+1.6%</td></tr><tr><th scope='row'>2026-09-24</th><td class='num'>$206.48</td><td class='num strong'>$204.16</td><td class='num'>+1.1%</td></tr><tr><th scope='row'>2026-09-23</th><td class='num'>$190.68</td><td class='num strong'>$190.50</td><td class='num'>+0.1%</td></tr><tr><th scope='row'>2026-09-22</th><td class='num'>$168.84</td><td class='num strong'>$176.50</td><td class='num'>-4.3%</td></tr><tr><th scope='row'>2026-09-21</th><td class='num'>$143.74</td><td class='num strong'>$151.87</td><td class='num'>-5.4%</td></tr><tr><th scope='row'>2026-09-20</th><td class='num'>$121.55</td><td class='num strong'>$126.96</td><td class='num'>-4.3%</td></tr><tr><th scope='row'>2026-09-19</th><td class='num'>$103.15</td><td class='num strong'>$109.87</td><td class='num'>-6.1%</td></tr><tr><th scope='row'>2026-09-18</th><td class='num'>$147.91</td><td class='num strong'>$154.61</td><td class='num'>-4.3%</td></tr><tr><th scope='row'>2026-09-17</th><td class='num'>$164.21</td><td class='num strong'>$173.33</td><td class='num'>-5.3%</td></tr><tr><th scope='row'>2026-09-16</th><td class='num'>$182.63</td><td class='num strong'>$191.55</td><td class='num'>-4.7%</td></tr><tr><th scope='row'>2026-09-15</th><td class='num'>$157.80</td><td class='num strong'>$172.77</td><td class='num'>-8.7%</td></tr><tr><th scope='row'>2026-09-14</th><td class='num'>$129.54</td><td class='num strong'>$146.83</td><td class='num'>-11.8%</td></tr></tbody></table>
+    </div>
+    <div>
+      <h3>Billed per day by category, last 7 complete days</h3>
+      <table><tbody><tr><th scope='row'>Node VMs</th><td class='num'>$75.57</td></tr><tr><th scope='row'>Persistent disks</th><td class='num'>$32.30</td></tr><tr><th scope='row'>GPUs</th><td class='num'>$21.16</td></tr><tr><th scope='row'>Snapshots</th><td class='num'>$11.40</td></tr><tr><th scope='row'>Network &amp; IPs</th><td class='num'>$6.95</td></tr><tr><th scope='row'>Cloud Logging</th><td class='num'>$5.55</td></tr><tr><th scope='row'>GKE cluster fees</th><td class='num'>$4.80</td></tr><tr><th scope='row'>Filestore</th><td class='num'>$2.40</td></tr><tr><th scope='row'>Cloud Monitoring</th><td class='num'>$1.03</td></tr><tr><th scope='row'>Other</th><td class='num'>$0.05</td></tr>
+      <tr class="tot"><th scope="row">Total</th><td class="num strong">$161.21</td></tr>
+      </tbody></table>
+      <p class="muted">Credits (mostly sustained-use discounts) take
+         $25.89/day off list price. Over these days the model is
+         -2.0% against the bill.</p>
+    </div>
+  </div>
+</section>
 
 <section>
   <h2>Daily</h2>
@@ -219,8 +242,8 @@ Base (always-on) $1,890.03 · CPU notebooks $877.45 · GPU notebooks $1,108.55</
   <table><thead><tr><th>Component</th><th>$/day</th><th>$/month</th><th>share</th></tr></thead><tbody><tr><th scope='row'>core-pool nodes</th><td class='num'>$32.43</td><td class='num'>$973</td><td class='num muted-cell'>46%</td></tr><tr><th scope='row'>Persistent disk (home dirs + other) <span class='tag'>modeled</span></th><td class='num'>$24.80</td><td class='num'>$744</td><td class='num muted-cell'>35%</td></tr><tr><th scope='row'>oss-cluster (no Prometheus — modeled) <span class='tag'>modeled</span></th><td class='num'>$6.76</td><td class='num'>$203</td><td class='num muted-cell'>10%</td></tr><tr><th scope='row'>Snapshots (GKE PD backups) <span class='tag'>modeled</span></th><td class='num'>$2.92</td><td class='num'>$88</td><td class='num muted-cell'>4%</td></tr><tr><th scope='row'>GKE cluster fees <span class='tag'>modeled</span></th><td class='num'>$2.40</td><td class='num'>$72</td><td class='num muted-cell'>3%</td></tr><tr><th scope='row'>Load balancers <span class='tag'>modeled</span></th><td class='num'>$0.61</td><td class='num'>$18</td><td class='num muted-cell'>1%</td></tr><tr class='tot'><th scope='row'>Total always-on</th><td class='num strong'>$69.92</td><td class='num strong'>$2,098</td><td></td></tr></tbody></table>
   <p class="muted">Only the top line is measured node-hours. Everything below it is
      provisioned capacity or a flat fee — it costs the same at 3am on a Sunday.
-     <b>Not included:</b> internet egress and Cloud Logging, neither of which can be
-     measured without the billing export; either could exceed several of these lines.</p>
+     <b>Not included:</b> internet egress, Cloud Logging and Monitoring, and snapshot
+     uploads. Their billed amounts are under <i>Modeled vs billed</i>.</p>
 </section>
 
 <section>
@@ -232,7 +255,8 @@ Base (always-on) $1,890.03 · CPU notebooks $877.45 · GPU notebooks $1,108.55</
 <footer>
   Sources: CloudBank Prometheus (node-hours, 5-minute samples anchored to Pacific
   midnight) · Cloud Billing Catalog API (list prices) · <code>gcloud compute disks</code>
-  (provisioned storage) · JupyterHub REST API (users) · Firestore (Otter).
+  (provisioned storage) · CloudBank billing export in BigQuery (billed) ·
+  JupyterHub REST API (users) · Firestore (Otter).
   Built by <code>cloudbank-classroom-usage</code>.
 </footer>
 
