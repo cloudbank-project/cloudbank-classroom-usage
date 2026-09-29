@@ -1,15 +1,19 @@
 """Pull what CloudBank was actually billed -> data/billed_costs.csv, data/billed_by_hub.csv.
 
-Source is the CloudBank billing export, shared read-only by CloudBank
-(StrategicBlue billing account 013B78-C37939-963D54):
+Source is our own copy of the CloudBank billing export, in cb-1003-1696:
+
+    cb-1003-1696.billing_export.gcp_billing_export_v1
+
+CloudBank shares the real export (StrategicBlue billing account
+013B78-C37939-963D54) with Sean alone, through a row access policy limited to
+project.id = cb-1003-1696:
 
     cloudbank-project-admin.BillingData.gcp_billing_export_v1_013B78_C37939_963D54
 
-A row access policy on that table limits every reader to project.id =
-cb-1003-1696, so the other projects on the billing account are never visible.
-Queries run as jobs in cb-1003-1696. The caller needs dataViewer on the table,
-a place in the row access policy (a reader who is not in it sees zero rows,
-not an error), and bigquery.jobUser on cb-1003-1696.
+The "billing-export-copy" scheduled query runs daily as Sean and re-copies the
+last 3 export days into ours, so this script (and CI) only needs dataViewer on
+cb-1003-1696:billing_export and bigquery.jobUser on cb-1003-1696.
+partition_date in the copy is the source's _PARTITIONTIME.
 
 This sits next to the modeled costs.py, it does not replace it:
   - the export lags 1-2 days, so the model is the only figure for yesterday
@@ -37,7 +41,7 @@ import pandas as pd
 
 from common import PT, PROJECT, bucket_of, load_pools, upsert
 
-TABLE = "cloudbank-project-admin.BillingData.gcp_billing_export_v1_013B78_C37939_963D54"
+TABLE = f"{PROJECT}.billing_export.gcp_billing_export_v1"
 WINDOW = 10
 MAX_BYTES = 50 * 10**9
 
@@ -52,7 +56,7 @@ SELECT
   SUM(IFNULL((SELECT SUM(c.amount) FROM UNNEST(credits) c), 0)) AS credits,
   MAX(export_time) AS exported
 FROM `{table}`
-WHERE DATE(_PARTITIONTIME) >= DATE_SUB('{since}', INTERVAL 1 DAY)
+WHERE partition_date >= DATE_SUB('{since}', INTERVAL 1 DAY)
   AND DATE(usage_start_time, 'America/Los_Angeles') >= '{since}'
 GROUP BY 1, 2, 3, 4, 5
 """
@@ -136,13 +140,13 @@ def main():
             # Expected until this identity is granted read access -- the model
             # still runs, so don't fail the whole nightly over it.
             print(f"  SKIP: no read access to {TABLE} (HTTP {e.code}).")
-            print("  Needs dataViewer on the table, a place in its row access policy,")
-            print(f"  and bigquery.jobUser on {PROJECT}.")
+            print(f"  Needs dataViewer on {PROJECT}:billing_export and bigquery.jobUser")
+            print(f"  on {PROJECT}.")
             return
         raise
     if not rows:
-        print("  WARNING: query returned no rows -- caller is probably missing from the")
-        print("  row access policy (that shows as zero rows, not as an error).")
+        print("  WARNING: query returned no rows -- is the billing-export-copy")
+        print("  scheduled query running?")
         return
 
     df = pd.DataFrame(rows)
