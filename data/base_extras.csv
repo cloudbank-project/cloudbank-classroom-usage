@@ -87,3 +87,7 @@ date,component,quantity,unit,usd_per_month,usd_per_day,note
 2026-09-29,idle-static-ips,0.0,addresses,0.0,0.0,"2 total, 2 attached and therefore free"
 2026-09-29,load-balancers,4.0,forwarding rules,18.25,0.6083,flat rate covers the first five rules
 2026-09-29,snapshots,3371.2,GB,87.65,2.9217,"726 snapshots; grows daily, check retention"
+2026-09-30,gcs-buckets,0.0,GB,0.0,0.0,0 buckets
+2026-09-30,idle-static-ips,0.0,addresses,0.0,0.0,"2 total, 2 attached and therefore free"
+2026-09-30,load-balancers,4.0,forwarding rules,18.25,0.6083,flat rate covers the first five rules
+2026-09-30,snapshots,3374.9,GB,87.75,2.9249,"727 snapshots; grows daily, check retention"
