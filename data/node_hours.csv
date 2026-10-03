@@ -115,3 +115,6 @@ date,pool,bucket,node_hours,peak_nodes,min_nodes,mean_nodes,source
 2026-10-01,core-pool,base,240.0,10,10,10.0,measured
 2026-10-01,nb-gpu-t4,gpu,68.083,11,1,3.32,measured
 2026-10-01,nb-n2-highmem-4-a,cpu,124.917,8,2,5.2,measured
+2026-10-02,core-pool,base,240.833,20,10,10.03,measured
+2026-10-02,nb-gpu-t4,gpu,45.333,8,1,2.86,measured
+2026-10-02,nb-n2-highmem-4-a,cpu,193.75,16,5,8.07,measured
