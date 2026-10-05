@@ -10,6 +10,7 @@ STEPS = [
     ("Measuring persistent-disk storage...",              "storage.py"),
     ("Measuring always-on extras (snapshots, LBs)...",    "base_extras.py"),
     ("Computing daily costs by bucket...",                "costs.py"),
+    ("Splitting pool costs by hub...",                    "hub_costs.py"),
     ("Pulling billed costs from the billing export...",   "billed_costs.py"),
     ("Fetching hub users...",                             "../users.py"),
     ("Fetching Otter grading counts...",                  "../otter_standalone_use.py"),

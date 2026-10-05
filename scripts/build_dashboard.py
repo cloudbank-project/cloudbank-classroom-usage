@@ -267,6 +267,61 @@ def billed_block(daily):
     return html, stats
 
 
+def hub_cost_block(days=7, min_usd=1.0):
+    """Cost by institution over the last `days` complete days, with term users."""
+    hc = read_data("hub_costs.csv")
+    if hc.empty:
+        return None
+    dates = sorted(hc["date"].unique())[-days:]
+    week = hc[hc["date"].isin(dates)].groupby("college")[["gpu_usd", "cpu_usd"]].sum()
+    week["total"] = week["gpu_usd"] + week["cpu_usd"]
+
+    users, term = {}, None
+    upath = BASE_DIR / "users.csv"
+    if upath.is_file():
+        u = pd.read_csv(upath)
+        u = u[~u["college"].astype(str).str.startswith("Total")]
+        term_cols = [c for c in u.columns if "_20" in c]
+        populated = [c for c in term_cols if u[c].sum() > 0]
+        term = populated[-1] if populated else None
+        if term:
+            users = u.groupby("college")[term].sum().to_dict()
+
+    week = week.sort_values("total", ascending=False)
+    shown, rest = week[week["total"] >= min_usd], week[week["total"] < min_usd]
+
+    def row(name, r, n_users, cls=""):
+        per = money(r["total"] / n_users) if n_users else "—"
+        return (
+            f"<tr{cls}><th scope='row'>{escape(str(name))}</th>"
+            f"<td class='num'>{int(n_users):,}</td>"
+            f"<td class='num'>{money(r['gpu_usd'])}</td><td class='num'>{money(r['cpu_usd'])}</td>"
+            f"<td class='num strong'>{money(r['total'])}</td><td class='num'>{per}</td></tr>"
+        )
+
+    body = "".join(row(name, r, users.get(name, 0)) for name, r in shown.iterrows())
+    if len(rest):
+        rest_users = sum(users.get(n, 0) for n in rest.index)
+        body += row(f"{len(rest)} other hubs (under {money(min_usd, 0)} each)",
+                    rest[["gpu_usd", "cpu_usd", "total"]].sum(), rest_users, " class='muted-cell'")
+    all_users = sum(users.get(n, 0) for n in week.index)
+    body += row("Total", week[["gpu_usd", "cpu_usd", "total"]].sum(), all_users, " class='tot'")
+
+    term_label = (term or "").replace("_", " ").title()
+    return f"""
+<section>
+  <h2>Cost by institution</h2>
+  <p class="sub">CPU and GPU pool cost for {escape(dates[0])} to {escape(dates[-1])}, split by each
+     hub's measured usage. Users are accounts active in {escape(term_label or 'the current term')}.</p>
+  <table><thead><tr><th>Institution</th><th>Users</th><th>GPU</th><th>CPU</th>
+  <th>Total</th><th>Per user</th></tr></thead><tbody>{body}</tbody></table>
+  <p class="muted">Modeled, not billed. GPU is split by GPU pod-hours and CPU by notebook memory
+     requested, so idle pre-warm time lands on the hubs that used those nodes. The always-on base
+     (core-pool, disks, cluster fees) is shared by every hub and is not split here. Per user is
+     this period's cost over the term's users, so it reads high early in a term.</p>
+</section>"""
+
+
 def current_term(today=None):
     """(label, start_date) for the academic term `today` falls in.
 
@@ -357,6 +412,7 @@ def build():
     usage = usage_blocks()
     base_table, _ = base_breakdown(costs)
     billed_html, billed = billed_block(daily)
+    hub_html = hub_cost_block()
 
     last7 = daily.tail(7)
     base_day = last7["base"].mean()
@@ -524,6 +580,8 @@ footer{color:var(--muted);font-size:12px;border-top:1px solid var(--rule);paddin
   <div class="legend">{legend}</div>
   <div class="chartwrap">{stacked_bars(daily.tail(30))}</div>
 </section>
+
+{hub_html or ""}
 
 <div class="cols">
   <section>
