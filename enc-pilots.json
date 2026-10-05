@@ -3,530 +3,530 @@
 		{
 			"url": "bcc",
 			"name": "Berkeley CC",
-			"token": "ENC[AES256_GCM,data:m+hWYKZl5jeX+XXsijNCgo6ZT2qqJ3a9qFnxnulHoPbt3+4xV9vnREP1L+oVGIFeazj8lweZLKqiHfCuyzvSTg==,iv:e4Pa0DlpskCPnpmOdtUVgdZH1LjzgIzZxgsr/R52pIQ=,tag:Tu5A/MO0fPIx8yWZgibMWg==,type:str]"
+			"token": "ENC[AES256_GCM,data:X1T4PqnUIbtR0X1LaS2Z5Yv0ebBlOXxrcaEVvH/GcD01EGTAvAQ63Nw4C3K/LVmMlEdxF8jeiWaSNjTTrIu2Fw==,iv:clJQxOgA5wiwi4ZBa9YZpfhdfBtjUpgJEVPmAxtBoIk=,tag:hpDawUs7bfEh38DeDiN8CQ==,type:str]"
 		},
 		{
 			"url": "berea",
 			"name": "Berea College",
-			"token": "ENC[AES256_GCM,data:AarPDrkhbTm6EQxqZoumZscxhdZO6KkP2lWdsufzjB7l5xOaeGcJe050A3jcsNtZtx1O6C7NhDT9e+3eqBwHLA==,iv:zq3y7P+yJUYwRKWxR7wZznptPB6QFx4kefnqKIzxfRE=,tag:gqXdOX0UOdPSvDp/fc12aQ==,type:str]"
+			"token": "ENC[AES256_GCM,data:0WSrKWxYzuEKpLT125ZRUQKLobS2kVOvvJ4rwHOz/jOCmPih3kJL2cnB+6UAh0b+5rnTj/ojw8hmmOeiHeFLNg==,iv:jIr/2kDKKFZrBYwF4CrhRv/qOn/xXCr5quiJfrPqhAI=,tag:/wrVOBDw+lagaq9AVjPS8Q==,type:str]"
 		},
 		{
 			"url": "bmcc",
 			"name": "Borough of Manhattan Community College, CUNY",
-			"token": "ENC[AES256_GCM,data:Ap6Vj+YHRauA0pjtYVF9dEQRTIShmFhT9fTrB7NqhVA/lg8PakNY/DCJWUjIZlRrgaXtppq2kPi+lFTT6T4AkA==,iv:J1ylEjxrsOXc1rx4YpR/nylZ7ax1IHklAGurB2Jj2EU=,tag:CaafjrRx1N7Myrs1qBGQkw==,type:str]"
+			"token": "ENC[AES256_GCM,data:PldsyCj4dzNwr6ApbiWWomBZsrgWmVZvt0rCuiDH6owVeuEtHYEVH2jU7F0ZK4axOLb/7IVHodlnNY5pl0HkyA==,iv:6CfeM4Kx8kxm/8nXX/94TiSuXYGKX+GQKAf/7I8aTaI=,tag:TTbxhJmPS04aFZe5JrPuYw==,type:str]"
 		},
 		{
 			"url": "boise",
 			"name": "Boise State University",
-			"token": "ENC[AES256_GCM,data:hQPoCOHcjMFTit80b04oumRKQBQbSK/9uRH+BZGstJusM4WgYak00+U/YivoBqgjIOCFtZHzbCre0oZCxjhq6g==,iv:Gv5CJQXDPxhY24bAQZKa+RnuGKImZezNwSKohvoswnk=,tag:yVIVveWqGWCsyCJ1b8DLOQ==,type:str]"
+			"token": "ENC[AES256_GCM,data:6/DILiyM0yZ7V8jm3dWzZ5oV5bz7g5KPvyaflCw83PumyRlqHdbxoO+Jlhn/aSzk1j4kq+Kfv7KIgtCzYEKrmA==,iv:b5Ig1xnMwwmoVuh4nbDOrpxu8LsX//rvq07G1iE+DD8=,tag:AdNzHBMwGoSuA2QPTUq0vg==,type:str]"
 		},
 		{
 			"url": "calpolyslo",
 			"name": "California Polytechnic State University, San Luis Obispo",
-			"token": "ENC[AES256_GCM,data:gv+BMhoyV7nIjJ795gcaBHUsB3+xrm4550XjdbQWqDJqd9f2BVcograc737s+w/aOBFVJEhfA5SH/SwKourMaA==,iv:5Vd4g/4worSuC1Riou70qgJ/wbYJFogfyYpjZHELgpc=,tag:i4OSHkCa19r2r0GUtUoINQ==,type:str]"
+			"token": "ENC[AES256_GCM,data:FAYtOhGquTs2HhME96OZVDeqxYGYZlYtgyXukPGF6WfXnBsFKrF8y/XRk8sqqcjNDG++jxzFfUlGuK5dpxrhrA==,iv:b9tQFjt3y5BF9srH9BW+rH6GBRQ41Ik91LgZILHlrAk=,tag:fzhSOGotutc4yuZeuorWXw==,type:str]"
 		},
 		{
 			"url": "carrollu",
 			"name": "Carroll University",
-			"token": "ENC[AES256_GCM,data:sd/sSoAbhEzQsFrIOgbEysiEXzVRwLbl2QjHrYRokpAN0A9eAo37eK+rS4xULf2YfB0Lc+hlVldSh0YEHkmp+A==,iv:Ps6NRuBESot6FgFq9povEbAC1pimG7ytRWgEZuk0S64=,tag:aCuPQhlbLDwqSelamIgGEQ==,type:str]"
+			"token": "ENC[AES256_GCM,data:yRqEOZxh8HHgJH05JWkANqCusttmGnhpCuRFptUYFaNV2EO61rO8eDsDGFfbP1Aoa8yRtYVrpCEDgknhd0bWOQ==,iv:JHYy0lLIu2F42MbiJMab7Zp5VD7v9Mc3EeWOyTIofvM=,tag:LSNtDXhqDbVi+1vzq1vjTA==,type:str]"
 		},
 		{
 			"url": "cau",
 			"name": "Clarke Atlanta University",
-			"token": "ENC[AES256_GCM,data:O54b51iEEy0M2ZMcn7HfemmySYvetNZ4koxJ16Qn5XnjeaNAsTbbl8LVqwEKn/eDSwuK9tXt6Mgmk5N7HROorw==,iv:YpzyHvVf7yicMJ0b+jpDjSx/9mO15T9IT27w0z/qT4Q=,tag:5rWMsEt6JbaGasg0uAcrog==,type:str]"
+			"token": "ENC[AES256_GCM,data:kxqxHiwDB8/EEl2pdFH0m+jfmHyWVVD8ZbHMe3e7ZCOMIITk/8O35ymH+ehejUQh/uy2R2QRwD7Cu1imnldtPg==,iv:+uFNcAc9kaJ3XcSXz2Ja36B5R8haPQ88Iv465sRwVYA=,tag:HjsC1SlNzGhjgIHpIVD4Pg==,type:str]"
 		},
 		{
 			"url": "ccsf",
 			"name": "Community College San Francisco",
-			"token": "ENC[AES256_GCM,data:VG/yX2OA0IDf2ghTEzQgMuMpzupiRjJxtrcPVormsh3JWUnymXOuqG8bvLo338y++3WCsIX7JQUQDYaq0fYLlw==,iv:Xe02Kn0VsAW4dWXUZah4hLV+fZe7ErHQvrmD9Y8FkhA=,tag:oGCNV/33SOiDNLdGitBSDg==,type:str]"
+			"token": "ENC[AES256_GCM,data:WWKUMqfGxytNTST0vKf63FN33O+b/2UGRg4q0+b2dO/e5MpzEY3go8MnuPp9OERZh2feoiUfo48xgefbcX+xvg==,iv:Nn7iFzHrxWEmSfPGIq3lGqvr2VY+qXDhGYbkluYCbIM=,tag:H/nW+1iSqGRUbqg+Z1iurQ==,type:str]"
 		},
 		{
 			"url": "chabot",
 			"name": "Chabot CC",
-			"token": "ENC[AES256_GCM,data:65VQ7aQH9WNDJvdIhqz3sVx+n52Hlxp0R6a7s92iB2p1Yw0IQ12nCF7SelqnSWkZdGDtGpEpjtkcpKAi1TEsQQ==,iv:ni6R2HkQvOBWujgZk491Kc+iFwk4QK1B/0JT4dlWDNA=,tag:HMpT0g8h5lE22+7q3pJydA==,type:str]"
+			"token": "ENC[AES256_GCM,data:swsdq208wV2h672hVpWI9tJBwLytEl8EvgTvk01teHz82reQzw/aTz1ryWnaeY2711iJ/IHLdbVtPRqhP6SLcA==,iv:wDr4jyeE5Bk5uMB95A8tuEtKdtMRa9iIZmc4R7ddVH0=,tag:NxG2s9bKVsO4/B2qz9Jflw==,type:str]"
 		},
 		{
 			"url": "chaffey",
 			"name": "Chaffey College",
-			"token": "ENC[AES256_GCM,data:94svtU4cYhT8Xfo+vBV+YK0C426l/cFFfjS2rsRIVtIwekSo0KcsOkPsae4PxR/dyI4vGSjH00nlDlz6jQ46SA==,iv:hBzrBLdkxGWS72hHRG/aPFaMQz78NNbX7QNe7f4U8VQ=,tag:MT728bFw/j1LB4ZVIH7vfw==,type:str]"
+			"token": "ENC[AES256_GCM,data:JmzBKjY+1RPQSFJuO9mOWd+Tx+8UAvztzYTuXZNIpGIInd+dKlk1XABpXT3YyRDrlCDeE90BLNEa2h0id4xlGA==,iv:3TCMN/2mbuIwT5zzgX0TcY+4AxPd4wAfDBawefk9srA=,tag:lKWVeRoMd/QlNeW9K6qqzg==,type:str]"
 		},
 		{
 			"url": "chaminade",
 			"name": "Chaminade University of Honolulu",
-			"token": "ENC[AES256_GCM,data:f0CjbjTg+0Q6dIs9s1reBoIuFHrzwcTb5vqhgWW99GFQNYwH2MendJAg1iAtLLb+tK+VlR+KWq4bGLJRIrZolQ==,iv:96Ulnh6/Jrdp2DqhUxkqvyOIlvRjMUaF79eDgaAqajQ=,tag:DOtujQOu0cXFFM6vfK1HBw==,type:str]"
+			"token": "ENC[AES256_GCM,data:p1/+JX4KKnxgQFs3bf54TOLYy8zdylWT71JOgYbsPvV8eNmp+7kypFi21VOE8N8Z/Jh2ijpyz3MtPxiWTVS2WQ==,iv:szLAM9ZIbnkZejug1kPmTY01E52kBaxAW5WjdgrMkAk=,tag:rFDIdZELGvBOwRdbBJ0CxA==,type:str]"
 		},
 		{
 			"url": "chicagostate",
 			"name": "Chicago State University",
-			"token": "ENC[AES256_GCM,data:NyRqjx0RONm6UQDFtx+guhMSHzHaWNS+Xp5um7mqfUtnMWZfFbEc14fQ8sJdlVZ52AU3my9WC3LhUd/7+cBw4A==,iv:MRiaJc0OPc6SadyA3S2yI2vO5DswnOXZgDQVUz3yjnE=,tag:aTE47TOe1Yda7L3G0O1hjw==,type:str]"
+			"token": "ENC[AES256_GCM,data:fQ1UvyGFGztnjK4/0+rlYm9JMcjXdI9C5chZbgKUz9H5Fd+LmHzepixlbcBC8oBRg+cLOIZKMFcmRln/pKLZNA==,iv:UCy5/Y8lPbhAf/SaaOlHKcxOFGvbAa9Kzs4euMwRCw0=,tag:7fLR74zmbzWHflJXtj+WWQ==,type:str]"
 		},
 		{
 			"url": "clarku",
 			"name": "Clark University",
-			"token": "ENC[AES256_GCM,data:zOCwWwzKUPCJRHjlW/TGMkWjES09lb75fD4EhfoXUx7LUJpRFm9+tX1+zOVqc8csayU35VUEhzCOfbvkDLT/hw==,iv:YqmaQ3nzBSHnlhs9ACQUX19nTni9M8TB/E0NddpATWM=,tag:jvhdvGo60SqI1jwp5WrK6w==,type:str]"
+			"token": "ENC[AES256_GCM,data:5wU9yo9T6Om3mxUGjCR0L1K9/hfqAvhXIR51jaVwr77mI/sHx41skoxu1DDbs4Uc2vptUgxTUmol8q1D3q5Yxg==,iv:zyBBu+PYbpzgAAYGB1ujEdBE7B/LWGBu1UJdfuUtWhU=,tag:ZZ1enFjfg8VCT1tLz0QWew==,type:str]"
 		},
 		{
 			"url": "cloud-county",
 			"name": "Cloud County Community College",
-			"token": "ENC[AES256_GCM,data:2JOfP7Q06bRG5egNZ+j3SK9ow0FkrMfH6RA5PN46vAVXUQcKwinTLtrY6gD7/J1epIantV38IhLFg3phqGiC/w==,iv:iW9rrj3LK6EVbOuEH+zZNjEziCZzvQhWVwkjpkbGaZs=,tag:SfdY3Z/UJdvA3V6NHJ2LEw==,type:str]"
+			"token": "ENC[AES256_GCM,data:Or++HsRdNHZQU8ZKMc1SQM0mIeGnNB9UAsJx/Ym8RVwipH/bHZ/t3VWiAyah00YcD3JBNALeYZqVfsfMw8fzlg==,iv:3U4/NhORaByFdgPbIQnbZ0H4EB6lA1CGCOKitCZd1Xk=,tag:8kLGS81vzI+2MH65PESxxw==,type:str]"
 		},
 		{
 			"url": "cmu",
 			"name": "Carnegie Mellon University",
-			"token": "ENC[AES256_GCM,data:Kf7ggtOdc2/VUqCc3ZL2+tTRIJ52lAq6SXngEy/ng4qTqBYNmZNPQ+heTf5xJ/bKnN3Y7bB92Yg8jP06FKK8Jg==,iv:xpPafo4dnvyRb2HG5tCg/UsjZH9WQIeNBgnFbhjR6e4=,tag:j7usv6AgVoO6iVsoSm5Zmg==,type:str]"
+			"token": "ENC[AES256_GCM,data:UwBKEDrX7xhSeCgpqQmm6J9pwXLJEVQUcJTZNcfhBhQ9VMN4wIiWft9FRCoU5qo2dPPnWCiLYl/IuYSn/bYIJA==,iv:+laO1dGZqO+yjuNOX3Nz8oNFUpt9HK+z73EJSIqkSQ8=,tag:FEc1Q3GGTB0Ec0mNLS8gdg==,type:str]"
 		},
 		{
 			"url": "cra",
 			"name": "Computing Research Association",
-			"token": "ENC[AES256_GCM,data:zhZr+bpBeMLSWSyz8LAnihl3Y0HtL+rJXl4DYQFKHExkHAZzLGZjOc6f/R3Bz51rOHEjgw7kh7tdkdF06fC3vA==,iv:Mvl3nILzV4HZIaQqheOfKqyqIiksRpWRSJZ12G/3ID4=,tag:qUOOasdemKCl9PQySBgQMw==,type:str]"
+			"token": "ENC[AES256_GCM,data:Fe1WaMuu9kWUszUlizf1UCC3+DIWIxLoka0QL4uihRcMWvLXJ5BQw6QT6qsbIJpT0EQjSc7SNcsyV53UQYGFnw==,iv:+MoKzmVFMRyqjP/7qNXBwmDYgGLxDREc8OZs+xUKw+8=,tag:j1CW8JDu6HsJJ3Vk+5ciQQ==,type:str]"
 		},
 		{
 			"url": "csm",
 			"name": "College of San Mateo",
-			"token": "ENC[AES256_GCM,data:SVOY6TVQQNSycozbg9g9ZaZBDBdwNkim2TyGPkGyqW6ClwewfNXjYB3GfcZqMTPG9Kif0/EV1G0gLcDJvun0BA==,iv:7x7S9hY2AzQDoZnuSyElCpZpBYWcacZkXXbiojXqrHk=,tag:6yKcRfP0iodmvIkwpnvEaA==,type:str]"
+			"token": "ENC[AES256_GCM,data:OYGyz0/MSXPDllsxH5pUgqhhUcgFixekW2Yxlbqrhts8mpGRTYCUEKhLUhNjCx8eotTES8ZWqdwN+vzzgQw+ww==,iv:aPMvimSaQkYJFiQvfX2KZyk/JwNbWGCkdgrPD57sChc=,tag:Nh6M9JiRG6+s2wmIXBvuag==,type:str]"
 		},
 		{
 			"url": "csusm",
 			"name": "CSU San Marcos",
-			"token": "ENC[AES256_GCM,data:NumJhY7ZKbLCcVBAvbOsY2I6LjeFv2jbUMnuizWFrblcqIlvwTNfZQ57u0SIpXOb4N9qlVlsELenJii3fntzNw==,iv:PkbIjve5cEfszURxyiQtQxFVYowynLuBXjiAtQeP0KI=,tag:MH46MhjZTuD1DkE0n9bKmA==,type:str]"
+			"token": "ENC[AES256_GCM,data:WjEfltV5H29Op0RSN9IwyAJ7CCj1pe1dsYzaTDjSdmYlRBNTN8/DDLyAFszYZJejvrxfjdG9aZQMUZehVuzL+g==,iv:wqdbUVeKKkFUCpXjoSYBb8bzToZuVmPbLW4QDwjZ7V8=,tag:jHiV3ptuO6qStY2eU5rktA==,type:str]"
 		},
 		{
 			"url": "deanza",
 			"name": "DeAnza College",
-			"token": "ENC[AES256_GCM,data:JHCkNOkISWiCG8Ur7VMwmbxL2qkP2JktcDFfR/Jiw4m5VniGKT8WLH+D84Uktbk2yS1MhUTJWc9yKismGINBsA==,iv:NNGi6zv0CltBKvQmzBq4kVrwYPXVN4jx+LPJ22ZFmj4=,tag:0lfd8B65O3pSiXPPX+0xcA==,type:str]"
+			"token": "ENC[AES256_GCM,data:8FvBCwjNKX/tO0FqBA3fxUSZVkDxC2XCM0bdpAn5wx0fH/M1ffwZBClbrFGndaV7DJ9brXc6N3OwNvqr8pjmfA==,iv:HnYYFHO5jGBERMPY4Ek2wN2Zz1rsiCJalRocFhNDzQk=,tag:jZlZesnd3IWxis22s6zOrQ==,type:str]"
 		},
 		{
 			"url": "elac",
 			"name": "East LA College",
-			"token": "ENC[AES256_GCM,data:pJl0tldbjjk6knG08S+hBHqlZCSIGnUQU12toeeDocxC8jl61mS+Tb/eCAd2rH/RH21L8H7H780E/nWDMCTvJg==,iv:lg+CER6ooI2OfuoSf+CbEnMKW3PLGSFVrLnNTs6GYvM=,tag:kWl5i9nJCF9tRtwhLA1zyg==,type:str]"
+			"token": "ENC[AES256_GCM,data:/Okwc/HTfzMr1kr20quWv3Ac8OVm/VR7WZoCyAsrf1rUM6AZF7HOT2C/NtYOsSB0OdLiEzc4wcZOoz+ESQ8Lwg==,iv:mdwhrn+oeQdt5c+UrId7+b1qNy8J8q92ecMtZtaoPZg=,tag:1ZzvVoCrUO2HTEQAmv8SqQ==,type:str]"
 		},
 		{
 			"url": "elcamino",
 			"name": "El Camino Community College",
-			"token": "ENC[AES256_GCM,data:9yLK1QKOImqH99a0l14U+kzttCTWYA+RWj0fzYWhljNC1yIJyehh8ligg2QR+n5M0qG1FbZxS1Km0saRK93U8A==,iv:DOYSFATMOs72ZBi2Wcv9n1Cs/jvcMXBzdFj/A7EfBXg=,tag:LhHiBMIWUj++sM1eqstlOQ==,type:str]"
+			"token": "ENC[AES256_GCM,data:/J3EVWyy30WZ1mdjHYtJBJ1HbjGGOOCEGa4TExDtlfVQKHQ/5xuTRSBMRasBeLs0RN8E204O7au2cFjebuEheA==,iv:J6m13WhBW6+2ZtJZW9ignms0IUNUD8bW3p8Su8XWI/E=,tag:vxNjuueFBJibNclDKo28NQ==,type:str]"
 		},
 		{
 			"url": "emich",
 			"name": "Eastern Michigan University",
-			"token": "ENC[AES256_GCM,data:E9V2sBmuswzpDcYmpBxE+CtrglfgWDIVBUrBortQhrDScJCWJ1gnFjfr2LQOfMXBhMfGlWsnR8IYs7X4ravbUg==,iv:qvJtC+Hy96PQQmrwBLjASKpN7XSGSaoaQtbi6TfeBo0=,tag:YLUyr0tZ5TeJwMAZaQIE4A==,type:str]"
+			"token": "ENC[AES256_GCM,data:5XRKLaPakomdV/llA04oIhU4yEEF2qu0OItokJCqXsrwXJz2dpKo9VtXUEscH/Q22lGJ9VlfEEyKrfOmjl38cQ==,iv:CQNzYlGH6r5dSrRY6WUhnyGIpuKQfwWJNrJDQjn2keo=,tag:LcM+3hIN+fcw/aN6GaKdUA==,type:str]"
 		},
 		{
 			"url": "epcc",
 			"name": "El Paso Community College",
-			"token": "ENC[AES256_GCM,data:/duiCPM7cIYpjl5U1ghirESxNh+Mjy+V8B4zYnqFB/RhuouKv/bLrJbX1fEyj1EyDOCeC3u3WTaavGHjpW6oKQ==,iv:FoPiLldBvNUQlplXzeBeCFvTttQLOrlNaqr6fnZIgww=,tag:BSQBKKLMUF0vAWIFQRwciQ==,type:str]"
+			"token": "ENC[AES256_GCM,data:829VtgpJ/8yZNjN5WFIbL4S4KHjglKIMsbB+WbGv1Mqqdh0jilyKaCOcJ+B6L8MAnkTdarre/kHScDS8t99G5g==,iv:VCKpgLdy9EOUhoyHusWPrY/dvayRtwE44c65UmO288s=,tag:hWRK26NuxKHhiOR9OK8f4Q==,type:str]"
 		},
 		{
 			"url": "etsu",
 			"name": "East Tennessee State",
-			"token": "ENC[AES256_GCM,data:X5lR8ffU/VyiTW7WCsDJdRP6e/llnSF+rcUbx12pOdp3dhTHhhCAx7c0xQbq7MNIAxk4l9f5WyAC0UvNFieYGg==,iv:wt3yT4BQrjiE4WmPtDWZ0+NX+Ir6VLVlwjtvo21Wp3k=,tag:+TiDAgkV9Wxjn/eFbkplrg==,type:str]"
+			"token": "ENC[AES256_GCM,data:aJsionHvnkZK2FHtCxHDL3oDhPizTdM2H+zOqC2rSpjg4Sof0nZi+qx4KGa8JbClbLvidFwJbpL3wJepqOJEdw==,iv:xhUvP2AvubG+BAyQBGUIqWw2DyvsYS/bLw99K6j8oEI=,tag:UTm9752fGhqpT4sUFbb0Tg==,type:str]"
 		},
 		{
 			"url": "evc",
 			"name": "Evergreen Community College",
-			"token": "ENC[AES256_GCM,data:8gzRYSu6Nq6liCBLj6MabTtXRrptktooeLmOcRlFyyoLSbACi2Rnt82XlqPdPu8obV17NKqUgkn6BjaHvRVL8g==,iv:LS/zuoiVRSbuiLOG43veTBxe/HL5kTkfcm9H3GDzpfA=,tag:OhGGKaemiuv9JwAUhGQlig==,type:str]"
+			"token": "ENC[AES256_GCM,data:pO8WaqVTptblxtEQTpPyzd96IILoj0kxiqdvENuDg1XWOQIHa2BUFySkhQDTnzM3SdDpaqBTUxOGkkOKo+UDHQ==,iv:jhvhla8fcQ2G0KrOifRJ2cm+lL6p8ZOrXDML0qfaGuM=,tag:9VSWcHaXsw9AsgR2sIjuKA==,type:str]"
 		},
 		{
 			"url": "fgcu",
 			"name": "Florida Gulf Coast University",
-			"token": "ENC[AES256_GCM,data:z2PCuvaKnksTkKvqFU8QvHapXpEN5rIZ6nDX+/UCKgqgglrKIlOBEoMWdrp9aqYJMdzNbudrZgZ2DVSv0hFUgQ==,iv:ixzuMXt3HldWdYuCNx+LmI/u8UnSynH2lhP/ELme4J4=,tag:l69dG4vMMxxLwXONjqII6Q==,type:str]"
+			"token": "ENC[AES256_GCM,data:9utj5O/YEZ40gQfggCb2Z2Aup8yfv50MjXDscp7qOkaawFj/TwNyirwfJ/Vj1F6GXMQhTzyWvukGivwPdXPMvQ==,iv:JxIjpnjqh1rInjoqeRJM29E5E2Vrs6O1E4cdeNtS9Xk=,tag:cG3nuTdK5GxWN8a6EtiILg==,type:str]"
 		},
 		{
 			"url": "foothill",
 			"name": "Foothill Community College",
-			"token": "ENC[AES256_GCM,data:cQos9b7Cp0q4NH6N3wbA7SZkYGwAFGVg0qcUublNm6BZpzDVVL4H1mAZ+PNeo+f9IfVlBl6fNKEBOeVqum+R3w==,iv:j0uf+WeLzqa854E8LQQyIhTzZVghU8afhM/o28VELWw=,tag:jLfMz5aeJ60c7udK2cnXlw==,type:str]"
+			"token": "ENC[AES256_GCM,data:r+KbURk1SALmVSD/kP2rBH9HRN2WjjY3IwuFueEQndQ7zjZLR1G8jbIV3OkKfWEkf84PgBidBXF+1hJ9ST5ocQ==,iv:LrlHRt1zfGFjzecSnsdQp96G+v/EU9tPBq7UNwBYKQI=,tag:AAESvDfdwdCIucFvRf0fhw==,type:str]"
 		},
 		{
 			"url": "fresno",
 			"name": "Fresno Community College",
-			"token": "ENC[AES256_GCM,data:0CivTqJwR6iHaLAvzzAbBzXHToe3Q1f9aG/KvDizG8Mv65awgdJbz1Wwg5f3xH3UIhKyZ/023lfobJ1u7gCUIA==,iv:IX0rn2PhJD1kGmxTQBme/GdnGGrh94b89keye8VkNm0=,tag:/bXVpCPCIFuZsMpHSfpIsQ==,type:str]"
+			"token": "ENC[AES256_GCM,data:PoAIQS4N0sNJsOXODR40JMAGIUYKb9VAN17F8Gt4Yo5gUPoZTrs/7BDpFibg0JBaVQUJvWwYzS+6akBARVCIvg==,iv:i6ochLVAnH+KQHuVyMcGGVnYwfMV8ichXPqj2ICuZxA=,tag:ROhHjLghHUPCrCClU/8CWQ==,type:str]"
 		},
 		{
 			"url": "fullertoncc",
 			"name": "Fullerton College",
-			"token": "ENC[AES256_GCM,data:NpRK48H9pm0Z3IgScxWYfM0tsxzXnsuEJv7NdD6JLRnBAIMjDFr0StkgNSxIHQKS2016t+3tB43xyPjVlbwzeQ==,iv:6ckjWYTwFJhqa7vwa9cLAiulISo/WIMaURvy7pOrgbo=,tag:Bv4vk3S92gcrsP0ULDWliA==,type:str]"
+			"token": "ENC[AES256_GCM,data:fyw918M6awRRgEGznvrPYcUXV0GYGIqCvjqOH+m8ovfzSN9IhDgj+Y83MRmXl5fMYWT/WAr9/laPXnywOW24iQ==,iv:L6E/2CwEHqnZwoPeqhFxUUXErTsTdgBsp2WvvtdStGk=,tag:qUAVfkBmqwdASftcpmFONg==,type:str]"
 		},
 		{
 			"url": "georgetown",
 			"name": "George University",
-			"token": "ENC[AES256_GCM,data:jv719j66TLZy8X7WZHBVa403DI9/OAJZBLRnojIeXzWIlPmuc4zLi0LqzWU5eTu/0kWk0DoBHW+eVFyuWUDe3A==,iv:xFW7oBoSbRietS9OdwoWvK94LS9Fqde1XmpQYUev0yo=,tag:eQqZ5kP7elrhcpN4V/OZyw==,type:str]"
+			"token": "ENC[AES256_GCM,data:zOCSwVz3bbf9GXNYVlV1MOBb/KPpJpdL2Qt8c+fcVxUteYb1z8AGUOqDByafbiM2OrqaYR76I1gcqWY5nvzgzA==,iv:uZupm/pC2mC6oZrqlu7bclEuqM3iTBtO5eZyWVbUmW4=,tag:xQPWyxRNb68pqnUOcuI3bA==,type:str]"
 		},
 		{
 			"url": "glendale",
 			"name": "Glendale Community College",
-			"token": "ENC[AES256_GCM,data:wAB3YtESJy0i/uU1e8cgw50OhqZ7sVWZC48TYD31a1f4PX9g6XVbmqdzgC2g5VVcB/OPeoQg9qXt5OuKBo2qUg==,iv:jDAPDC5wZQkyssEkhSMAQIVIQ1ylB06hi6Xbi3Z6Unk=,tag:v719dnCmESCIuv7/wo2nxQ==,type:str]"
+			"token": "ENC[AES256_GCM,data:B7M7340pfs/8X5xPGT1tmGn07v14dOLoU4mY0lhNhJF7kS1P4ubVFhzgFaE1URRtPHxCveKPPZoSdavGcSXZ6g==,iv:KVqCMRdMjHIS+Ic53GpyswnZITfzz54OXm6lkEf50Oo=,tag:iSIby6w0pOFFGdMO7JJM8g==,type:str]"
 		},
 		{
 			"url": "golden",
 			"name": "Golden West College",
-			"token": "ENC[AES256_GCM,data:Yy5fT2t5YqatY0aTRK8ptPWLx0fTxAHSlp347WCw9NZEO9qu9N4cmxdMkwJQs4E5FRzgrONPk43sfTtKg1BdTw==,iv:QGDgbw3uDG3RKzVzlJL0Fc+Wnj7s3LnrHGnJS7gPQ50=,tag:LZ8ZzCfZm79lerCSyBj/YA==,type:str]"
+			"token": "ENC[AES256_GCM,data:yudKORH3HkRCDFw2z1++nDenHGa7F4xMK+JJWmNkpbfWz+H9Ch25tyhOoNgQh015yccBdJgD6rDiC0LB87/FeQ==,iv:EFc/xWyFAtI2yBcAE7QiTLFAkisU/M9Fwl2sQ8PlKKs=,tag:+S05gROtxNEms+m5PUHvaQ==,type:str]"
 		},
 		{
 			"url": "gssm",
 			"name": "Governors School of Science and Math",
-			"token": "ENC[AES256_GCM,data:1K7brk216VnjcqFtsaARuLDHjYxjYOSxvoiHpWPc0sTfg9leJCAk1m7eo1/6EpdNjRJ7Hj6bJp23/pUrU6xpBw==,iv:B/9fe9PXpC919L0KOOmc9GD6tM7KttxbHQSIr/IdUuA=,tag:DI1MudmNnlOKEpTOw0uChg==,type:str]"
+			"token": "ENC[AES256_GCM,data:yMV4iLeVvYKn2RDLv1gR7sfjKgtsDaIR+dNKLRshYSFFeUs9jMzOCPNBYrgNZn5uVkeC9tRdLcyzR9wnNZd5cA==,iv:3RQAgxOssQ/3eQKTfAq6MfxOIWhlWxL4oz1LGEcBSCk=,tag:vcctn0vnwpHdXiaBeFTd1w==,type:str]"
 		},
 		{
 			"url": "gwu",
 			"name": "George Washington University",
-			"token": "ENC[AES256_GCM,data:YtHBo6n8EnJojonXa8JOPUFZ/3S0EAk4NtXsHARwFgo4u9UeiCZdpNUwjyoYPjXxt3PlprRAdzAZ3CbL2yQHWw==,iv:SDuShLGcuxz7KOXj852viC0nwC3/XDAXSzkLM8zDrEw=,tag:iGiJpFt6/MD/2G3sLOampw==,type:str]"
+			"token": "ENC[AES256_GCM,data:on8DmMOel8/6Ly0mLv14nnihL0Lz8+iJ/vumoo6+ZhnfTm7/5uLtf06VcqxirbcDO3c+9jsKPYbn5QWXkGbFOw==,iv:I3Lo0YDe3DB2mpzM68/Tp0CUA9JGxowkgRJex6HmdJo=,tag:V6bafsUj7gnVARNOgJRFyg==,type:str]"
 		},
 		{
 			"url": "high",
 			"name": "High School",
-			"token": "ENC[AES256_GCM,data:fAyhK2bIMzZAGfXDC1IZyHcISzVrk89xwv/H7ha0hTEiaa0EqxxQj2qUHno+tmLT1xDcLM35l6qqJn+fHdDM6Q==,iv:1u1HA7X+G78SPDn3p/5ajVm0LgutE+K5m5icFNLzHEc=,tag:RxNsypTktVwMSLkeqfgBzQ==,type:str]"
+			"token": "ENC[AES256_GCM,data:l/E7WHJpmMu4veZDiV4jH4xz/4VAdbqNTXK2doYw0hr5eMWrrN8uXBsLJBCDVNouk2Yv1odnh2pu4uN7Tb1n6w==,iv:jD2JDh2xSYKAIoZcFTaF1qUMU/RIfkr9CE+rABb/zo0=,tag:GCwOFug94L/3SL8hDkZeYQ==,type:str]"
 		},
 		{
 			"url": "hmc",
 			"name": "Harvey Mudd College",
-			"token": "ENC[AES256_GCM,data:/K4zSgnmzq2SxVtwfgVXW/ApI1SKL7zi2pqEhhUNpXNUUmav/oWcjwJRHoUy3Y2DcTvez61kuwnGp3FbKzZMFQ==,iv:vk7suym1GCSevIRST2DQn1AsLMRWBqgOgWnmiQX7Y2k=,tag:AaO29oJFi5LrtjmxYIPB0Q==,type:str]"
+			"token": "ENC[AES256_GCM,data:vHLf5D2XLB/+41zwY17bFKkjNQootaCXf23uDk4+oHKq86N1VWb2t5o+hbxO4Nd0d6oM6NcBJxA7+U3jeLMqlg==,iv:s3aIPJVi3tbc8fFTK8i39o1OSJfaib0BtI0Mpnw0Igk=,tag:WgeFI19z74V2+bPEFlM9qg==,type:str]"
 		},
 		{
 			"url": "howard",
 			"name": "Howard University",
-			"token": "ENC[AES256_GCM,data:/gbaEFrAdGOY8DDoQnxLdr5KRT/miLgtdWHllZC7gR2ScHJgqILpigncKoUnXv4yULONLAh6XurfB8g5EtCX7g==,iv:coxbIKcON/xCa3iHOkjZWi+LS4WT0GJe39GWyNJ8njw=,tag:tPunTwsr/zUzOR2jt74EnA==,type:str]"
+			"token": "ENC[AES256_GCM,data:PHuMiKXJFVDN6CRN1CuiIsKHEJDUSgBPzPwg3NyJaaxqvgImAN9oIS7mL9XjoLu6kNnaY1yinKtFHItAljqAbw==,iv:GWFjCP67X6LJ6CYAld1UjCmzSVkvSuIR7+HxDzxfbhM=,tag:HlXWuXIaz7MK0QcyDkyhfA==,type:str]"
 		},
 		{
 			"url": "humboldt",
 			"name": "Cal Poly Humboldt",
-			"token": "ENC[AES256_GCM,data:TCoX2bUczx6s5G88Gim+Rak/d40Tpev5v3XIhFoxspf42R71SmFda9BJRWa0MOIMr1FISC9Rjy8+Z2wHoFDRjw==,iv:DI3zkT8PCUj/+Wo92Td1ceYyUgTuYJlYUH51OhWiNX4=,tag:5juEYCZVbvNs9SBJHeJlkg==,type:str]"
+			"token": "ENC[AES256_GCM,data:ZDQ0IrUp7i0KxRwwRLZP4umQVj7aPXlVqO647WpdOTdC11a7NHXOQhea2AzTACpcSR4UJF8m6tmTnyBRMYSXbA==,iv:0VMVOcc8AvF1+Gvz2HJlButL6eJ+CZrWwOtLSHz/JEI=,tag:AiQCKc5yKv1cv2lPvnemVg==,type:str]"
 		},
 		{
 			"url": "iit",
 			"name": "Illinois Institute of Technology",
-			"token": "ENC[AES256_GCM,data:K9BzLGLDRTS//z5dSebRtP9sZK2+5HtrDhV8l1cQJf63xIxA8AXQ5AHWkhQ9OkN7ucL7UvXbGf0Wu1xrP3VOeA==,iv:j0TxBsGhUT+PAzRUQDTgth9A8meWwQylxTtZrc1JOfU=,tag:N3DgJbkj68+bAdOB0nmo1Q==,type:str]"
+			"token": "ENC[AES256_GCM,data:MbHg6yPK8tIntagzqnh5pDRbX4tbopFTYEdRkzoJ4+DfLGXNXkLP63nQQUck4xkSlfA6AIUHuCCpFvHNOIs6Cg==,iv:jj7f2jUqDV5Vq2c0+q4AHcdq+Fug9P1/NiEzKaPoDZg=,tag:jtagsK0LOAqDwM0yCxe17A==,type:str]"
 		},
 		{
 			"url": "iub",
 			"name": "Indiana University Bloomington",
-			"token": "ENC[AES256_GCM,data:Qz2jOoKXc/jniEGM1vIHezx3HEpMpB0H+FuSG/hHBU0uD2HC76J5yxYtBdMDu6TnSwPGP0YEAv62WjWL3ME2Mg==,iv:ieGxlR6q9Lw/AperuP32sSUAMbv+8gZJ1h6xHdJ7+uA=,tag:p6jwtdot+myCqevarTW2+g==,type:str]"
+			"token": "ENC[AES256_GCM,data:6xEr8AH52AJCb/reKg+vCkJfgmvS2Lv0Xq63L9tlafM/uBjqoUoS6SjHNDPSM20unyaVJ1LalpBilDyd4ycKvw==,iv:FKeeVbQW+x7OxdyJMwzAsVQcUfQRSDBgK6roVitRjAs=,tag:6ZNDusYgmHjNsZrTMsGbVA==,type:str]"
 		},
 		{
 			"url": "ivytech",
 			"name": "Ivy Tech Community College of Indiana",
-			"token": "ENC[AES256_GCM,data:2b2EMBPJ2Oaz0gEPREBRzfEgpXPr5S512e0LGJ2BJ6L6dHlCg6JrTeZamA1n7QNLU/kQveqjl4zKf1yW76R7fA==,iv:IPg9XqqXHjmGgsMcE72GtrUVoOq3AhpRchzjVHHHbig=,tag:9RX+Rvfjj4TIq/R0SSDsHA==,type:str]"
+			"token": "ENC[AES256_GCM,data:o+bUrGc8bjigIGwJE4WQBTiFJxG7MzpLChi/bKaYoV2tbqm9KgVFiBHmupW7ZYLIGqTSZ10y/A6FDRolP6XAWQ==,iv:8N3vZOFJwEzHNLkG1Ejh5zYPZedsAZX2uBKKonFpJh8=,tag:Gx0UdQTpCUuD1V7KDJrOOA==,type:str]"
 		},
 		{
 			"url": "kean",
 			"name": "Kean University",
-			"token": "ENC[AES256_GCM,data:W1LRR19iZZok9C9oISSkr8DOjD2XlKP3HOlTGWCJA7F6W2iep+AiMLN87KxYdzxJZU6qtzNnZLp6owvrtYn89g==,iv:nifk+wtUpw7asMzxiqH22+qQQjL4ZubhPEclIz0CP40=,tag:Qzv5oaILcGaTtbU+NF6SHg==,type:str]"
+			"token": "ENC[AES256_GCM,data:hOAVZvTn0S6YLJi6IxeFFeI/9HXl0LxlRZoPbrN6/CULwWgQ0tS1IT5WsUsb5q7tp1XxCh44TfAjcngindW/hg==,iv:QKfpIyPrdRutoxf4H2bDhWRWPT7jTHS9Doun1O9UFP0=,tag:6sHhgMeLI3uEU53a1XGtHg==,type:str]"
 		},
 		{
 			"url": "lacc",
 			"name": "Los Angeles Community College",
-			"token": "ENC[AES256_GCM,data:qwQk8uVNBXLtfRtLXRGMM4zo4xcsFelNuxH8ktBlLx2Elrmw7VwP2kcjxj9ZwfsmGC9Fz79iu2hG/lWV3ub+nw==,iv:csuw/024efdssgmhRLe4ZQSC4b0wYF1CzsmkJCYwIEE=,tag:djZSv4oLAXfv14hx3MUWFQ==,type:str]"
+			"token": "ENC[AES256_GCM,data:NBgVAAbUqsTEtp3Ng5LMFgy1Zca+cLWy4HTWEJt2Fdv6fj2BTbnDHx1pPYMXkAo9XbpcdpMujMhBr/ltCRC56A==,iv:1OwnOzpZ/Cr+FPrJJxiTD/GRrV1uy4BZIQrr/C0fq8U=,tag:uQGD3/hBeaeF/kLqOw25RA==,type:str]"
 		},
 		{
 			"url": "lahc",
 			"name": "Los Angeles Harbor College",
-			"token": "ENC[AES256_GCM,data:dxCH2NdNRA/Nfo2Tt4mA1hM4gDkVWRE1kmkVcIT+Be/d2UmhAdfo2q8YWRDZPa1sxs3l02IeMHOs3CViqPpLEQ==,iv:FQvCzpX9cKy4AV3YE4J5NyXGzPu7kLXbMM0yZsHBJvQ=,tag:rTXBydE3IyTHgQE5K/1OnQ==,type:str]"
+			"token": "ENC[AES256_GCM,data:6+fpN3v6DGz6E/bjL3wsJG5dT2R9JsxtyUd5t5NWNqXfApuvPcS2EbE+chfN3vTqvq4bw0Rh2Q4lZqloVdS4vA==,iv:kxeMoezPS4iyFxUqN2Dhd75VDk0OgmSbXiUD6Mn5jX4=,tag:RBakyThVDPRZm4g0fJn1cA==,type:str]"
 		},
 		{
 			"url": "laney",
 			"name": "Laney Community College",
-			"token": "ENC[AES256_GCM,data:F9B4mkANZaA78FX/6uv84hi4URIoANgjhwF1860sxyfKR5p0oJ5IQky/9v0rxCF489j315ChfaptqbK9tuSGvw==,iv:qGdvFIsX5H+oD6znrMim1rEIRSeWg6d4fQkDrVj45g4=,tag:pY5N1x8eF4fJ/npN3Phh9A==,type:str]"
+			"token": "ENC[AES256_GCM,data:m83nCu6iA1Ih42XjTx6jwmWKDc0nAC+kqpxYx0g+I7oOiYHSqSKFR0isR4/oXsDOsXjZUmPAXlK+nne/co/1Lw==,iv:7MhFLs93YfXMdV9+HWFGx/FhIOhpcIbxdF7NOD9IiSU=,tag:hiV+k9sWTnnzodF6mKmJEw==,type:str]"
 		},
 		{
 			"url": "laspositas",
 			"name": "Las Positas College",
-			"token": "ENC[AES256_GCM,data:poBwYZaQTKElGaRTqzhMS8l3QqC1oaYRSG0Z30//p5Cm7EE5UClKdo6M69jDIKP86rfUdSP17VIej6DtsDuYwg==,iv:dgLq3nUKzAl+UO+ClWQrMvL1fY4ZwdwJOjLLGys3PWM=,tag:E9FcufthwIClNE6CIIfacw==,type:str]"
+			"token": "ENC[AES256_GCM,data:gham1iJGLG7AbH0/n5T+CbkQUvvxOEHBFvoHWgPH8PtFj8XQ0Gq9YnoDLAT2T/cwWsoEbs01AriuBAmtuPTulA==,iv:gX7xL4dHOzaahkDQcQnFCM50b3adYacW/bYvrCfEFtY=,tag:Nd8VSIH5lQ16sd+7fi/Xgg==,type:str]"
 		},
 		{
 			"url": "lavc",
 			"name": "LA Valley College",
-			"token": "ENC[AES256_GCM,data:SnJmF2nVI6xGDkq9jJ/9pbu5sRnCdF8kvQHRIOUa1UCaLzark8WhL4Ip0UiQ8kXjMZqh8DUSM93HiTBJjD8vlw==,iv:bLavqevOP3K2F1RDu8hNiU9hR5THssyMeNX4p+LhTy4=,tag:jo/pCC/+nGJfNdHSWyV8tQ==,type:str]"
+			"token": "ENC[AES256_GCM,data:/QViwE68lfyr/lsU8gjg+Gwr3Ca/MjaUbjIlY0FslFI40IEK3ItcgXXFs00/GOfZGU9AiJwm8Ryc8Kc1utISCQ==,iv:vVSlOExhYikLfI5JgJXISOpe0ggHXca/bZf52xLSFM0=,tag:DCV3KfRqypppBzetAzXogA==,type:str]"
 		},
 		{
 			"url": "lbcc",
 			"name": "Long Beach Community College",
-			"token": "ENC[AES256_GCM,data:SptUVFax19708IsUoktl5hmzCPH8OzrlzqyIlnqill3T43XQqGGDEpV1SZchzvcmARVZdUGoOEydt8wg3C+Rsw==,iv:BYQTzRutYDttnx9NsxTi4UISX+pG6Hu9UrcwwyK2BBk=,tag:bYav7Vaq/6BxKeJICg842A==,type:str]"
+			"token": "ENC[AES256_GCM,data:zwPeY+XBtbkZC09jufV0Rhe8OwrHui549iThlaX0amz8csdzBCjbc75h+PLdkBzYdvJtnjuPV8aDiO6F4M8cGA==,iv:cykZNo/fzrLWEio7maRkPC9Nj6qvOn17b+G+CYJowXc=,tag:LdbsPQacGw6QKbA71f/u+A==,type:str]"
 		},
 		{
 			"url": "maine",
 			"name": "University of Maine",
-			"token": "ENC[AES256_GCM,data:JZzzA/Yt7X6+EffugspjbTJo37gEs521a+n+KympXCBR0T7i+MFDp01ORJYJJW0ZDiX5heWR//26kXdmSld2RQ==,iv:5B7VJs6yRuQL2QSYP6277ddweSBPnZZl3aUERIqldXE=,tag:eYPsZKrq0dA23ebbfstR1A==,type:str]"
+			"token": "ENC[AES256_GCM,data:XHBjlq/8pa+Mq9lkppZwhgsL9BMTQNO7aRcx6iECdo3Kn8Sy4eb4mHfSGsPs8loelXstoMjE5G8+GT84rfSxfQ==,iv:teQLdE0L6tkSH7JlcR5+8AIX0GE4KFDETJlrRkMILQQ=,tag:hH1vVyU8ue4rQm6ZZS/hkw==,type:str]"
 		},
 		{
 			"url": "marian",
 			"name": "Marian University",
-			"token": "ENC[AES256_GCM,data:OtePEJaGGJjBjoY8CFfhAZRLfoWz0YTMfHTwlvFkNdC6s/DmjBfLBd8pEOo4eJY2wUY6r+IQoatCpIbmmtFyYQ==,iv:t/puUvCTAji/4BsrvxSZtKvVrfNaT6CL3RTb/uiuN7s=,tag:NRZWcViUFOvgGvBh6ii2gw==,type:str]"
+			"token": "ENC[AES256_GCM,data:7iteDubi6MhFBEhlcmuybTqPkU6gXxqNxU/Ggk+VpE4ItDLz0Cbhxhurkewqakp0V3j5zG3JTZpssjgpG9P8Og==,iv:4+TdlHHueQM1PZxtyCecBOHxs7ltQSmre72b2+rU5wU=,tag:Ip2cb6KRyK8+l3ZYbUAlxA==,type:str]"
 		},
 		{
 			"url": "mendocino",
 			"name": "Mendocino College",
-			"token": "ENC[AES256_GCM,data:+nw611dvZ1YZD+8JDJWTPoMtTIPbhLs73ch3cu97aIgDIJwTvZmCFst8JMMl07QJsco7YE0Xa/44Zxx89ff3ig==,iv:txhXIMe6v+PJrA/NADbU4fyAjzCQ2rHIvnpzTm5U7VI=,tag:5NqiYYkwXmXx8Ply0Kzfog==,type:str]"
+			"token": "ENC[AES256_GCM,data:x5Xm/AvPIXxv6F8cL1CVNlCJ0cAtHb8xFDYIlwMbDvpLEPWMaYEw+Y3Mucx7LuHrc6+ujd5srKcj/BOS42xVIg==,iv:wLuEY7FzvOp0+3Ym1MxJWmS5n+2DROs4fZCQGjBpiwY=,tag:AaqqAHzpCeRY/mZanl3hjQ==,type:str]"
 		},
 		{
 			"url": "merced",
 			"name": "Merced College",
-			"token": "ENC[AES256_GCM,data:n8ENnyDgt1t4vDZIbHqmG0PS62Totr7sr5JtXa2yAMurs7zkxX2RqUAQXIIKA9f5Wf/bUI8KUA3n6cgnnGc2TA==,iv:ycCukONwJ+iHJQp80QV/7a6JHhn42kJcWmPRE4fK7O8=,tag:TJ7+dQWgAvO+S9tK+eaVdQ==,type:str]"
+			"token": "ENC[AES256_GCM,data:YaemHyyEpCRZikQNCVyljNIZcVoBY3KVB/nxaE0R0DlcfNytK8mLTl3ZpnGfbSqL0FX0WzKZwWqd1j5CE5G0ZQ==,iv:YGq/tcuWaoN2ZooKhq9f2FIB0p3Fmf+mhe0TFqLUTLI=,tag:GJcLQbuvcSvTh7ujLcFcvQ==,type:str]"
 		},
 		{
 			"url": "merritt",
 			"name": "Merritt College",
-			"token": "ENC[AES256_GCM,data:UVJHNVAdEEbEdONjSSGZ5vxMYuT2qczwNxavOFmSey4r8nuotnixPd1880cCdYeFVA0Th7nGpGJtchIS3QJLrQ==,iv:uhuK2mnzeY1DeWtZRhEj+NXo2kMBIGj+q9X25JEBqbc=,tag:T0wLQFUfobnrV9+ob02GPA==,type:str]"
+			"token": "ENC[AES256_GCM,data:hNmWv/nLVtO5YyXKCoB7Ys6pXTsesVneRKH8z3486Hwjyp3Dib/kPskOY422IO4moIzpJvLTbV3fp/hMkpApQw==,iv:9Stk1zdalCNV1V34xPWWnKdXzH1ZsipwpoO+bQKvgg4=,tag:tVL39OkaGiSQPYJvDAiw/A==,type:str]"
 		},
 		{
 			"url": "miracosta",
 			"name": "MiraCosta College",
-			"token": "ENC[AES256_GCM,data:di+K0iBz36XxP+qh0ybzp+b++bVAmzXdfPbpxZYavA2vl6pJ19aQdjR80FpKsFW1KBT+bJRJIn7cHwkinsJ5lA==,iv:YmiP+YfxOTYVDW2awphbKjgIf87Qc7QnzLj4exZQVcM=,tag:TARTAvsop4mV30ehyAeygw==,type:str]"
+			"token": "ENC[AES256_GCM,data:lQC8aeDZinWKSK/v+B7ifjq23GyGvLzOe640UkUOc8mfVevLay6JbFfKOzFxl05j4ValmUhbpNOK+Co0JlXGeg==,iv:GgUhA2bleLIM8eAD9bq+ig3yWAnNytsAE532k9e2GxE=,tag:N1eBQQ3c8fzdkEsOahYsxg==,type:str]"
 		},
 		{
 			"url": "mission",
 			"name": "Mission College",
-			"token": "ENC[AES256_GCM,data:bcSzWDrH24+aDHVsjaDwMOYxi7LoX8zp78RcZCVoTnluta4MOhdGxODnq8itB6HT9tVOA+njmFIFNxixVg9cpg==,iv:SvaC6uET6ZKqJvCWOLurkcw45IFhG3mri/h8GzwJ0J0=,tag:QAvKKuRBG640VB5qeHX3wg==,type:str]"
+			"token": "ENC[AES256_GCM,data:mVImiY/va25/JAZFXALErnhQqbQNtOy36kgjDyZQLgakN+6z62jhOPIYdD+deIHJxIf0t/Lnp3zOsHu0YR038g==,iv:RPAkX6gtpYf7hatfTEW8ua5g0QHsqSyF6JLxhIGThZ0=,tag:ue/zmWLVkQNWkbgf+iGN/A==,type:str]"
 		},
 		{
 			"url": "mmc",
 			"name": "Meharry Medical College",
-			"token": "ENC[AES256_GCM,data:oT4il8g4PLdgY9TSEVYc48mNeHcBVvD6DJSlspqecnZoUYlwVMRxv8V5yJWlV0E4lX38vmnSencW2g3lwU3D0g==,iv:Qxkiq6y1YQMCjwDTearrCKsMX/t4xFTc+O3HWvCOm3k=,tag:Rjp4aXoihGJbGjYf1Ut0ig==,type:str]"
+			"token": "ENC[AES256_GCM,data:F2Eqid8DRLNFaW0SiiyqApqsr9shlp0VcWhjavtEIOwT7M19uYawvyzxtvNDsx1FtFMbqnTPfMaN32mJldDvXQ==,iv:o4p4S2he4Ct+KeAwxmqMJoJSQTbc7L9hDca8EQqzAtc=,tag:9kapnOV8oTdw4hpiGVXeCA==,type:str]"
 		},
 		{
 			"url": "monmouth",
 			"name": "Monmouth University",
-			"token": "ENC[AES256_GCM,data:J+0issJAYmcbk+IAQc/euM9tta1qOfEye3ZtjtQhpAUAyBocrYje37/2SPpdH7wdFUoq04TzNeySB2VrP4Mjow==,iv:GC0WpnSuW7byCJVUhqEzhNJU9EShZe6OAR/JL5+dmDg=,tag:9ypfQm2SXnm3gUiUlC2Hrg==,type:str]"
+			"token": "ENC[AES256_GCM,data:agkSe3ri74pJFsZZpsUi9EWKMIltkNYYNewTuhESCsa3D5KrI9UxPBHA95qDi4ANbrvy5Rsv1I1XdyVgxj/xtw==,iv:WTDJljcFp0tngzvxT2DKj/PJGKGuNdCjQqa4sy1Fels=,tag:kUHaCvbtSSb2ed+hIKABrQ==,type:str]"
 		},
 		{
 			"url": "moreno",
 			"name": "Moreno Community College",
-			"token": "ENC[AES256_GCM,data:MTAOxIKVtxg1DXeBOnKo8Xd98TsjrF07PXIyR6+M7xsA0H3q31J1fKUFFMiVfTLqEhagLxLqYXW53bAyvIzKig==,iv:SxhE786v4V2JzvXsMC7A5RJpliRHGSgT+5H2CGcT0lI=,tag:uFJgCWw8t2KdFsyCJeWVkw==,type:str]"
+			"token": "ENC[AES256_GCM,data:3lTKU8ubHAkmk9t45VoD95wdQL9cfOhpUtXInO4+SgOxLM9CdKW4kHOdEqeABh2SySIuEV02sad/8Hl0CJSTpw==,iv:2dMXI9BkRnltd0HDtxXMiTinnWRqk81xDGmPt77TEOM=,tag:L4TxuX1/pYNdX4jl3Z8rBA==,type:str]"
+		},
+		{
+			"url": "mtu",
+			"name": "Michigan Technological University",
+			"token": "ENC[AES256_GCM,data:PwIAbEp5vMynhjntwF3mGCX12QBG2kEWB6Z/P54o0M8b0QeDViA0Tn6UItGH2uyJ1NxuJMuVBlyqvie1txhCag==,iv:YL31CpacPjDsaJuLUsx+nF6SmQQt6bEuhNjlwEKbebg=,tag:F1X8Nu6YXtDSepREblhQlw==,type:str]"
 		},
 		{
 			"url": "nicc",
 			"name": "Northeast Iowa Community College",
-			"token": "ENC[AES256_GCM,data:q1/m3Yhgu/GDc4nthorpnhCdb5ElM3PDUZPnPfcHMhZEeDdORUHjy2+cMpRwpIEkcbwK968puA0z6lDUCU2b4w==,iv:qAALodM5dlp/d8uQZJgIBojtSMY26Mb/XHn5KBROJ3c=,tag:biuB91dF22ELTTrsEd+UZw==,type:str]"
+			"token": "ENC[AES256_GCM,data:bd+sSokBAkOplP8Cs7VhQWfV1xtieG2aovqe5hrFNNzUk4g9cFU+qoKwa5VoTeSJbdvXx2P4YCkpnBnch+LdcQ==,iv:fviu+wW/4cLfWLxJR1Ry8ndZ3bWDjSnuB+NRp9Q0Yhc=,tag:dwGFBLKDjjGvLF2q0/B5Hw==,type:str]"
 		},
 		{
 			"url": "norco",
 			"name": "Norco Community College",
-			"token": "ENC[AES256_GCM,data:0ySkJlxMNSl3YkBz9jLpUVy0bz4mlV41DDO/n5hwyErO7z6wE6J5kh+Wqt+FT71Ko8kYo8hvQ3+Ook9O6ZCUOw==,iv:FCE810fuUUiFLFxcaYUvkXPooBzAbqEtooJMPQaL1aw=,tag:XJV/1rwMwQDSdlNDmezimA==,type:str]"
+			"token": "ENC[AES256_GCM,data:WSDorJl2d9TBu2RprgGeiiRgZCHvCqf/AFatbrlJM5hHn8OXo0kdhv41aqJby1RqXYugtRyGcpMOSGZyzbuEgQ==,iv:QRTR+6tR/b1X549JASvHpPc9fMF05pZjkR2/ra0wtQA=,tag:38XNnB+zdR01pFRgpvU+4Q==,type:str]"
 		},
 		{
 			"url": "nova",
 			"name": "Nova SouthEastern University",
-			"token": "ENC[AES256_GCM,data:FgtYuMA7n4aa479teTf/ECowQDZKPzHu01w+KxTm08zwrQdzlSDIySKaiRe/BqzrnQFObMAsM0xEvlbX+nsCPg==,iv:wocTqqOnQ8heoWdt3PQ2Ch5JC9d73K/wgNGForKbJUs=,tag:5uCGMN0e/Bl2mKN96Py2Qg==,type:str]"
+			"token": "ENC[AES256_GCM,data:v+Eta556LiWTZGR6j/1r9R6NlMHzsXvOvPXJ2tT8lRT6iO5ZzwHmKTfRcmjFTQwnBIFwt75DFiyHemQDctRQ2Q==,iv:cQXRYDUzCCVuvbkUI7yQMU+x3Kot1anJjD2RKfRdeTk=,tag:AyGJcsFngUlR+KiO/6/amA==,type:str]"
 		},
 		{
 			"url": "ocu",
 			"name": "Oakland City University",
-			"token": "ENC[AES256_GCM,data:E1Zls8YGDSBZrekISQMnrxZMWLh7ae+mzrgkKA4ev4lGUAAoBwYuPMST95KzDpk/wAhMapQfEQ5mb2y6TESe6Q==,iv:/jXWX4ONFh7ftFB8mEZ0eO8/eFY7zyEKtqFJR8awzu8=,tag:xa7Ri8qXSHiyL250qfkgPA==,type:str]"
+			"token": "ENC[AES256_GCM,data:mxH0GrzRGxGw03DCLyRJMo8Gh26NuCR2cYOJfvGbZ9mubAYO4UPfQgILeReUJW+yR57joIxYTRut62MShvZ/pQ==,iv:bE6mBXLjhgrBMuywQsq2d1c1UhSsu6p/cb2O7u2zIh8=,tag:1M5iqQHfleIz3zOw6kanVg==,type:str]"
 		},
 		{
 			"url": "oit",
 			"name": "Oregon Institute of Technology",
-			"token": "ENC[AES256_GCM,data:h0V/qX5zxdRq21saEixcev4yFtaD5zbW4/ABRjLxi5p0K13052KwdWwZbgqtj+BuUKpekL5/rd2o2A/NERwgcg==,iv:zgizjVfWKq5hdOIuzjI6z9/YTSCYpR2CjyXBP3ZVc8s=,tag:6im1dVLHP9TVNh88dMF2RA==,type:str]"
+			"token": "ENC[AES256_GCM,data:Ku/yxJHObXpRr4RUowWkPageWQeOzxzwmP1xM3hgi75hRQXFuwmCwX3IUCFRoG69A5b3U3E5X5lWrWNwedVSpw==,iv:DY6BHBglQjsMSdBF9QYt51Md/FZTgz73QLOr0gMmn/o=,tag:JCGnKUxUodwYfxUDvIp+TA==,type:str]"
 		},
 		{
 			"url": "orangecoast",
 			"name": "Orange Coast College",
-			"token": "ENC[AES256_GCM,data:xFmipCbpjGIDAcpUsUSJkOxrcrWu0SwPc9HlGN8fyEXXH6o9Uu5F7y75/ODfd41CGQrK8LZp9Zt8/CxyagUPcA==,iv:MM1Vwj65pNocGU8PggMY/fduhv86MpZd7lytGdfYABg=,tag:LwNO0qh/PQL0CK5q5/DeDA==,type:str]"
+			"token": "ENC[AES256_GCM,data:Q+bVGX687ITePC5M5zWJEUbMtfzcupZDS0f4hH+J/3SNLKvlocl0ipmOfPGPId5gscYTXRTDxKpkRRtT5vxnxA==,iv:XYbfkvmfivavo+XMe7iY03+tcyZQ5pfoIQBb3PDXTo4=,tag:mRi9QfYg/Xnn8a1jRnORPA==,type:str]"
 		},
 		{
 			"url": "ornl",
 			"name": "Oak Ridge National Laboratory",
-			"token": "ENC[AES256_GCM,data:Qddl0cYT/Rm6pyBh6a3++NZtsviwnYh/SL+fKZanJbgoee6wwIWBpEeRzxiUi/XL+2bw6lCCv6pPZFjq/+6nWA==,iv:wJvbT0uaBQz+820uaxIzvkfYKWLoq7ao3wEzpKiDAAc=,tag:Eo++12VjhVc1mOioJGafgw==,type:str]"
+			"token": "ENC[AES256_GCM,data:wDG1VteTPTXYnAc1u+c2BtKaBTCLLEZGej219MWnEuvnaXbnRqy9O5vXITdzPYOj4MMnePGCIjOsUus0vxTwMg==,iv:mTMTJ0JCFM4TohHzDcZa/p1utSJrqOVaBSKThi6NLj8=,tag:D/F34RnT8nhFd1yk/U6m/A==,type:str]"
 		},
 		{
 			"url": "palomar",
 			"name": "Palomar Community College",
-			"token": "ENC[AES256_GCM,data:Q0kY3h1O/6xAQ5r6vNxAU/XrgKhhgPl72mn9lArwrvk8coq07ORLmaxMm5gDmX4mx74uqVciFpR9l1b2CQLkyA==,iv:IJRTEQrT6sy6iaMLzA4tyxdhYhcBPutqzqLrOg/eg58=,tag:hLlIx4hKh+QvGghYXEDLjQ==,type:str]"
+			"token": "ENC[AES256_GCM,data:G3hTqq96g0wlGPBOIyPjLVsnGOTGEuQRsw01Gd1aU/IitIAFkFLfZme7E5VzhvvXkJWb6lvjQjbfR3rXZiMzRw==,iv:WNTD3ggiKQ959EPdKCzorU0xtlovPak3ycTBsScfdw4=,tag:1h+CXPUD4sgc8n4qz91SBg==,type:str]"
 		},
 		{
 			"url": "pasadena",
 			"name": "Pasadena Community College",
-			"token": "ENC[AES256_GCM,data:e0ltrv0w1QRY+RqLOUdQESDpUI/+mb2mXJNhvj48f6WkQicz7bw2mltkD31j4MaF1Nu1rQLRBtIoGoTLvi4GWw==,iv:tr4E00z4qj62XHCFIhd4jqk8PvD1PJcc0elL7HSpQuU=,tag:9FxX1medtWj3yy5sCwkbxQ==,type:str]"
+			"token": "ENC[AES256_GCM,data:6DkTUox5Ds9LAvVrNtOn/m0ysY3mHymFLDjXXrvl3uFw5L7rypCv0LGC/P9zdKAuga1rQ5JkhT7bDJfbL7IEkw==,iv:U/nxuYj6Z1i+bvF/udHNeWTUKuiPvx+5zdNvBEQ0e4k=,tag:myszhxCh35eRgddET/TMFA==,type:str]"
 		},
 		{
 			"url": "psu",
 			"name": "Pennsylvania State University",
-			"token": "ENC[AES256_GCM,data:p/lTTJ3rMo590wmFEfpudAzi34M41vtDO7qRaw+7frVKLjwAnCIJcd5g/7de0aBRcr1r0Htzi/Yep53ehIuZbw==,iv:PzLt8lrNwzd9lTlmrgqBZ99p6aJ2277n0TDQXgNELXg=,tag:A12Qkfq7KM92SrSHnWbqRg==,type:str]"
+			"token": "ENC[AES256_GCM,data:VRuVwgKz871nYf7HVMtC/QMHP0PT5wiuqgfiI3YCHr8E13vD/xeGmX8nvxaDxeP5n0l+2PAMA7rezhdEqEWrsA==,iv:G6rNlE394uM6AtBXe2JEMoxA0RSaHwtS5dhyDQkmPxI=,tag:VzZe7jsrkR/IF0fsFbzvTA==,type:str]"
 		},
 		{
 			"url": "redwoods",
 			"name": "College of the Redwoods",
-			"token": "ENC[AES256_GCM,data:Obq8i7JsvJ7y5qIUkkB/IeCl28x+y9v63SW285GWs36MQPdsg3UK/PRwgRgiVZjAOHxMGzcgiEC4axdJbL02nA==,iv:buEu6MILhWT2DzbZAPWYpebpBC8p6U9QKgTm4Tyq6cs=,tag:tTGR5Tfm+D68BK9eRdD+aQ==,type:str]"
+			"token": "ENC[AES256_GCM,data:vIg91/eYUFZmnYrC5N+Rf9/jm9RGRN2KPiA4x6SUEBCa0ipGqsbJlSmpnVozlvNfuBEOAwIedPJJ2Um3rwLtuw==,iv:Q2jrJaEhuOdAD8kDhF7bULjqJiPzosV0/Iq50inbdeg=,tag:1m47qX/nj3VKDJ8CYj1j2w==,type:str]"
 		},
 		{
 			"url": "reedley",
 			"name": "Reedley Community College",
-			"token": "ENC[AES256_GCM,data:EYSRkrVPOHGt1qvtaLE0bx02+ocOu2mZFx53uFjmQm1MGqGz/kzOLomogAcdYDBn2+hEoLQJMq8ak7VfGwN7mA==,iv:Uuqo1jlE32tOly+FQYVg44NG/8HlL4FNym4agQYXtr8=,tag:9CpPOLkLdXpp1eUbBqVuJw==,type:str]"
+			"token": "ENC[AES256_GCM,data:dS1OQl8yLuCbd7ddFrj8C6NLTJiDOG8+PMhelhd/VH/DClP9FGQInlU7swdG7UTvVc5Oc7pj/RtBNGoDJ/DEfg==,iv:N593jcDsn8PyKYpkLOmgaFv7gGZOab2OIBGvdD8u0ss=,tag:IHVY1H2YOq8yKR0XYwMSxw==,type:str]"
 		},
 		{
 			"url": "ric",
 			"name": "Rhode Island College",
-			"token": "ENC[AES256_GCM,data:vzcDDMCY8SnTxS/UhHo+IPzJP5HdfNn6HfY5+iNtb8GeF41DVRuhnBsL5/0pa3Fi6BT8hCI9NEfb/73s/h5vfA==,iv:zQJekladaUu/azvulS7ByxT+EtjmdowhB8O6W8fsmtU=,tag:GtUeNuX8sC5d+pqLizBYUQ==,type:str]"
+			"token": "ENC[AES256_GCM,data:BCFyiQt20Xe1r0zkcuKyOXYksexhOoQpDGF87f8PcHihhlKtxcEB32WbAwtvSsRZLi8YfGCFF9G4umjtzkV29g==,iv:MyszXEtwAmJJC2sA6ZW+EyF+rGAovIsW2KFC0jIzSGQ=,tag:CUgwIH96CSBLCD6fUg0d+A==,type:str]"
 		},
 		{
 			"url": "riohondo",
 			"name": "Rio Hondo Community College",
-			"token": "ENC[AES256_GCM,data:lTRevugFDl3Bk4b+t2o/cxzf8hQACcP9EI78dPIgEOgvY+C89K2ccFXXPGkHpBrxaEeO15oCR6dgs8jBMAkV7w==,iv:jMrfrmb30K+Ga/XRQ5cTvOmy2g0BuKcMXwku0/n6EA4=,tag:5f3SdUyT1R2qi7jiJj+pqg==,type:str]"
+			"token": "ENC[AES256_GCM,data:twQLcJ+P9D1OgjPtZyj+138iwKFKzNRh7sh7nUNVoDSHvfTm3tz//Z97AV8rTIxNvvd7sL9pq5fM0nnfU864XA==,iv:Z/xviTIQbeDtIYRF0G3muYwBJwSinZNOO2/kBKT8v58=,tag:4/P18W4yGNyhHlCa9rpm0g==,type:str]"
 		},
 		{
 			"url": "saddleback",
 			"name": "SaddleBack Community College",
-			"token": "ENC[AES256_GCM,data:hR3dcTu/vtwYYAfWGNlma0OhWZ3feblBr5O53FhZoSoIUyou0iCXQBkHqIDRpXy0QFGzrUDTdX4CseEWZAHivw==,iv:PnRR4v4Ky61NRZmjrnc3eKBFcuEtsBJbK4CPbSIRUzc=,tag:vm1VEUAtgeDNkIp+v46Ecg==,type:str]"
+			"token": "ENC[AES256_GCM,data:MtavI+iHHjE1abWPXg7743YiULBeCGWuzXQAOhUXDn5Is6+et4a6TNxsAgrgP8+EALCy4B37XWkUMpAMR7qwFw==,iv:IIeuDcTyoBA3WS4IwglDIo0gY0EyNUFgDn3IITYxCus=,tag:WayL5qY+jKetJdfPpRXmtw==,type:str]"
 		},
 		{
 			"url": "santiago",
 			"name": "Santiago Canyon College",
-			"token": "ENC[AES256_GCM,data:JAVd/kq89XE3zIWPPqx0bgPMhqdhEwOronNCgQND29YgV+9V1VwJM5xKnb/gXNVOS14POm8OgkMD0DERAkwaMw==,iv:IXGB08T1NzcK1Lg9HSYd+r3UscBTOvPnl+mHpELtr3A=,tag:q7Wo+tvCxWAsD1R7EEUQTQ==,type:str]"
+			"token": "ENC[AES256_GCM,data:i4ydHTehcCK0Q+NSFNEZMy18RQfQjptGKaKL9L/UwNHQBzZ8T9ncGNsvqXfCqkTVo4gnm1rVhGOnO4Y+QUO/Iw==,iv:HusDjqI1qthB+18yHnecsuG6oI/hO10LVN+3cFygTM0=,tag:ABhjoc43kBU0SiKxQyvXaw==,type:str]"
 		},
 		{
 			"url": "sbcc",
 			"name": "Santa Barbara City College",
-			"token": "ENC[AES256_GCM,data:pZ3ZEyNDiNf192h+SxT52/DTGwkEsrdBHrSSS75EIL6telaAU+FDk09+/qHjney0h4ouBJp3aUpr/OU/LVxYuQ==,iv:kEVsdKBnUK1oeypA/Xw7Fhisz98DwRnzFwHsdAalmE0=,tag:YUxmruU1+WpPTmdWeoEBJQ==,type:str]"
+			"token": "ENC[AES256_GCM,data:GA/EfnPdvQ+2qEtEO5fEUTzJULRFI7aG0QpB2WjKCLzWWnaqVHTcl+ZNDdsZ7f3VSWBXVwl35tDJQbyXJIl9BA==,iv:nG4WOhtLEIAm5UUeF7/+hfErVN7FIfmiPhLy+6wOUAk=,tag:I0fdPa2mBhG3ILcRK/96Ow==,type:str]"
 		},
 		{
 			"url": "shasta",
 			"name": "Shasta College",
-			"token": "ENC[AES256_GCM,data:AFBIp8FR1IABuGidv7r+awtpmmkbtVZfVAImt21adZsVctYP6l3s3n7oKDE4cdFbEV5nFN7EvXaVlbAA9mMskg==,iv:o7QDIX78F2psRF7Y/nGEuJ3JR9GJndr7p61sonQwUW4=,tag:8IykpUN9lcPIdcRwfeC/IQ==,type:str]"
+			"token": "ENC[AES256_GCM,data:H4XvcLIKuS/raaCPMUrkl8ydz1UPtyZYb/o/TtH9ZultRnjEFxocgLh+vc1mnXhOpgLIJDBVEDbn41IkPrKsew==,iv:RYwoeL3/4hS+V0AaIRiniI34F/z6z9nxecU2RwGA9RY=,tag:oAkuVifLV5Ou+C8UeTF57w==,type:str]"
 		},
 		{
 			"url": "sierra",
 			"name": "Sierra Community College",
-			"token": "ENC[AES256_GCM,data:98LE4szYXq17CM+Vp180SHNxkQbUfsGa+C+EnKHBe8rRESjBbRFUlr0IUvoy1nTFiq6TYRZ4LwzU2cTcl1ddXQ==,iv:k5Ds8nwtSPP/nmnS+UfjEB2ix6aKemg4xKgMQg/5qDQ=,tag:uFzj5au08kKt7HExW+E6sw==,type:str]"
+			"token": "ENC[AES256_GCM,data:hmXLbazJA4k1yfZwUnQ+3HHkIakSEyFmA+OqwOWPE3LxwsUZtZMtRkESS+VEFkc1UpjX/icEyfMjbspJSsuRQw==,iv:tB69KTdZVMgoy4LQGX0sFCLLyqFouVcRngOZNNQ90L0=,tag:PfhdMIvyr/U41CSxhEmmTQ==,type:str]"
 		},
 		{
 			"url": "sjcc",
 			"name": "San Jose Community College",
-			"token": "ENC[AES256_GCM,data:gtcYpvr3NlMoMDoHf0y/W3vBuCzusX8lgPxxbqVcR3GSMgr4aBxsXlYCSyZUK4iA9ixlD4aWXi19KjMKSQ74QQ==,iv:qPu7aFjQU0IMZZtH9Hy/Acd+/QG9nVGLLTAxojV6EKM=,tag:LpqJ1MCGcYmzhNppDu0+FA==,type:str]"
+			"token": "ENC[AES256_GCM,data:PdR6pPOxH2RE/ZSZ/tV/uobqXJe15rRLHyLsCTaS9WXImsU+YMx9PlL4c6nE0FNEFWSsb4fX1J0aFECsgVbhdg==,iv:tBy9G90xHQzoKvg0pKuFvGIWggjydGO2E2WMhu5m4r8=,tag:JXA9zBLECMxKbFby3mjDWA==,type:str]"
 		},
 		{
 			"url": "skyline",
 			"name": "Skyline Community College",
-			"token": "ENC[AES256_GCM,data:Mnl1vuoF5lrWlIOukAkwbR0BKWELfgiypw7fbU7QF8Mzc+bN9NENpVx9K7FpVcpUzozKqZIW3WvhEwBU7UUZXQ==,iv:wmgTGHVtOBsu0nrKlhF1H/4Qbbb84NxkLOykib5h0cg=,tag:jlQLgrcuyacB3w3LHfsdhA==,type:str]"
+			"token": "ENC[AES256_GCM,data:iUCE92anSzzjG9KfDyrYxO5eXUA8IEV83qySgnLa9DfyBpnH0AxlPON9y7fXGOgn89hnnL3mb0MW6Ij0VU6gbw==,iv:Xjx/h4U3y/RU8SvmVcOmXwb5BmZT74F9nNVgGx7zdHQ=,tag:/Z0o1vnfoDwduHnMcBclGw==,type:str]"
 		},
 		{
 			"url": "smc",
 			"name": "Santa Monica College",
-			"token": "ENC[AES256_GCM,data:4OaufrKXIb6dAUOekT/SA9FHAqczcoq2kcnuvnYOzaH9xZKKy4Fms7LTEBa/yW3I0MUww8PnDQP2a+aEwee9UA==,iv:l3PasAtG1DeanUD9wgFV3a3+oL9n2ScHyzANoUQlEQQ=,tag:M1h25szHDNkrHt8yu8A9yQ==,type:str]"
+			"token": "ENC[AES256_GCM,data:hSEEqWezF7da+2zdbZl0CELHZz85+ZIlnWqWKuO32Z8ManviJtBlC690WfOtCOJwjRMsSCkD0gsFmUe7t9yQhA==,iv:1ctUhJnGIEgHqrqusZl96CRU7wim424njqEzVZjW3zw=,tag:Xc+uvLQVwGA/PJET5vtO7g==,type:str]"
 		},
 		{
 			"url": "sou",
 			"name": "Southern Oregon University",
-			"token": "ENC[AES256_GCM,data:qhXI0dPQydXn1/zmyca2UOD9C5LO9J3KKGA3Hq2McKyxjdiGALTStqMSS29bItQBKNkctdETk+3tTu0lM6BLyg==,iv:cuyc6S9nB9gMXft2Ayo23jUb4269zYqAii+2S4RFAyY=,tag:N2BvgEEC88++XNEoExLHtQ==,type:str]"
+			"token": "ENC[AES256_GCM,data:53SJwltRLTpvbvZDicoq2yUU1vFiyK1Ou/sLs52XvfTPLCFMmBCu2seBQkOmnG6qmh0Rftx1oMF1Xh4DAm+Baw==,iv:2wnF7/oiriv2QmrJaMqg79ABsMiXP579Vi98QdA5wsE=,tag:tJan58xQOQVnPuFWDYx1jg==,type:str]"
 		},
 		{
 			"url": "spelman",
 			"name": "Spelman College",
-			"token": "ENC[AES256_GCM,data:iHK8y/CXaL/jTRR10dYyXGVrZe+W9KT69mbnAB/FlBFWc4KsLEFCApILyjP0SeEv2mLxfenBWE9qqpsXf/Neuw==,iv:+EdMLGabOcjLQm1y0HyAhi0SLCEiIO4hSKFaB7ZPcbI=,tag:QPj1HjcfHuNRQ3SAJMHw5Q==,type:str]"
+			"token": "ENC[AES256_GCM,data:tVDLgDGqs5AHJdrDApgqtRpZx1cNOTuABE8NyXEEy0P6sp/JTOGUrTKqyS4dHqPc4EMkdq7PAHHRSwhkOWKgJg==,iv:khoGa6TZot/wuZbACqQWHB9LDQ5/gxNArAOko0CC1qs=,tag:9uEAWDbL2j/Ie72IHx15Ww==,type:str]"
 		},
 		{
 			"url": "srjc",
 			"name": "Santa Rosa Junior College",
-			"token": "ENC[AES256_GCM,data:tlk59nRGD+s+ZEoWScuPp6eFJr3Y5mETF4VDzFmcRjOb6Eq1r9tvNEuxgXD+DPzkBHSD8qcPhqZJQjH0zVn1EQ==,iv:1LvXB4mEPN4z+2dFbPUh2e1VMNkL+0R8iImynPjiyfw=,tag:HV09UsQTOd0LJgb0WJ3YAQ==,type:str]"
+			"token": "ENC[AES256_GCM,data:Akct7zNxW5HW6KYeWRGG1LPQ3k3Yvbzpqs5ZEFZPaczkJe2iBfLRsX1Hbpz+i3WYuMJb+U9L4O6ggEPAttLYBQ==,iv:NjTOPu65uoDlZgQgwFsLTZQ3b3XB81SYnoVCJ77vpOw=,tag:I/6lIZLS+5NK9e+G0seU4w==,type:str]"
 		},
 		{
 			"url": "tiffin",
 			"name": "Tiffin University",
-			"token": "ENC[AES256_GCM,data:rDgQobDU0jjS4xa55RcBtjkVcKO0n6/1lAaDw7qdePj31Y3bIiM2Iw/VlScJgpDCIQ68nUXlltuz98Xdlv0Uxw==,iv:FKgxhp+XVcCri/ozTqVsYzs3R++lLEN/3dZ1pQFBXMs=,tag:zZmOoZZnK9d9XTuJjlhfVQ==,type:str]"
+			"token": "ENC[AES256_GCM,data:UKDwUPum/+jfYv69aM9X1UtmqkC4Xe/67QAF9OF1ac57v7KwXt5ERR+yRjUYqVo2wEKG1S4G2XlrMALYWLeCyQ==,iv:4CHd5pIs9nSFAZvKrSyJUBfT996XdsF5Ng9SS7s43co=,tag:WaCf9eFZjpK33JG3Sy1fLQ==,type:str]"
 		},
 		{
 			"url": "tntech",
 			"name": "Tennessee Technological University",
-			"token": "ENC[AES256_GCM,data:JVaX7Wq0LQGxPERYF+rPQDddMSu/4lgWrYb1yH5PnBLuOwYzd0GLscCjesSTBEfT4gs3977htDJlXARQwkMh1w==,iv:a8YsbH4gg/maui5UR5aKsVXz6dA6b5zNhRXwDnE9gWk=,tag:Jhdh+g/6QiDTwgGyHRYhjg==,type:str]"
+			"token": "ENC[AES256_GCM,data:Bv1jpWxaFZCnslwGXwAuVJh8Rvh1QhgFDNRdk46PigbS3vrVpDpjK06fv46Id+FDqVCrYZ5hClBpyqknIQlcYw==,iv:3cfrR9JUVGh4zA7UtiAu/qnsXUObbrrDng1W2/JmOf8=,tag:at5JVFhdCmtWQMHkDYAJsw==,type:str]"
 		},
 		{
 			"url": "toledo",
 			"name": "University of Toledo",
-			"token": "ENC[AES256_GCM,data:sVuqzkP0dmdoFosRXa50vAbTM74WakppETqH0J61+dXYtKtIjC1Hs6ZJaPkYjrii67OMtZrYgZaJpy2kJULB8w==,iv:I/lr6ZfOuB9RQheJDtGMao7tWJ7V9MA9XbfQmsVLa+s=,tag:r7qo+naKOddlzzg51iDeyg==,type:str]"
+			"token": "ENC[AES256_GCM,data:NKxSbMcWmmafxvuQqaxgeJBVTUET9+8yn+5+O28hshzvyouE5J0x/1GB3+P2WdnZ+GirezfZAtXmD0HlHojbrA==,iv:lGm6qcNGyVyFfgjZwzQXP1K/Dd4W5Rn1Z1dSIvFc3wo=,tag:HSzwsAJbBG8awYIu+2i4Og==,type:str]"
 		},
 		{
 			"url": "tuskegee",
 			"name": "Tuskegee University",
-			"token": "ENC[AES256_GCM,data:S6bGHQViaexU1sszjjvPmhf8AQOZo0WD+98W6FrbNdVJ717NFEg7rEaFEa9yc/ZbyO17/5BN4xWRTctoUHrqUQ==,iv:HDcMM7CZFmx+YPSJeldacKLNqO22EMc8nYbw4ABPQEU=,tag:abGqKvCy+nkZAgl3jMDIvQ==,type:str]"
+			"token": "ENC[AES256_GCM,data:KN093h8738OS4C5ztHsAMI6mhW/wBpdXZYRMjD7wmy5VztKuSjJMjli8JNzwTZ2DTQ0MI9k+AvYL+Cdb3a7RNw==,iv:d+hftx7+TsnxnbdCtT3gPo5OBtE0OIzVwZbzJUf94Tc=,tag:9hmmarXcFBMh0LSeZjvI2A==,type:str]"
 		},
 		{
 			"url": "uams",
 			"name": "University of Arkansas for Medical Sciences",
-			"token": "ENC[AES256_GCM,data:iiWah8X/lKd+ZENz4E9tNkOoCjskzMbSoQigbAFxlRIQa0A8ikNDdP6/e0+wN3elBNwT8yQWUGAke1NFQxIO7Q==,iv:vpDkWIYbGid+1wPHkiMAhudMQSi5JkdnKaljGY/H2oQ=,tag:EM/5DOJeRPcLTYq7FX3pUw==,type:str]"
+			"token": "ENC[AES256_GCM,data:2UT1hJMHnAIIYTcoxNbEVEtWZNbI2v97EN2AafbaxIEhKvxYNVLOpaOGoE+XArAyF+d6bhSuKWVWhEeDhvSmZg==,iv:71ttCOM7wL6sT6xlfippn+fA6ds5qkgnPLdH0ii4k1Q=,tag:hY5/QQuyEJ29jq/wVstKOQ==,type:str]"
 		},
 		{
 			"url": "umd",
 			"name": "University of Maryland",
-			"token": "ENC[AES256_GCM,data:D76n8es0o3NlNyE79x2pn4MPw0biXnODiTQYfIqog2dURqnFbjpZhoyuyEdb2xWsg//VAErrlkUQSwaNa9I3ag==,iv:U+6QFSrRI4alPFfZs198SZlvNyHbtB5Yxd3QdmvgxWU=,tag:wlTPnsIFck5vfYnBX85dkg==,type:str]"
+			"token": "ENC[AES256_GCM,data:ZQguhVCxEddtaiXgiUP1ppz9BTDOxnqIsfYbSR+QRc+82Kwigl1chzK10kAAVdGVrbwD2j0TmrD2a/E/pB047Q==,iv:fU1RmTNI3eberPFHoi79QMMHlBRkxQ8QutdeqwPh0hk=,tag:xXPJoHLfguKDgXgw2L2bMQ==,type:str]"
 		},
 		{
 			"url": "unc-chapel-hill",
 			"name": "University of North Carolina at Chapel Hill",
-			"token": "ENC[AES256_GCM,data:W2H437QSwTTo9qsoJvP76u1y7iU3SejORbZ+3ywjogHH721m8Zw+Hpb+f1gzPokiQZ2jyDhuMhmDkgwWch3JuQ==,iv:f7yX70n2Fic9c8jzoiSRGeynmxdseNp98AUViChp7y8=,tag:yJhqZb89QjsvTzyFpduAeg==,type:str]"
+			"token": "ENC[AES256_GCM,data:xTb5vLcWZQRLEwfnkd4PCASCsp0n324nffVH5euIo4nepqklg6Y+l1/1O9p7hFjyUqeb7lpVovAsa4bGxsl2mg==,iv:EUHIQ0tjmkGCoT3OsTpXLFw8ckZy1ql87mEj4u+sVqs=,tag:rEohGsP1bz7NpWyOhAlSWQ==,type:str]"
 		},
 		{
 			"url": "uncw",
 			"name": "University of North Carolina at Wilmington",
-			"token": "ENC[AES256_GCM,data:Uw6IPbFU9zM0jmRTv1p3Dr5jgbIfHO2OH8qywdOqOp0erUUuY6L26DslE9EOMwL/rXSgz9u9zZ+WuWSDepp/fA==,iv:AY3K8+7tgDV2pI1hqONmpkXUoU8Szt1Y400urw85AjE=,tag:FeMkSvlQ1HJSFNveUwkhKg==,type:str]"
+			"token": "ENC[AES256_GCM,data:EIBXEK/e/34cgRlpoxZnyKNS9MlAVUNr3fPVbCl11JaBq9oPXXoh4kQZEFqTZ+I0dM4jlMu+0PTyesKmUl2E3Q==,iv:+rGDeS/+mIu6IjIGh/pnPvlxnZ5VPIdTB8f0blCbDT8=,tag:Dt5/j4LF9DMsYc+NrCxr6Q==,type:str]"
 		},
 		{
 			"url": "und",
 			"name": "University of North Dakota",
-			"token": "ENC[AES256_GCM,data:IcKdxxf1RkLm5GwdW0L1lTqoHGQBZD6LwHO2UQuBbg4Ow2VrjMgjPQsapUkZ3DaYOJfsyz3E6mwb0r5NFIGDSg==,iv:NAuXon+Y5kupXZTDlEhWDOF2WplgCKdp9BY6ZEFiS9Q=,tag:SMRehUOtdQotXYorPl/idw==,type:str]"
+			"token": "ENC[AES256_GCM,data:6KbWiZbElh72Bnv3cqDVZld/iQPtksUqVfzyLMwEeXdLN6VwF6js8c08dc/QEh+mN2xIKBo0E8d4pu17vn70jQ==,iv:Qv4rVRkkeoyl3RFtQ9kKNtlRhm1L7kndYeid4gdt6J0=,tag:iv2BfQE4z6Bz7kU5Bb3NVQ==,type:str]"
 		},
 		{
 			"url": "uta",
 			"name": "University of Texas at Arlington",
-			"token": "ENC[AES256_GCM,data:WSNRZSG1VcKv385A00tqPe4TrBLo9kIyuTmRbA4c/Pe5ll4yQJjWCtViXLlShSA0c0kCDwnO6idJ5yR5KyLYVA==,iv:aNWl0mmEpfG+2s/2GpB0BmyyV7Ud7brjXYjOgU4QGXE=,tag:Looe6Dd+YAU72A6/7PUNKg==,type:str]"
+			"token": "ENC[AES256_GCM,data:FPsJ5VyaZ/FEUliZwdIL2gtQheqkd3pOKyEJBr9OmS/l62Uoyl1CACH7/D9Ec3pqMHc1sO6DqPSYZqIYH50cqA==,iv:2X9jDVUcsdqthj+B9yI5tQa9QICDv6wRUDPCTsrXXto=,tag:sa94bqcm7C0/Dptr5TfUTw==,type:str]"
 		},
 		{
 			"url": "utpb",
 			"name": "University of Texas at Permian Basin",
-			"token": "ENC[AES256_GCM,data:ONM55FL9LPJnDyz12VF5w+qb3Xnlj7YrFloHpe6rxH7KjleSPf4d5OIAfbQ0ZjA9p+2bYiZp2sTDr2UjfrJcGw==,iv:e/m+U4qXd4ZuUSU4sMhG/8Qjo7aWSKGRKl2bt/RA6WU=,tag:CiYOXhVfWDgSAYEcOqCd7w==,type:str]"
+			"token": "ENC[AES256_GCM,data:2sRArEfG0rGfU33LkWuVuG1Z7MjRBXH9DBLGWz5DRUl69ADHIP3Y4ifTWhhTyOYPjLnrsr3RdNtL5L3PWy99LA==,iv:gvLkeRks+sIBtq+auzlkA177Orqxb16hXjrETSokoUQ=,tag:L8NrvcUGbZXEgkxrR8vI4g==,type:str]"
 		},
 		{
 			"url": "uwyo",
 			"name": "University of Wyoming",
-			"token": "ENC[AES256_GCM,data:NLpqSpjnVMUmPqIUP3uRL/eUq/hO1EYVrVT8dKyS1DvoRr6EpgSjO4fwSYhKPAan1oVQgK3lAXg70EiGbtRqAg==,iv:xG82fa8ZUKDzb3POhpFQdzNscc0Sb2RILeWW7teYkbc=,tag:e9v9RrAST5/zOwCj5d4IyA==,type:str]"
+			"token": "ENC[AES256_GCM,data:BT8lNV7p+IBzTFINPSrRJg31yg2smZ5rwNPSqivs7JvWOGNJ6qQkrQ12swCapZvtZXTTuEQ0Xcr4ZsK9JVYmBA==,iv:GVFCSJB+Qv/8vL/yLc7zNM9AEGPuvkTshRh2v3GiOOE=,tag:wyylUKNa7DOeVvyJxrYQsg==,type:str]"
 		},
 		{
 			"url": "virginia",
 			"name": "University of Virginia",
-			"token": "ENC[AES256_GCM,data:nnQoj8xMD+zzNKaxSDJTenzDVkSMTAwFlEU4wQeslwRcCd5vczgITi+Bdj5RH2gxKBPyo7RNgkIjQm5AM4GqSw==,iv:TWbiOAG3tx5CoXZ0EeqPMSQJnBdqmyjgBK8YhbDO47U=,tag:urnbAN/Txx+U7WpYgZ4IPg==,type:str]"
+			"token": "ENC[AES256_GCM,data:6vzsTYAaDc3rNsQn4+MDJCVE/27OQ1G7r4Km2MtOMF2UaG/ovIn4KWkn+LOA8iO4X6cj9pX+Lu14geXhn4WxWg==,iv:uCxu4k1/p9vuBtERBlnxUiwRfdciG1HOKxJXFqD92lY=,tag:/aVYEVclX2NDujhUTEZ7EA==,type:str]"
 		},
 		{
 			"url": "wcu",
 			"name": "Western Carolina University",
-			"token": "ENC[AES256_GCM,data:hlYR/5jJgS66RvNzZ9mMsZ3Kjdunh5jqnzgt/+ri2IrFPA0TXNTE28OrXIMDUdPSsZJY9SW3J4WCp4vS0oSonQ==,iv:AATOwQqS2G9GAgOX+Ur3ETUQdT0EalsC1goJ0S7J46s=,tag:WwWBqNbgf0UouSAoryETIg==,type:str]"
+			"token": "ENC[AES256_GCM,data:prqZeB3s8fCdWzb4g41Y657Z7Q2IsU//tRjfuCfs0BAuXUQqiq7Zxod7EaPMT3Ed/nHmmwCfZ2wBuiHAKbLNzw==,iv:3C26DjtSiWboWW7wsbIe7E5M8uSFiqy7rnXKsb/P53w=,tag:V7vDO+dOkgMZ6FRfVylWMA==,type:str]"
 		},
 		{
 			"url": "weber",
 			"name": "Weber State University",
-			"token": "ENC[AES256_GCM,data:80xRQAh8JlXaXNYHt+WjNyRg6EVmX8tkkS80cmJ78eSOcVZ/w9JmvoYWPiiW4x+RXDDjbJbJqBFYVcg4+GVNcQ==,iv:HpV0LSJPJgYPj/lvZJE/lFfvgiNI22KKIceFuFVY5Ys=,tag:vvw2+hoOBVqcxDBPMq8g+g==,type:str]"
+			"token": "ENC[AES256_GCM,data:RDNXXWqpQfqqDjuKhHVBozoWTl6MXsBVemka41DziVuboEJpcbf9EG/vLXp185Nr5zmoKmM0E5zSXcR1gi8gIQ==,iv:74fMFW2RIEEAqueQ2W43aVg+gBtAAcDlD6L0r6ww3g0=,tag:XNzf05wX89omFn93WmjmgA==,type:str]"
 		},
 		{
 			"url": "whitman",
 			"name": "Whitman College",
-			"token": "ENC[AES256_GCM,data:B0qnuFhDpo5PCWV0vs/hU7mWvjUudKQCQHTXbs6lT4dyXQM+rnXPfq7xO/U7stO1alN8+10t2w3oyvKiHbCVvw==,iv:BVsY7bxhS80cA3Z38YZUmuMiyAMgpJoLIJ6U4WLALVA=,tag:jOr0AlOQ0oYoG6J16SYtpw==,type:str]"
+			"token": "ENC[AES256_GCM,data:RtoVbat0zSOCtu121FbNn0I1NWF6y1186I3WG5xx46kMwqFi66bLYHrPYP8hxsdi1zXutCqp3tk+zGzmyeU38w==,iv:2+YFDxBy5+FiSu/CKjNbg6MVKraHwvjhz3UvgMCX6d4=,tag:iRnEMxfGiphMHEMWItGVJw==,type:str]"
 		},
 		{
 			"url": "willamette",
 			"name": "Willamette University",
-			"token": "ENC[AES256_GCM,data:iERMCaL3jNJd80q3xFHssZEupwf5yJ3FGW+6DSB1Mp5IjqLxbXy/sEjpW4nOb/3rVlv9O/64gxveExcg11Rzyg==,iv:/63ILl6p2q2B3IyC2ycbgbgA+ZHVSJktvFn9LnQ93Ws=,tag:llnjMCn3D0O909oRkaH46g==,type:str]"
+			"token": "ENC[AES256_GCM,data:j8oOl2DAsJM7z1wZTbR0lzpHqFKZ1PWWsC3/ISXIVxlbDdxURQf4oblzRsryQru4sQajgu0BDRBlI2zrxDmo8A==,iv:HhOC0+mL4LmQSlKk86dAKE+gtnP07Rnbof19/6C6JD8=,tag:GkgxZ0PLVlcN2bqBsK01IA==,type:str]"
 		},
 		{
 			"url": "wlac",
 			"name": "West LA College",
-			"token": "ENC[AES256_GCM,data:DOxuBFkSVbyw07AsEJ09smJ4WgRfM1OvCuBJBVmE/I4UtHH5ROmMDlStF20QJjD1/e34S+TJ4X4v2B0FO5fbjA==,iv:yEXr4bxjUuyLNLeclhis2E8B9E3e1FhyuNHiUBDX6nw=,tag:l//F6A9OG0i2+0B7cwnFnw==,type:str]"
+			"token": "ENC[AES256_GCM,data:XIWPu6BYEdU9fO3yC6om8anU1BhpNVAI85aCFTm47221AlDlMixMQA/6S9gVVEQ9Syx62CdjuYUJOS30NI0hBw==,iv:CDv6x0E5G5KGQAOLO6R+wmxIurs1j62DFeKVYAnABbg=,tag:vkB68Yfw9zB798FWAxjXKA==,type:str]"
 		},
 		{
 			"url": "york",
 			"name": "York College, CUNY",
-			"token": "ENC[AES256_GCM,data:TDiQQVU39ZDgHLXHi1mptukVowbSB40noEUvGOd9q0zJO3MCE1HC0jk7henIz6sIrHAgi9yN1NVQiJHMgOX4KQ==,iv:AiOXK2MqOIeTGA8TBkTHmU47ZvFHoU9pkD3PC3+Rf/k=,tag:AsVnpLJ0doo49lQGP5A3tA==,type:str]"
+			"token": "ENC[AES256_GCM,data:nsOeEBDFTrD8Jz/r6Vjr0WrVeGbNtBZGGFj/QSomfBAS4E563DgdKp6UzZOgHsAH5djXUcQcdCTSDbZh12NZpg==,iv:ctKHtNAIttk3u17YeI6MUXceyPVM1YpoyZ/QEBWBA58=,tag:r1A33hFaNqABHDY5AVy4xQ==,type:str]"
 		}
 	],
 	"sops": {
-		"kms": null,
 		"gcp_kms": [
 			{
 				"resource_id": "projects/cb-1003-1696/locations/global/keyRings/sops/cryptoKeys/sops-key",
-				"created_at": "2026-09-29T01:05:44Z",
-				"enc": "CiQAjZWTiT5LpHHzKz1WigTBJ19cAT/SDL2VdHEuzNI77iqOMXESSQDTgEeKOgJzqRDLtEKvp/GjJZ7sQAkMnIXb6NJS+HF+YEDxivkNUDi+f+W4SZJGxgRevlZQW5Tm+fPZ9ESUJk9B4EoSFPAUnT8="
+				"created_at": "2026-10-01T20:03:20Z",
+				"enc": "CiQAjZWTiemSUFvn06nXf4BYK6YyK7sxOcA/OfZXLkmP6IyPNokSSADTgEeKI6UvuCJCMFf1mnDNhf44mQFX8Qq4FamHWjxRnHv8mCLhilyHMqutGp7jS6ESNqwyTHI+gxvfodnU3KZ4Ghv0EoYjtA=="
 			}
 		],
-		"azure_kv": null,
-		"hc_vault": null,
-		"age": null,
-		"lastmodified": "2026-09-29T01:05:45Z",
-		"mac": "ENC[AES256_GCM,data:7sKnMu+mqcY1U978RXxoFzoutRUvYy2mPzRhsOTrZr6ilobRWyAp+6Iac5znz+DdD14wEsnwxUHSd3cflDHNrb8qBvxXhow5494j0xi5T3H2Z6dfaWkyDG+wVSeK8/qc6C/K8jZ6xI53CaYFG7tdx0w4Y6cL7ICTOlYUlXSH0xo=,iv:jifMZwaQe261XiTUgy+13sY5hKuzUbjanXVZJkXduWY=,tag:QDeLcYsWlsV7wwX59E4NiA==,type:str]",
-		"pgp": null,
+		"lastmodified": "2026-10-01T20:03:20Z",
+		"mac": "ENC[AES256_GCM,data:GLLD9hHSQcG+yu+9Smkz//3LgGwznIrFE3TwvBYGAZ+3Zx8o08HVIsNVmE0FvqFP05EAjbfEMPFd79bWUOZa9FU8fTfBQNGQ6nRNalfmOGmg7eG185EDWEr5AbXmsXpfrAtn048o5JzCSnNVi/orKOzv3QsLiMhJoQUIf0yeCRw=,iv:+QqIxixz3SoTIy9oI1gUYGdmkJSBRB/41ntc+S7aE5I=,tag:DNcdCUf1aS5VFAgCbSPXUA==,type:str]",
 		"encrypted_regex": "^(token)$",
-		"version": "3.8.1"
+		"version": "3.11.0"
 	}
 }
