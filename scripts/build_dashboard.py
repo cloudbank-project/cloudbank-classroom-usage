@@ -308,9 +308,32 @@ def hub_cost_block(days=7, min_usd=1.0):
     body += row("Total", week[["gpu_usd", "cpu_usd", "total"]].sum(), all_users, " class='tot'")
 
     term_label = (term or "").replace("_", " ").title()
+
+    # The week's whole bill, base included, as a headline above the split.
+    dc = read_data("daily_costs.csv")
+    wk = dc[dc["date"].isin(dates)].groupby("bucket")["usd"].sum()
+    parts = [(b, float(wk.get(b, 0.0))) for b in BUCKETS]
+    grand = sum(v for _, v in parts) or 1.0
+    bar = "".join(
+        f"<span class='seg {b}' style='width:{v / grand * 100:.2f}%' "
+        f"title='{LABELS[b]} {money(v)}'></span>"
+        for b, v in parts if v > 0
+    )
+    split = " · ".join(
+        f"<span class='lg'><i class='sw {b}'></i>{LABELS[b]} {money(v, 0)}</span>" for b, v in parts
+    )
+    headline = f"""
+  <div class="weektotal">
+    <span class="k">Total cost, {escape(dates[0])} to {escape(dates[-1])}</span>
+    <span class="big">{money(grand, 0)}</span>
+    <span class="s">{money(grand / len(dates), 0)}/day · {money(week['total'].sum(), 0)} of it student compute,
+      split by institution below</span>
+    <div class="splitbar">{bar}</div>
+    <div class="legend">{split}</div>
+  </div>"""
     return f"""
 <section>
-  <h2>Cost by institution</h2>
+  <h2>Cost by institution</h2>{headline}
   <p class="sub">CPU and GPU pool cost for {escape(dates[0])} to {escape(dates[-1])}, split by each
      hub's measured usage. Users are accounts active in {escape(term_label or 'the current term')}.</p>
   <table><thead><tr><th>Institution</th><th>Users</th><th>GPU</th><th>CPU</th>
@@ -545,6 +568,12 @@ tr.tot th,tr.tot td{border-top:2px solid var(--rule);border-bottom:none}
 .note{border-left:3px solid var(--warn);background:var(--sunken);padding:13px 16px;
 border-radius:3px;font-size:13.5px;color:var(--ink2)}
 .note b{color:var(--warn)}
+.weektotal{margin:14px 0 18px;display:flex;flex-direction:column;gap:4px}
+.weektotal .k{font-size:10.5px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.weektotal .big{font-size:44px;font-weight:650;letter-spacing:-.02em;line-height:1.05;font-variant-numeric:tabular-nums}
+.weektotal .s{font-size:13px;color:var(--muted)}
+.splitbar{display:flex;height:12px;border-radius:3px;overflow:hidden;margin-top:10px;background:var(--sunken)}
+.splitbar .seg.base{background:var(--base)}.splitbar .seg.cpu{background:var(--cpu)}.splitbar .seg.gpu{background:var(--gpu)}
 .cols{display:grid;grid-template-columns:1fr 1fr;gap:26px}
 @media(max-width:760px){.cols{grid-template-columns:1fr}}
 footer{color:var(--muted);font-size:12px;border-top:1px solid var(--rule);padding-top:16px}
