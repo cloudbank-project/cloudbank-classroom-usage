@@ -267,12 +267,21 @@ def billed_block(daily):
     return html, stats
 
 
-def hub_cost_block(days=7, min_usd=1.0):
-    """Cost by institution over the last `days` complete days, with term users."""
+def hub_cost_block(min_usd=1.0):
+    """Cost by institution for the last complete Mon-Sun week, with term users.
+
+    Same weeks as the Weekly chart (weeks ending Sunday), so the two agree.
+    """
     hc = read_data("hub_costs.csv")
     if hc.empty:
         return None
-    dates = sorted(hc["date"].unique())[-days:]
+    newest = date.fromisoformat(max(hc["date"]))
+    sunday = newest - timedelta(days=(newest.weekday() + 1) % 7)
+    dates = [str(sunday - timedelta(days=6 - i)) for i in range(7)]
+    if not set(dates) <= set(hc["date"]):
+        sunday -= timedelta(days=7)
+        dates = [str(sunday - timedelta(days=6 - i)) for i in range(7)]
+    span = f"{date.fromisoformat(dates[0]):%b %-d} – {sunday:%b %-d, %Y}"
     week = hc[hc["date"].isin(dates)].groupby("college")[["gpu_usd", "cpu_usd"]].sum()
     week["total"] = week["gpu_usd"] + week["cpu_usd"]
 
@@ -324,7 +333,7 @@ def hub_cost_block(days=7, min_usd=1.0):
     )
     headline = f"""
   <div class="weektotal">
-    <span class="k">Total cost, {escape(dates[0])} to {escape(dates[-1])}</span>
+    <span class="k">Total cost, week of {escape(span)}</span>
     <span class="big">{money(grand, 0)}</span>
     <span class="s">{money(grand / len(dates), 0)}/day · {money(week['total'].sum(), 0)} of it student compute,
       split by institution below</span>
@@ -334,7 +343,7 @@ def hub_cost_block(days=7, min_usd=1.0):
     return f"""
 <section>
   <h2>Cost by institution</h2>{headline}
-  <p class="sub">CPU and GPU pool cost for {escape(dates[0])} to {escape(dates[-1])}, split by each
+  <p class="sub">CPU and GPU pool cost for the week of {escape(span)} (Mon–Sun), split by each
      hub's measured usage. Users are accounts active in {escape(term_label or 'the current term')}.</p>
   <table><thead><tr><th>Institution</th><th>Users</th><th>GPU</th><th>CPU</th>
   <th>Total</th><th>Per user</th></tr></thead><tbody>{body}</tbody></table>
