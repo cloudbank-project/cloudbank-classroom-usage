@@ -342,11 +342,12 @@ def hub_cost_block(min_usd=1.0):
   </div>"""
     return f"""
 <section>
-  <h2>Cost by institution</h2>{headline}
+  <h2>Cost and Users by Institutions</h2>{headline}
   <p class="sub">CPU and GPU pool cost for the week of {escape(span)} (Mon–Sun), split by each
      hub's measured usage. Users are accounts active in {escape(term_label or 'the current term')}.</p>
-  <table><thead><tr><th>Institution</th><th>Users</th><th>GPU</th><th>CPU</th>
+  <table class="sortable"><thead><tr><th>Institution</th><th>Users</th><th>GPU</th><th>CPU</th>
   <th>Total</th><th>Per user</th></tr></thead><tbody>{body}</tbody></table>
+  <p class="muted">Click a column heading to sort.</p>
   <p class="muted">Modeled, not billed. GPU is split by GPU pod-hours and CPU by notebook memory
      requested, so idle pre-warm time lands on the hubs that used those nodes. The always-on base
      (core-pool, disks, cluster fees) is shared by every hub and is not split here. Per user is
@@ -455,32 +456,22 @@ def build():
     # what fraction of spend is the floor?
     base_pct = base_day / tot_day * 100 if tot_day else 0
 
-    stat_cards = [
-        ("Always-on base", money(base_day), f"{money(base_day*30, 0)}/mo · {base_pct:.0f}% of spend"),
-        ("Variable (students)", money(var_day), f"{money(var_day*30, 0)}/mo · CPU + GPU"),
-        ("Total per day", money(tot_day), "7-day average"),
-        ("Last 30 days", money(daily.tail(30)["total"].sum(), 0), f"through {latest}"),
-    ]
+    # Three boxes only: billed per day, the 30-day total, and term users.
+    stat_cards = []
     if billed and billed["days"]:
-        stat_cards.insert(3, (
+        stat_cards.append((
             "Billed per day",
             money(billed["billed_day"]),
             f"{billed['days']}-day average through {billed['through']}",
         ))
+    stat_cards.append(
+        ("Last 30 days", money(daily.tail(30)["total"].sum(), 0), f"through {latest}")
+    )
     if "users" in usage:
         u = usage["users"]
         term = (u["current_term"] or "").replace("_", " ").title()
         stat_cards.append(
             (f"Users, {term}", f"{u['current_users']:,}", f"{u['institutions']} institutions")
-        )
-    if "otter" in usage:
-        ot = usage["otter"]
-        stat_cards.append(
-            (
-                f"Notebooks, {ot['term']}",
-                f"{ot['term_total']:,}",
-                f"{ot['term_users']:,} submissions · {ot['total']:,} all time",
-            )
         )
 
     cards = "".join(
@@ -546,6 +537,10 @@ p{margin:0}
 .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(168px,1fr));
 gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:4px;overflow:hidden}
 .stat{background:var(--panel);padding:15px 17px;display:flex;flex-direction:column;gap:3px}
+table.sortable thead th{cursor:pointer;user-select:none}
+table.sortable thead th:hover{text-decoration:underline}
+table.sortable thead th[aria-sort=ascending]::after{content:' \2191'}
+table.sortable thead th[aria-sort=descending]::after{content:' \2193'}
 .stat .k{font-size:10.5px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
 .stat .v{font-size:25px;font-weight:600;font-variant-numeric:tabular-nums;line-height:1.15}
 .stat .s{font-size:12.5px;color:var(--muted)}
@@ -602,6 +597,8 @@ footer{color:var(--muted);font-size:12px;border-top:1px solid var(--rule);paddin
 
 <div class="stats">{cards}</div>
 
+{hub_html or ""}
+
 <div class="note">
   <b>The charts are modeled figures.</b> Cost is measured node-hours &times; Cloud
   Billing Catalog list price, which is the only figure for the last 1–2 days.
@@ -618,8 +615,6 @@ footer{color:var(--muted);font-size:12px;border-top:1px solid var(--rule);paddin
   <div class="legend">{legend}</div>
   <div class="chartwrap">{stacked_bars(daily.tail(30))}</div>
 </section>
-
-{hub_html or ""}
 
 <div class="cols">
   <section>
@@ -666,7 +661,55 @@ footer{color:var(--muted);font-size:12px;border-top:1px solid var(--rule);paddin
   Built by <code>cloudbank-classroom-usage</code>.
 </footer>
 
-</div></body></html>"""
+</div>
+<script>
+// Click a heading in a .sortable table to sort by that column. Values are
+// compared as numbers when both parse after stripping $ , % and spaces, so
+// "$1,234" and "12" sort numerically while institution names sort as text.
+document.querySelectorAll("table.sortable").forEach(function (table) {{
+  var head = table.tHead && table.tHead.rows[0];
+  if (!head) return;
+  var body = table.tBodies[0];
+  if (!body) return;
+
+  function value(row, i) {{
+    var cell = row.cells[i];
+    return cell ? cell.textContent.trim() : "";
+  }}
+  function num(text) {{
+    var n = parseFloat(text.replace(/[$,%\\s]/g, ""));
+    return isNaN(n) ? null : n;
+  }}
+
+  Array.prototype.forEach.call(head.cells, function (th, i) {{
+    th.tabIndex = 0;
+    th.setAttribute("role", "button");
+    th.addEventListener("click", function () {{
+      var dir = th.dataset.dir === "asc" ? "desc" : "asc";
+      Array.prototype.forEach.call(head.cells, function (o) {{
+        delete o.dataset.dir;
+        o.removeAttribute("aria-sort");
+      }});
+      th.dataset.dir = dir;
+      th.setAttribute("aria-sort", dir === "asc" ? "ascending" : "descending");
+
+      var rows = Array.prototype.slice.call(body.rows);
+      rows.sort(function (a, b) {{
+        var x = value(a, i), y = value(b, i);
+        var nx = num(x), ny = num(y), r;
+        if (nx !== null && ny !== null) r = nx - ny;
+        else r = x.localeCompare(y, undefined, {{ numeric: true }});
+        return dir === "asc" ? r : -r;
+      }});
+      rows.forEach(function (r) {{ body.appendChild(r); }});
+    }});
+    th.addEventListener("keydown", function (e) {{
+      if (e.key === "Enter" || e.key === " ") {{ e.preventDefault(); th.click(); }}
+    }});
+  }});
+}});
+</script>
+</body></html>"""
 
     DOCS_DIR.mkdir(exist_ok=True)
     (DOCS_DIR / "index.html").write_text(html, encoding="utf-8")
