@@ -435,6 +435,75 @@ def usage_blocks():
     return out
 
 
+def nice_max(v):
+    """Round a peak up to 1, 2, 2.5 or 5 x 10^n so the top gridline is a clean number."""
+    if v <= 0:
+        return 1
+    exp = 10 ** int(f"{v:e}".split("e")[1])
+    for step in (1, 2, 2.5, 5, 10):
+        if v <= step * exp:
+            return step * exp
+    return 10 * exp
+
+
+def column_path(x, top, w, base, r=4):
+    """A column with a 4px rounded data end and a square foot on the baseline."""
+    h = base - top
+    if h < r * 1.5:
+        return f'<rect x="{x:.1f}" y="{top:.1f}" width="{w}" height="{max(h, 0.8):.1f}"'
+    return (f'<path d="M{x:.1f},{base:.1f}V{top + r:.1f}Q{x:.1f},{top:.1f} {x + r:.1f},{top:.1f}'
+            f'H{x + w - r:.1f}Q{x + w:.1f},{top:.1f} {x + w:.1f},{top + r:.1f}V{base:.1f}Z"')
+
+
+def grouped_columns(groups, series, *, fmt, height=210, bar_w=18, group_gap=16,
+                    label_last=False, tick_every=1):
+    """Grouped column chart as inline SVG.
+
+    groups: x-axis labels. series: (name, values, css class); a None value leaves
+    an empty slot so gaps in the data stay visible. Bars inside a group sit 2px
+    apart; every bar carries a hover title. label_last puts the value above the
+    last series' bars only, so labels stay sparing.
+    """
+    n = len(series)
+    peak = nice_max(max((v for _, vals, _ in series for v in vals if v), default=1))
+    pad_l, pad_b, pad_t = 52, 24, 18 if label_last else 8
+    group_w = n * bar_w + (n - 1) * 2
+    width = pad_l + len(groups) * (group_w + group_gap) + 8
+    base = height - pad_b
+    plot_h = base - pad_t
+
+    parts = [f'<svg viewBox="0 0 {width} {height}" width="100%" height="{height}" '
+             f'role="img" class="chart">']
+    for frac in (0, 0.5, 1):
+        y = base - frac * plot_h
+        parts.append(f'<line x1="{pad_l}" y1="{y:.1f}" x2="{width - 8}" y2="{y:.1f}" class="grid"/>'
+                     f'<text x="{pad_l - 8}" y="{y + 4:.1f}" class="ylab">{fmt(peak * frac)}</text>')
+    for gi, g in enumerate(groups):
+        gx = pad_l + gi * (group_w + group_gap) + group_gap / 2
+        for si, (name, vals, cls) in enumerate(series):
+            v = vals[gi]
+            if v is None or pd.isna(v) or v <= 0:
+                continue
+            x = gx + si * (bar_w + 2)
+            top = base - v / peak * plot_h
+            el = column_path(x, top, bar_w, base)
+            close = "</rect>" if el.startswith("<rect") else "</path>"
+            parts.append(f'{el} class="col {cls}"><title>{escape(str(g))} {escape(str(name))}: '
+                         f'{fmt(v)}</title>{close}')
+            if label_last and si == n - 1:
+                parts.append(f'<text x="{x + bar_w / 2:.1f}" y="{top - 5:.1f}" class="vlab">{fmt(v)}</text>')
+        if g and gi % tick_every == 0:
+            parts.append(f'<text x="{gx + group_w / 2:.1f}" y="{height - 7}" class="xlab">{escape(str(g))}</text>')
+    parts.append("</svg>")
+    return "".join(parts)
+
+
+def year_legend(items):
+    return "<div class='legend'>" + "".join(
+        f"<span class='lg'><i class='sw {cls}'></i>{escape(str(name))}</span>" for name, cls in items
+    ) + "</div>"
+
+
 PILOT_RAW = "https://raw.githubusercontent.com/sean-morris/cloudbank-pilot-hub-users/main"
 MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
 
@@ -470,7 +539,7 @@ def yoy_block():
     term_rows = []
     for season in ["spring", "summer", "fall"]:
         cells, vals = [], []
-        for y in years:
+        for y in years[-4:]:
             col = f"{season}_{y}"
             n = int(u[col].sum()) if col in u else 0
             schools = int((u[col] > 0).sum()) if col in u else 0
@@ -483,7 +552,15 @@ def yoy_block():
         last = [v for v in vals if v]
         delta = change_cell(last[-1], last[-2]) if len(last) >= 2 else "<td class='num muted'>–</td>"
         term_rows.append(f"<tr><th scope='row'>{season.title()}</th>{''.join(cells)}{delta}</tr>")
-    year_heads = "".join(f"<th class='num'>{y}</th>" for y in years)
+    year_heads = "".join(f"<th class='num'>{y}</th>" for y in years[-4:])
+    cyrs = years[-4:]
+    ycls = {y: f"yr{i + 4 - len(cyrs)}" for i, y in enumerate(cyrs)}
+    seasons = ["Spring", "Summer", "Fall"]
+    term_chart = year_legend([(y, ycls[y]) for y in cyrs]) + grouped_columns(
+        seasons,
+        [(y, [int(u[f"{se.lower()}_{y}"].sum()) if f"{se.lower()}_{y}" in u else None for se in seasons],
+          ycls[y]) for y in cyrs],
+        fmt=lambda v: f"{v:,.0f}", bar_w=22, group_gap=28, label_last=True)
 
     m["year"] = m["month"].str[:4].astype(int)
     m["mon"] = m["month"].str[5:7].astype(int)
@@ -500,6 +577,12 @@ def yoy_block():
             mon in mau.index and len(mau_years) >= 2) else (float("nan"), float("nan"))
         mau_rows.append(f"<tr><th scope='row'>{MONTHS[mon - 1]}</th>{cells}{change_cell(cur, prev)}</tr>")
     mau_heads = "".join(f"<th class='num'>{y}</th>" for y in mau_years)
+    mcls = {y: f"yr{i + 4 - len(mau_years[-2:])}" for i, y in enumerate(mau_years[-2:])}
+    mau_chart = year_legend([(y, mcls[y]) for y in mau_years[-2:]]) + grouped_columns(
+        MONTHS,
+        [(y, [mau.at[mon, y] if mon in mau.index else None for mon in range(1, 13)], mcls[y])
+         for y in mau_years[-2:]],
+        fmt=lambda v: f"{v:,.0f}", bar_w=11, group_gap=10)
 
     cost_html = ""
     bpath = BASE_DIR / "data" / "billed_monthly.csv"
@@ -520,9 +603,20 @@ def yoy_block():
                 float("nan"), float("nan"))
             crow.append(f"<tr><th scope='row'>{MONTHS[mon - 1]}</th>{cells}{change_cell(cur, prev)}</tr>")
         cheads = "".join(f"<th class='num'>{y}</th>" for y in cyears)
+        span = pd.period_range(f"{cyears[0]}-01", b["month"].max(), freq="M")
+        bnet = b.set_index("month")["net"]
+        bill_chart = grouped_columns(
+            [p.strftime("%Y") if p.month == 1 else "" for p in span],
+            [("billed", [bnet.get(str(p)) for p in span], "yr2")],
+            fmt=lambda v: money(v, 0), bar_w=8, group_gap=3, height=200)
 
         both = b.merge(m[["month", "cloudbank"]], on="month").dropna(subset=["cloudbank"])
         both = both[both["cloudbank"] > 0]
+        per = both.sort_values("month")
+        per_chart = grouped_columns(
+            [pd.Timestamp(mo + "-01").strftime("%b %y") for mo in per["month"]],
+            [("per active user", list(per["net"] / per["cloudbank"]), "yr2")],
+            fmt=lambda v: money(v), bar_w=16, group_gap=12, height=170, tick_every=3)
         per_rows = "".join(
             f"<tr><th scope='row'>{pd.Timestamp(r['month'] + '-01'):%b %Y}</th>"
             f"<td class='num'>{money(r['net'], 0)}</td><td class='num'>{int(r['cloudbank']):,}</td>"
@@ -531,12 +625,14 @@ def yoy_block():
         )
         cost_html = f"""
   <h3>Billed per month</h3>
-  <table><thead><tr><th>Month</th>{cheads}<th class='num'>vs last year</th></tr></thead>
+  <div class="chartwrap">{bill_chart}</div>
+  <table><thead><tr><th>Month</th>{cheads}<th class='num'>YoY</th></tr></thead>
   <tbody>{''.join(crow)}</tbody></table>
   <p class="muted">Net of credits, from the CloudBank billing export. Mar 2024 – Aug 2025 is
      not in the export, so those months show as –. The current month fills in as the
      export catches up.</p>
   <h3>Cost per monthly active user</h3>
+  <div class="chartwrap">{per_chart}</div>
   <table><thead><tr><th>Month</th><th class='num'>Billed</th><th class='num'>Active users</th>
   <th class='num'>Per user</th></tr></thead><tbody>{per_rows}</tbody></table>"""
 
@@ -548,15 +644,17 @@ def yoy_block():
   <div class="cols">
     <div>
       <h3>Users per term <span class="muted">· institutions</span></h3>
-      <table><thead><tr><th>Term</th>{year_heads}<th class='num'>vs last year</th></tr></thead>
-      <tbody>{''.join(term_rows)}</tbody></table>
+      <div class="chartwrap">{term_chart}</div>
+      <div class="tablewrap"><table><thead><tr><th>Term</th>{year_heads}<th class='num'>YoY</th></tr></thead>
+      <tbody>{''.join(term_rows)}</tbody></table></div>
       <p class="muted">* {escape(current_term.replace('_', ' ').title())} is in progress.
          Counts before Fall 2026 are restored from history after the August 2026 account loss.</p>
     </div>
     <div>
       <h3>Monthly active users</h3>
-      <table><thead><tr><th>Month</th>{mau_heads}<th class='num'>vs last year</th></tr></thead>
-      <tbody>{''.join(mau_rows)}</tbody></table>
+      <div class="chartwrap">{mau_chart}</div>
+      <div class="tablewrap"><table><thead><tr><th>Month</th>{mau_heads}<th class='num'>YoY</th></tr></thead>
+      <tbody>{''.join(mau_rows)}</tbody></table></div>
       <p class="muted">Distinct users active in each calendar month, from the hub's
          <code>jupyterhub_active_users</code> metric. Tracked from January 2025.</p>
     </div>
@@ -697,6 +795,15 @@ tbody th{font-weight:500;white-space:nowrap}
 .strong{font-weight:600}
 .muted{color:var(--muted);font-size:12.5px;margin-top:8px}
 .up{color:var(--gpu)}.down{color:var(--warn)}
+.col.yr0,.sw.yr0{fill:#93b6e3;background:#93b6e3}.col.yr1,.sw.yr1{fill:#6593d1;background:#6593d1}
+.col.yr2,.sw.yr2{fill:#3a71b9;background:#3a71b9}.col.yr3,.sw.yr3{fill:#1f4c8a;background:#1f4c8a}
+@media(prefers-color-scheme:dark){.col.yr0,.sw.yr0{fill:#36577f;background:#36577f}
+.col.yr1,.sw.yr1{fill:#41689c;background:#41689c}.col.yr2,.sw.yr2{fill:#5287cc;background:#5287cc}
+.col.yr3,.sw.yr3{fill:#86b3ee;background:#86b3ee}}
+.vlab{fill:var(--ink2);font-size:10.5px;text-anchor:middle;font-variant-numeric:tabular-nums}
+.col:hover{opacity:.8}
+.cols>div{min-width:0}
+.tablewrap{overflow-x:auto}
 td .muted{font-size:11.5px;margin:0}
 .muted-cell{color:var(--muted)}
 .tag{font-size:9.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);
