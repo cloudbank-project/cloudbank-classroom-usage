@@ -61,6 +61,15 @@ WHERE partition_date >= DATE_SUB('{since}', INTERVAL 1 DAY)
 GROUP BY 1, 2, 3, 4, 5
 """
 
+MONTHLY_QUERY = """
+SELECT
+  FORMAT_DATE('%Y-%m', DATE(usage_start_time, 'America/Los_Angeles')) AS month,
+  SUM(cost) AS gross,
+  SUM(IFNULL((SELECT SUM(c.amount) FROM UNNEST(credits) c), 0)) AS credits
+FROM `{table}`
+GROUP BY 1
+"""
+
 
 def access_token():
     return subprocess.run(
@@ -144,6 +153,13 @@ def main():
             print(f"  on {PROJECT}.")
             return
         raise
+    # Whole-history monthly totals for the year-over-year table (~100 MB scan).
+    monthly = pd.DataFrame(run_query(MONTHLY_QUERY.format(table=TABLE)))
+    for c in ("gross", "credits"):
+        monthly[c] = monthly[c].astype(float)
+    monthly["net"] = monthly["gross"] + monthly["credits"]
+    upsert("billed_monthly.csv", monthly.sort_values("month").round(2), ["month"])
+
     if not rows:
         print("  WARNING: query returned no rows -- is the billing-export-copy")
         print("  scheduled query running?")

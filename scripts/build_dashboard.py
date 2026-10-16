@@ -435,6 +435,136 @@ def usage_blocks():
     return out
 
 
+PILOT_RAW = "https://raw.githubusercontent.com/sean-morris/cloudbank-pilot-hub-users/main"
+MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+
+
+def change_cell(new, old):
+    if not old or pd.isna(old) or pd.isna(new):
+        return "<td class='num muted'>–</td>"
+    pct = (new - old) / old * 100
+    cls = "up" if pct >= 0 else "down"
+    return f"<td class='num {cls}'>{pct:+.0f}%</td>"
+
+
+def yoy_block():
+    """CloudBank users per term and monthly active users, year over year.
+
+    Both come from the cloudbank-pilot-hub-users registry repo rather than this
+    repo's users.csv: its term counts are restored from history after the
+    Aug 2026 account loss, and it keeps Prometheus monthly active users.
+    """
+    try:
+        u = pd.read_csv(f"{PILOT_RAW}/users.csv")
+        m = pd.read_csv(f"{PILOT_RAW}/data/active_monthly.csv")
+    except Exception as e:  # the page must still build if GitHub is unreachable
+        print(f"  WARNING: year-over-year data unavailable: {e}")
+        return ""
+
+    u = u[~u["college"].astype(str).str.startswith("Total")]
+    u = u[u["where"] == "cloudbank"]
+    terms = [c for c in u.columns if "_20" in c and u[c].sum() > 0]
+    years = sorted({int(t.split("_")[1]) for t in terms})
+    current_term = terms[-1]
+
+    term_rows = []
+    for season in ["spring", "summer", "fall"]:
+        cells, vals = [], []
+        for y in years:
+            col = f"{season}_{y}"
+            n = int(u[col].sum()) if col in u else 0
+            schools = int((u[col] > 0).sum()) if col in u else 0
+            vals.append(n)
+            note = " *" if col == current_term else ""
+            cells.append(
+                f"<td class='num'>{n:,}{note}<span class='muted'> · {schools}</span></td>"
+                if n else "<td class='num muted'>–</td>"
+            )
+        last = [v for v in vals if v]
+        delta = change_cell(last[-1], last[-2]) if len(last) >= 2 else "<td class='num muted'>–</td>"
+        term_rows.append(f"<tr><th scope='row'>{season.title()}</th>{''.join(cells)}{delta}</tr>")
+    year_heads = "".join(f"<th class='num'>{y}</th>" for y in years)
+
+    m["year"] = m["month"].str[:4].astype(int)
+    m["mon"] = m["month"].str[5:7].astype(int)
+    mau = m.pivot_table(index="mon", columns="year", values="cloudbank", aggfunc="sum")
+    mau_years = list(mau.columns)
+    mau_rows = []
+    for mon in range(1, 13):
+        cells = "".join(
+            f"<td class='num'>{int(mau.at[mon, y]):,}</td>"
+            if mon in mau.index and pd.notna(mau.at[mon, y]) else "<td class='num muted'>–</td>"
+            for y in mau_years
+        )
+        cur, prev = (mau.at[mon, mau_years[-1]], mau.at[mon, mau_years[-2]]) if (
+            mon in mau.index and len(mau_years) >= 2) else (float("nan"), float("nan"))
+        mau_rows.append(f"<tr><th scope='row'>{MONTHS[mon - 1]}</th>{cells}{change_cell(cur, prev)}</tr>")
+    mau_heads = "".join(f"<th class='num'>{y}</th>" for y in mau_years)
+
+    cost_html = ""
+    bpath = BASE_DIR / "data" / "billed_monthly.csv"
+    if bpath.is_file():
+        b = pd.read_csv(bpath)
+        b["year"] = b["month"].str[:4].astype(int)
+        b["mon"] = b["month"].str[5:7].astype(int)
+        net = b[b["year"] >= 2021].pivot_table(index="mon", columns="year", values="net", aggfunc="sum")
+        cyears = list(net.columns)
+        crow = []
+        for mon in range(1, 13):
+            cells = "".join(
+                f"<td class='num'>{money(net.at[mon, y], 0)}</td>"
+                if mon in net.index and pd.notna(net.at[mon, y]) else "<td class='num muted'>–</td>"
+                for y in cyears
+            )
+            cur, prev = (net.at[mon, cyears[-1]], net.at[mon, cyears[-2]]) if mon in net.index else (
+                float("nan"), float("nan"))
+            crow.append(f"<tr><th scope='row'>{MONTHS[mon - 1]}</th>{cells}{change_cell(cur, prev)}</tr>")
+        cheads = "".join(f"<th class='num'>{y}</th>" for y in cyears)
+
+        both = b.merge(m[["month", "cloudbank"]], on="month").dropna(subset=["cloudbank"])
+        both = both[both["cloudbank"] > 0]
+        per_rows = "".join(
+            f"<tr><th scope='row'>{pd.Timestamp(r['month'] + '-01'):%b %Y}</th>"
+            f"<td class='num'>{money(r['net'], 0)}</td><td class='num'>{int(r['cloudbank']):,}</td>"
+            f"<td class='num strong'>{money(r['net'] / r['cloudbank'])}</td></tr>"
+            for _, r in both.sort_values("month", ascending=False).iterrows()
+        )
+        cost_html = f"""
+  <h3>Billed per month</h3>
+  <table><thead><tr><th>Month</th>{cheads}<th class='num'>vs last year</th></tr></thead>
+  <tbody>{''.join(crow)}</tbody></table>
+  <p class="muted">Net of credits, from the CloudBank billing export. Mar 2024 – Aug 2025 is
+     not in the export, so those months show as –. The current month fills in as the
+     export catches up.</p>
+  <h3>Cost per monthly active user</h3>
+  <table><thead><tr><th>Month</th><th class='num'>Billed</th><th class='num'>Active users</th>
+  <th class='num'>Per user</th></tr></thead><tbody>{per_rows}</tbody></table>"""
+
+    return f"""
+<section>
+  <h2>Year over year</h2>
+  <p class="sub">CloudBank only. Term users are accounts whose last activity fell in that
+     term, so someone active in both fall and spring counts in spring.</p>
+  <div class="cols">
+    <div>
+      <h3>Users per term <span class="muted">· institutions</span></h3>
+      <table><thead><tr><th>Term</th>{year_heads}<th class='num'>vs last year</th></tr></thead>
+      <tbody>{''.join(term_rows)}</tbody></table>
+      <p class="muted">* {escape(current_term.replace('_', ' ').title())} is in progress.
+         Counts before Fall 2026 are restored from history after the August 2026 account loss.</p>
+    </div>
+    <div>
+      <h3>Monthly active users</h3>
+      <table><thead><tr><th>Month</th>{mau_heads}<th class='num'>vs last year</th></tr></thead>
+      <tbody>{''.join(mau_rows)}</tbody></table>
+      <p class="muted">Distinct users active in each calendar month, from the hub's
+         <code>jupyterhub_active_users</code> metric. Tracked from January 2025.</p>
+    </div>
+  </div>
+  {cost_html}
+</section>"""
+
+
 # -------------------------------------------------------------------- page
 
 
@@ -446,6 +576,7 @@ def build():
     base_table, _ = base_breakdown(costs)
     billed_html, billed = billed_block(daily)
     hub_html = hub_cost_block()
+    yoy_html = yoy_block()
 
     last7 = daily.tail(7)
     base_day = last7["base"].mean()
@@ -565,6 +696,8 @@ tbody th{font-weight:500;white-space:nowrap}
 .num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
 .strong{font-weight:600}
 .muted{color:var(--muted);font-size:12.5px;margin-top:8px}
+.up{color:var(--gpu)}.down{color:var(--warn)}
+td .muted{font-size:11.5px;margin:0}
 .muted-cell{color:var(--muted)}
 .tag{font-size:9.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);
 border:1px solid var(--rule);border-radius:2px;padding:1px 4px;margin-left:6px;font-weight:400}
@@ -598,6 +731,8 @@ footer{color:var(--muted);font-size:12px;border-top:1px solid var(--rule);paddin
 <div class="stats">{cards}</div>
 
 {hub_html or ""}
+
+{yoy_html}
 
 <div class="note">
   <b>The charts are modeled figures.</b> Cost is measured node-hours &times; Cloud

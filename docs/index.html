@@ -49,6 +49,8 @@ tbody th{font-weight:500;white-space:nowrap}
 .num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
 .strong{font-weight:600}
 .muted{color:var(--muted);font-size:12.5px;margin-top:8px}
+.up{color:var(--gpu)}.down{color:var(--warn)}
+td .muted{font-size:11.5px;margin:0}
 .muted-cell{color:var(--muted)}
 .tag{font-size:9.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);
 border:1px solid var(--rule);border-radius:2px;padding:1px 4px;margin-left:6px;font-weight:400}
@@ -70,7 +72,7 @@ footer{color:var(--muted);font-size:12px;border-top:1px solid var(--rule);paddin
 <header>
   <h1>CloudBank Cost &amp; Usage</h1>
   <p class="sub">Modeled spend by node pool, and how much of it is being used.
-     Data through 2026-10-14 · generated 2026-10-15 04:24 PDT</p>
+     Data through 2026-10-14 · generated 2026-10-15 19:57 PDT</p>
 </header>
 
 <div class="stats"><div class='stat'><span class='k'>Billed per day</span><span class='v'>$161.21</span><span class='s'>7-day average through 2026-09-25</span></div><div class='stat'><span class='k'>Last 30 days</span><span class='v'>$4,410</span><span class='s'>through 2026-10-14</span></div><div class='stat'><span class='k'>Users, Fall 2026</span><span class='v'>2,006</span><span class='s'>103 institutions</span></div></div>
@@ -95,6 +97,39 @@ footer{color:var(--muted);font-size:12px;border-top:1px solid var(--rule);paddin
      requested, so idle pre-warm time lands on the hubs that used those nodes. The always-on base
      (core-pool, disks, cluster fees) is shared by every hub and is not split here. Per user is
      this period's cost over the term's users, so it reads high early in a term.</p>
+</section>
+
+
+<section>
+  <h2>Year over year</h2>
+  <p class="sub">CloudBank only. Term users are accounts whose last activity fell in that
+     term, so someone active in both fall and spring counts in spring.</p>
+  <div class="cols">
+    <div>
+      <h3>Users per term <span class="muted">· institutions</span></h3>
+      <table><thead><tr><th>Term</th><th class='num'>2022</th><th class='num'>2023</th><th class='num'>2024</th><th class='num'>2025</th><th class='num'>2026</th><th class='num'>vs last year</th></tr></thead>
+      <tbody><tr><th scope='row'>Spring</th><td class='num muted'>–</td><td class='num'>173<span class='muted'> · 10</span></td><td class='num'>442<span class='muted'> · 14</span></td><td class='num'>990<span class='muted'> · 23</span></td><td class='num'>2,020<span class='muted'> · 38</span></td><td class='num up'>+104%</td></tr><tr><th scope='row'>Summer</th><td class='num'>9<span class='muted'> · 1</span></td><td class='num'>11<span class='muted'> · 5</span></td><td class='num'>89<span class='muted'> · 6</span></td><td class='num'>252<span class='muted'> · 17</span></td><td class='num'>371<span class='muted'> · 37</span></td><td class='num up'>+47%</td></tr><tr><th scope='row'>Fall</th><td class='num'>70<span class='muted'> · 7</span></td><td class='num'>322<span class='muted'> · 15</span></td><td class='num'>739<span class='muted'> · 22</span></td><td class='num'>1,357<span class='muted'> · 33</span></td><td class='num'>2,006 *<span class='muted'> · 52</span></td><td class='num up'>+48%</td></tr></tbody></table>
+      <p class="muted">* Fall 2026 is in progress.
+         Counts before Fall 2026 are restored from history after the August 2026 account loss.</p>
+    </div>
+    <div>
+      <h3>Monthly active users</h3>
+      <table><thead><tr><th>Month</th><th class='num'>2025</th><th class='num'>2026</th><th class='num'>vs last year</th></tr></thead>
+      <tbody><tr><th scope='row'>Jan</th><td class='num'>900</td><td class='num'>1,242</td><td class='num up'>+38%</td></tr><tr><th scope='row'>Feb</th><td class='num'>1,080</td><td class='num'>1,570</td><td class='num up'>+45%</td></tr><tr><th scope='row'>Mar</th><td class='num'>1,006</td><td class='num'>1,470</td><td class='num up'>+46%</td></tr><tr><th scope='row'>Apr</th><td class='num'>1,007</td><td class='num'>1,447</td><td class='num up'>+44%</td></tr><tr><th scope='row'>May</th><td class='num'>959</td><td class='num'>1,393</td><td class='num up'>+45%</td></tr><tr><th scope='row'>Jun</th><td class='num'>599</td><td class='num'>934</td><td class='num up'>+56%</td></tr><tr><th scope='row'>Jul</th><td class='num'>351</td><td class='num'>548</td><td class='num up'>+56%</td></tr><tr><th scope='row'>Aug</th><td class='num'>973</td><td class='num'>1,334</td><td class='num up'>+37%</td></tr><tr><th scope='row'>Sep</th><td class='num'>1,337</td><td class='num'>1,915</td><td class='num up'>+43%</td></tr><tr><th scope='row'>Oct</th><td class='num'>1,162</td><td class='num muted'>–</td><td class='num muted'>–</td></tr><tr><th scope='row'>Nov</th><td class='num'>1,085</td><td class='num muted'>–</td><td class='num muted'>–</td></tr><tr><th scope='row'>Dec</th><td class='num'>923</td><td class='num muted'>–</td><td class='num muted'>–</td></tr></tbody></table>
+      <p class="muted">Distinct users active in each calendar month, from the hub's
+         <code>jupyterhub_active_users</code> metric. Tracked from January 2025.</p>
+    </div>
+  </div>
+  
+  <h3>Billed per month</h3>
+  <table><thead><tr><th>Month</th><th class='num'>2021</th><th class='num'>2022</th><th class='num'>2023</th><th class='num'>2024</th><th class='num'>2025</th><th class='num'>2026</th><th class='num'>vs last year</th></tr></thead>
+  <tbody><tr><th scope='row'>Jan</th><td class='num'>$256</td><td class='num'>$477</td><td class='num'>$542</td><td class='num'>$544</td><td class='num muted'>–</td><td class='num'>$2,943</td><td class='num muted'>–</td></tr><tr><th scope='row'>Feb</th><td class='num'>$240</td><td class='num'>$470</td><td class='num'>$508</td><td class='num'>$677</td><td class='num muted'>–</td><td class='num'>$3,324</td><td class='num muted'>–</td></tr><tr><th scope='row'>Mar</th><td class='num'>$321</td><td class='num'>$470</td><td class='num'>$549</td><td class='num muted'>–</td><td class='num muted'>–</td><td class='num'>$4,358</td><td class='num muted'>–</td></tr><tr><th scope='row'>Apr</th><td class='num'>$340</td><td class='num'>$427</td><td class='num'>$528</td><td class='num muted'>–</td><td class='num muted'>–</td><td class='num'>$3,304</td><td class='num muted'>–</td></tr><tr><th scope='row'>May</th><td class='num'>$348</td><td class='num'>$438</td><td class='num'>$584</td><td class='num muted'>–</td><td class='num muted'>–</td><td class='num'>$3,329</td><td class='num muted'>–</td></tr><tr><th scope='row'>Jun</th><td class='num'>$685</td><td class='num'>$406</td><td class='num'>$587</td><td class='num muted'>–</td><td class='num muted'>–</td><td class='num'>$4,183</td><td class='num muted'>–</td></tr><tr><th scope='row'>Jul</th><td class='num'>$525</td><td class='num'>$445</td><td class='num'>$708</td><td class='num muted'>–</td><td class='num muted'>–</td><td class='num'>$2,800</td><td class='num muted'>–</td></tr><tr><th scope='row'>Aug</th><td class='num'>$472</td><td class='num'>$504</td><td class='num'>$710</td><td class='num muted'>–</td><td class='num muted'>–</td><td class='num'>$3,349</td><td class='num muted'>–</td></tr><tr><th scope='row'>Sep</th><td class='num'>$526</td><td class='num'>$585</td><td class='num'>$923</td><td class='num muted'>–</td><td class='num'>$2,827</td><td class='num'>$3,952</td><td class='num up'>+40%</td></tr><tr><th scope='row'>Oct</th><td class='num'>$522</td><td class='num'>$551</td><td class='num'>$814</td><td class='num muted'>–</td><td class='num'>$2,930</td><td class='num muted'>–</td><td class='num muted'>–</td></tr><tr><th scope='row'>Nov</th><td class='num'>$501</td><td class='num'>$585</td><td class='num'>$783</td><td class='num muted'>–</td><td class='num'>$2,895</td><td class='num muted'>–</td><td class='num muted'>–</td></tr><tr><th scope='row'>Dec</th><td class='num'>$494</td><td class='num'>$511</td><td class='num'>$608</td><td class='num muted'>–</td><td class='num'>$2,883</td><td class='num muted'>–</td><td class='num muted'>–</td></tr></tbody></table>
+  <p class="muted">Net of credits, from the CloudBank billing export. Mar 2024 – Aug 2025 is
+     not in the export, so those months show as –. The current month fills in as the
+     export catches up.</p>
+  <h3>Cost per monthly active user</h3>
+  <table><thead><tr><th>Month</th><th class='num'>Billed</th><th class='num'>Active users</th>
+  <th class='num'>Per user</th></tr></thead><tbody><tr><th scope='row'>Sep 2026</th><td class='num'>$3,952</td><td class='num'>1,915</td><td class='num strong'>$2.06</td></tr><tr><th scope='row'>Aug 2026</th><td class='num'>$3,349</td><td class='num'>1,334</td><td class='num strong'>$2.51</td></tr><tr><th scope='row'>Jul 2026</th><td class='num'>$2,800</td><td class='num'>548</td><td class='num strong'>$5.11</td></tr><tr><th scope='row'>Jun 2026</th><td class='num'>$4,183</td><td class='num'>934</td><td class='num strong'>$4.48</td></tr><tr><th scope='row'>May 2026</th><td class='num'>$3,329</td><td class='num'>1,393</td><td class='num strong'>$2.39</td></tr><tr><th scope='row'>Apr 2026</th><td class='num'>$3,304</td><td class='num'>1,447</td><td class='num strong'>$2.28</td></tr><tr><th scope='row'>Mar 2026</th><td class='num'>$4,358</td><td class='num'>1,470</td><td class='num strong'>$2.96</td></tr><tr><th scope='row'>Feb 2026</th><td class='num'>$3,324</td><td class='num'>1,570</td><td class='num strong'>$2.12</td></tr><tr><th scope='row'>Jan 2026</th><td class='num'>$2,943</td><td class='num'>1,242</td><td class='num strong'>$2.37</td></tr><tr><th scope='row'>Dec 2025</th><td class='num'>$2,883</td><td class='num'>923</td><td class='num strong'>$3.12</td></tr><tr><th scope='row'>Nov 2025</th><td class='num'>$2,895</td><td class='num'>1,085</td><td class='num strong'>$2.67</td></tr><tr><th scope='row'>Oct 2025</th><td class='num'>$2,930</td><td class='num'>1,162</td><td class='num strong'>$2.52</td></tr><tr><th scope='row'>Sep 2025</th><td class='num'>$2,827</td><td class='num'>1,337</td><td class='num strong'>$2.11</td></tr></tbody></table>
 </section>
 
 <div class="note">
@@ -236,9 +271,9 @@ Base (always-on) $427.72 · CPU notebooks $233.24 · GPU notebooks $90.24</title
 Base (always-on) $427.72 · CPU notebooks $233.24 · GPU notebooks $90.24</title></rect><text x="67.0" y="182" class="xlab">Aug 30</text><rect x="90" y="89.8" width="30" height="74.2" class="bar base"><title>2026-09-06 — total $931.33
 Base (always-on) $506.28 · CPU notebooks $273.35 · GPU notebooks $151.70</title></rect><rect x="90" y="49.8" width="30" height="40.0" class="bar cpu"><title>2026-09-06 — total $931.33
 Base (always-on) $506.28 · CPU notebooks $273.35 · GPU notebooks $151.70</title></rect><rect x="90" y="27.6" width="30" height="22.2" class="bar gpu"><title>2026-09-06 — total $931.33
-Base (always-on) $506.28 · CPU notebooks $273.35 · GPU notebooks $151.70</title></rect><text x="105.0" y="182" class="xlab">Sep 6</text><rect x="128" y="90.1" width="30" height="73.9" class="bar base"><title>2026-09-13 — total $994.65
-Base (always-on) $504.25 · CPU notebooks $237.15 · GPU notebooks $253.25</title></rect><rect x="128" y="55.4" width="30" height="34.7" class="bar cpu"><title>2026-09-13 — total $994.65
-Base (always-on) $504.25 · CPU notebooks $237.15 · GPU notebooks $253.25</title></rect><rect x="128" y="18.3" width="30" height="37.1" class="bar gpu"><title>2026-09-13 — total $994.65
+Base (always-on) $506.28 · CPU notebooks $273.35 · GPU notebooks $151.70</title></rect><text x="105.0" y="182" class="xlab">Sep 6</text><rect x="128" y="90.1" width="30" height="73.9" class="bar base"><title>2026-09-13 — total $994.66
+Base (always-on) $504.25 · CPU notebooks $237.15 · GPU notebooks $253.25</title></rect><rect x="128" y="55.4" width="30" height="34.7" class="bar cpu"><title>2026-09-13 — total $994.66
+Base (always-on) $504.25 · CPU notebooks $237.15 · GPU notebooks $253.25</title></rect><rect x="128" y="18.3" width="30" height="37.1" class="bar gpu"><title>2026-09-13 — total $994.66
 Base (always-on) $504.25 · CPU notebooks $237.15 · GPU notebooks $253.25</title></rect><text x="143.0" y="182" class="xlab">Sep 13</text><rect x="166" y="90.1" width="30" height="73.9" class="bar base"><title>2026-09-20 — total $1,021.58
 Base (always-on) $504.35 · CPU notebooks $211.06 · GPU notebooks $306.16</title></rect><rect x="166" y="59.2" width="30" height="30.9" class="bar cpu"><title>2026-09-20 — total $1,021.58
 Base (always-on) $504.35 · CPU notebooks $211.06 · GPU notebooks $306.16</title></rect><rect x="166" y="14.4" width="30" height="44.8" class="bar gpu"><title>2026-09-20 — total $1,021.58
