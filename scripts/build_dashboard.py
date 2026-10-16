@@ -10,6 +10,7 @@ version pins. The palette is CVD-validated in both light and dark.
 
 import datetime
 import json
+import re
 from datetime import date, timedelta
 from html import escape
 
@@ -663,6 +664,30 @@ def yoy_block():
 </section>"""
 
 
+def add_anchors(html):
+    """Give every <h2> an id and a hover # link, and fill the jump-to nav.
+
+    Done on the finished page so any section added later gets an anchor
+    without touching this function.
+    """
+    seen, links = set(), []
+
+    def repl(m):
+        attrs, text = m.group(1), m.group(2)
+        plain = re.sub(r"<[^>]+>", "", text).strip()
+        slug = re.sub(r"[^a-z0-9]+", "-", plain.lower()).strip("-")
+        base, n = slug, 2
+        while slug in seen:
+            slug, n = f"{base}-{n}", n + 1
+        seen.add(slug)
+        links.append(f'<a href="#{slug}">{escape(plain)}</a>')
+        return (f'<h2{attrs} id="{slug}">{text}'
+                f'<a class="anchor" href="#{slug}" aria-label="Link to this section">#</a></h2>')
+
+    html = re.sub(r"<h2([^>]*)>(.*?)</h2>", repl, html)
+    return html.replace("<!--JUMP-NAV-->", f'<nav class="jump">Jump to: {" · ".join(links)}</nav>', 1)
+
+
 # -------------------------------------------------------------------- page
 
 
@@ -804,6 +829,13 @@ tbody th{font-weight:500;white-space:nowrap}
 .col:hover{opacity:.8}
 .cols>div{min-width:0}
 .tablewrap{overflow-x:auto}
+html{scroll-behavior:smooth}
+h2[id]{scroll-margin-top:16px}
+h2 .anchor{margin-left:8px;color:var(--muted);text-decoration:none;font-weight:400;opacity:0}
+h2:hover .anchor,h2 .anchor:focus{opacity:1}
+.jump{font-size:13px;color:var(--muted);line-height:1.9}
+.jump a{color:var(--ink2);text-decoration:none;border-bottom:1px solid var(--rule)}
+.jump a:hover{color:var(--ink);border-bottom-color:var(--ink2)}
 td .muted{font-size:11.5px;margin:0}
 .muted-cell{color:var(--muted)}
 .tag{font-size:9.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);
@@ -834,6 +866,8 @@ footer{color:var(--muted);font-size:12px;border-top:1px solid var(--rule);paddin
   <p class="sub">Modeled spend by node pool, and how much of it is being used.
      Data through {escape(str(latest))} · generated {escape(generated)}</p>
 </header>
+
+<!--JUMP-NAV-->
 
 <div class="stats">{cards}</div>
 
@@ -953,6 +987,7 @@ document.querySelectorAll("table.sortable").forEach(function (table) {{
 </script>
 </body></html>"""
 
+    html = add_anchors(html)
     DOCS_DIR.mkdir(exist_ok=True)
     (DOCS_DIR / "index.html").write_text(html, encoding="utf-8")
     print(f"  docs/index.html written ({len(html):,} bytes)")

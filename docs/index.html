@@ -59,6 +59,13 @@ tbody th{font-weight:500;white-space:nowrap}
 .col:hover{opacity:.8}
 .cols>div{min-width:0}
 .tablewrap{overflow-x:auto}
+html{scroll-behavior:smooth}
+h2[id]{scroll-margin-top:16px}
+h2 .anchor{margin-left:8px;color:var(--muted);text-decoration:none;font-weight:400;opacity:0}
+h2:hover .anchor,h2 .anchor:focus{opacity:1}
+.jump{font-size:13px;color:var(--muted);line-height:1.9}
+.jump a{color:var(--ink2);text-decoration:none;border-bottom:1px solid var(--rule)}
+.jump a:hover{color:var(--ink);border-bottom-color:var(--ink2)}
 td .muted{font-size:11.5px;margin:0}
 .muted-cell{color:var(--muted)}
 .tag{font-size:9.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);
@@ -81,14 +88,16 @@ footer{color:var(--muted);font-size:12px;border-top:1px solid var(--rule);paddin
 <header>
   <h1>CloudBank Cost &amp; Usage</h1>
   <p class="sub">Modeled spend by node pool, and how much of it is being used.
-     Data through 2026-10-14 · generated 2026-10-15 20:05 PDT</p>
+     Data through 2026-10-14 · generated 2026-10-15 20:14 PDT</p>
 </header>
+
+<nav class="jump">Jump to: <a href="#cost-and-users-by-institutions">Cost and Users by Institutions</a> · <a href="#year-over-year">Year over year</a> · <a href="#modeled-vs-billed">Modeled vs billed</a> · <a href="#daily">Daily</a> · <a href="#weekly">Weekly</a> · <a href="#monthly">Monthly</a> · <a href="#always-on-base">Always-on base</a> · <a href="#usage">Usage</a></nav>
 
 <div class="stats"><div class='stat'><span class='k'>Billed per day</span><span class='v'>$161.21</span><span class='s'>7-day average through 2026-09-25</span></div><div class='stat'><span class='k'>Last 30 days</span><span class='v'>$4,410</span><span class='s'>through 2026-10-14</span></div><div class='stat'><span class='k'>Users, Fall 2026</span><span class='v'>2,006</span><span class='s'>103 institutions</span></div></div>
 
 
 <section>
-  <h2>Cost and Users by Institutions</h2>
+  <h2 id="cost-and-users-by-institutions">Cost and Users by Institutions<a class="anchor" href="#cost-and-users-by-institutions" aria-label="Link to this section">#</a></h2>
   <div class="weektotal">
     <span class="k">Total cost, week of Oct 5 – Oct 11, 2026</span>
     <span class="big">$1,019</span>
@@ -110,7 +119,7 @@ footer{color:var(--muted);font-size:12px;border-top:1px solid var(--rule);paddin
 
 
 <section>
-  <h2>Year over year</h2>
+  <h2 id="year-over-year">Year over year<a class="anchor" href="#year-over-year" aria-label="Link to this section">#</a></h2>
   <p class="sub">CloudBank only. Term users are accounts whose last activity fell in that
      term, so someone active in both fall and spring counts in spring.</p>
   <div class="cols">
@@ -155,7 +164,7 @@ footer{color:var(--muted);font-size:12px;border-top:1px solid var(--rule);paddin
 </div>
 
 <section>
-  <h2>Modeled vs billed</h2>
+  <h2 id="modeled-vs-billed">Modeled vs billed<a class="anchor" href="#modeled-vs-billed" aria-label="Link to this section">#</a></h2>
   <p class="sub">Billed figures come from CloudBank's billing export, net of
      sustained-use and other credits. The export runs 1–2 days behind, so recent
      days show as pending and the model is the only figure for them.</p>
@@ -178,7 +187,7 @@ footer{color:var(--muted);font-size:12px;border-top:1px solid var(--rule);paddin
 </section>
 
 <section>
-  <h2>Daily</h2>
+  <h2 id="daily">Daily<a class="anchor" href="#daily" aria-label="Link to this section">#</a></h2>
   <p class="sub">Last 30 days. The blue floor is what runs with zero students.</p>
   <div class="legend"><span class='lg'><i class='sw base'></i>Base (always-on)</span><span class='lg'><i class='sw cpu'></i>CPU notebooks</span><span class='lg'><i class='sw gpu'></i>GPU notebooks</span></div>
   <div class="chartwrap"><svg viewBox="0 0 1084 190" width="100%" height="190" role="img" class="chart"><line x1="52" y1="164.0" x2="1076" y2="164.0" class="grid"/><text x="44" y="168.0" class="ylab">$0</text><line x1="52" y1="82.0" x2="1076" y2="82.0" class="grid"/><text x="44" y="86.0" class="ylab">$104</text><line x1="52" y1="0.0" x2="1076" y2="0.0" class="grid"/><text x="44" y="4.0" class="ylab">$209</text><rect x="52" y="107.4" width="26" height="56.6" class="bar base"><title>2026-09-15 — total $159.91
@@ -276,7 +285,7 @@ Base (always-on) $72.04 · CPU notebooks $26.47 · GPU notebooks $36.17</title><
 
 <div class="cols">
   <section>
-    <h2>Weekly</h2>
+    <h2 id="weekly">Weekly<a class="anchor" href="#weekly" aria-label="Link to this section">#</a></h2>
     <p class="sub">Weeks ending Sunday.</p>
     <div class="chartwrap"><svg viewBox="0 0 368 190" width="100%" height="190" role="img" class="chart"><line x1="52" y1="164.0" x2="360" y2="164.0" class="grid"/><text x="44" y="168.0" class="ylab">$0</text><line x1="52" y1="82.0" x2="360" y2="82.0" class="grid"/><text x="44" y="86.0" class="ylab">$560</text><line x1="52" y1="0.0" x2="360" y2="0.0" class="grid"/><text x="44" y="4.0" class="ylab">$1,120</text><rect x="52" y="101.4" width="30" height="62.6" class="bar base"><title>2026-08-30 — total $751.20
 Base (always-on) $427.72 · CPU notebooks $233.24 · GPU notebooks $90.24</title></rect><rect x="52" y="67.2" width="30" height="34.2" class="bar cpu"><title>2026-08-30 — total $751.20
@@ -306,7 +315,7 @@ Base (always-on) $216.11 · CPU notebooks $75.26 · GPU notebooks $88.28</title>
     <table><thead><tr><th scope='col'>Period</th><th>Base (always-on)</th><th>CPU notebooks</th><th>GPU notebooks</th><th scope='col'>Total</th></tr></thead><tbody><tr><th scope='row'>2026-10-18</th><td class='num'>$216.11</td><td class='num'>$75.26</td><td class='num'>$88.28</td><td class='num strong'>$379.65</td></tr><tr><th scope='row'>2026-10-11</th><td class='num'>$504.26</td><td class='num'>$215.35</td><td class='num'>$299.71</td><td class='num strong'>$1,019.32</td></tr><tr><th scope='row'>2026-10-04</th><td class='num'>$504.38</td><td class='num'>$248.38</td><td class='num'>$248.32</td><td class='num strong'>$1,001.09</td></tr><tr><th scope='row'>2026-09-27</th><td class='num'>$504.25</td><td class='num'>$207.39</td><td class='num'>$408.08</td><td class='num strong'>$1,119.71</td></tr><tr><th scope='row'>2026-09-20</th><td class='num'>$504.35</td><td class='num'>$211.06</td><td class='num'>$306.16</td><td class='num strong'>$1,021.58</td></tr><tr><th scope='row'>2026-09-13</th><td class='num'>$504.25</td><td class='num'>$237.15</td><td class='num'>$253.25</td><td class='num strong'>$994.65</td></tr><tr><th scope='row'>2026-09-06</th><td class='num'>$506.28</td><td class='num'>$273.35</td><td class='num'>$151.70</td><td class='num strong'>$931.33</td></tr><tr><th scope='row'>2026-08-30</th><td class='num'>$427.72</td><td class='num'>$233.24</td><td class='num'>$90.24</td><td class='num strong'>$751.20</td></tr></tbody></table>
   </section>
   <section>
-    <h2>Monthly</h2>
+    <h2 id="monthly">Monthly<a class="anchor" href="#monthly" aria-label="Link to this section">#</a></h2>
     <p class="sub">Calendar months.</p>
     <div class="chartwrap"><svg viewBox="0 0 202 190" width="100%" height="190" role="img" class="chart"><line x1="52" y1="164.0" x2="194" y2="164.0" class="grid"/><text x="44" y="168.0" class="ylab">$0</text><line x1="52" y1="82.0" x2="194" y2="82.0" class="grid"/><text x="44" y="86.0" class="ylab">$2,192</text><line x1="52" y1="0.0" x2="194" y2="0.0" class="grid"/><text x="44" y="4.0" class="ylab">$4,384</text><rect x="52" y="145.3" width="38" height="18.7" class="bar base"><title>2026-08-01 — total $885.39
 Base (always-on) $499.76 · CPU notebooks $284.74 · GPU notebooks $100.89</title></rect><rect x="52" y="134.7" width="38" height="10.7" class="bar cpu"><title>2026-08-01 — total $885.39
@@ -323,7 +332,7 @@ Base (always-on) $1,008.64 · CPU notebooks $417.15 · GPU notebooks $523.47</ti
 </div>
 
 <section>
-  <h2>Always-on base</h2>
+  <h2 id="always-on-base">Always-on base<a class="anchor" href="#always-on-base" aria-label="Link to this section">#</a></h2>
   <p class="sub">core-pool + oss-cluster + GKE cluster fees + persistent storage.
      This is the number to quote when asked what CloudBank costs to simply exist.</p>
   <p style="font-size:31px;font-weight:600;margin:12px 0 2px;font-variant-numeric:tabular-nums">
@@ -339,7 +348,7 @@ Base (always-on) $1,008.64 · CPU notebooks $417.15 · GPU notebooks $523.47</ti
 </section>
 
 <section>
-  <h2>Usage</h2>
+  <h2 id="usage">Usage<a class="anchor" href="#usage" aria-label="Link to this section">#</a></h2>
   <p class="sub">CloudBank hub accounts and Otter grading volume.</p>
   <h3>Busiest hubs, fall 2026</h3><table><thead><tr><th>Institution</th><th>Users</th></tr></thead><tbody><tr><th scope='row'>University of North Carolina at Chapel Hill</th><td class='num strong'>227</td></tr><tr><th scope='row'>El Camino Community College</th><td class='num strong'>193</td></tr><tr><th scope='row'>George Washington University</th><td class='num strong'>162</td></tr><tr><th scope='row'>Community College San Francisco</th><td class='num strong'>142</td></tr><tr><th scope='row'>Cal Poly Humboldt</th><td class='num strong'>123</td></tr><tr><th scope='row'>Foothill Community College</th><td class='num strong'>81</td></tr><tr><th scope='row'>Evergreen Community College</th><td class='num strong'>65</td></tr><tr><th scope='row'>Pasadena Community College</th><td class='num strong'>65</td></tr><tr><th scope='row'>Laney Community College</th><td class='num strong'>63</td></tr><tr><th scope='row'>Santa Barbara City College</th><td class='num strong'>61</td></tr><tr><th scope='row'>Los Angeles Community College</th><td class='num strong'>59</td></tr><tr><th scope='row'>SaddleBack Community College</th><td class='num strong'>50</td></tr></tbody></table><p class='muted'>103 CloudBank hubs · 2,039 accounts in total; 2,006 have ever been active.</p><h3>Otter grading, recent weeks</h3><table><thead><tr><th>Week (Mon–Sun)</th><th>Submissions</th><th>Notebooks</th></tr></thead><tbody><tr><th scope='row'>Oct 12 – Oct 18, 2026</th><td class='num'>37</td><td class='num'>266</td></tr><tr><th scope='row'>Oct 5 – Oct 11, 2026</th><td class='num'>112</td><td class='num'>1,335</td></tr><tr><th scope='row'>Sep 28 – Oct 4, 2026</th><td class='num'>100</td><td class='num'>755</td></tr><tr><th scope='row'>Sep 21 – Sep 27, 2026</th><td class='num'>114</td><td class='num'>715</td></tr><tr><th scope='row'>Sep 14 – Sep 20, 2026</th><td class='num'>116</td><td class='num'>704</td></tr><tr><th scope='row'>Sep 7 – Sep 13, 2026</th><td class='num'>161</td><td class='num'>1,259</td></tr><tr><th scope='row'>Aug 31 – Sep 6, 2026</th><td class='num'>131</td><td class='num'>592</td></tr><tr><th scope='row'>Aug 24 – Aug 30, 2026</th><td class='num'>117</td><td class='num'>395</td></tr><tr><th scope='row'>Aug 17 – Aug 23, 2026</th><td class='num'>33</td><td class='num'>153</td></tr><tr><th scope='row'>Aug 10 – Aug 16, 2026</th><td class='num'>30</td><td class='num'>80</td></tr><tr><th scope='row'>Aug 3 – Aug 9, 2026</th><td class='num'>24</td><td class='num'>461</td></tr><tr><th scope='row'>Jul 27 – Aug 2, 2026</th><td class='num'>35</td><td class='num'>655</td></tr></tbody></table>
 </section>
