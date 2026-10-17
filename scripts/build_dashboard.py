@@ -871,9 +871,9 @@ footer{color:var(--muted);font-size:12px;border-top:1px solid var(--rule);paddin
 
 <div class="stats">{cards}</div>
 
-{hub_html or ""}
-
 {yoy_html}
+
+{hub_html or ""}
 
 <div class="note">
   <b>The charts are modeled figures.</b> Cost is measured node-hours &times; Cloud
