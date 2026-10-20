@@ -1,0 +1,275 @@
+date,hub,college,node_hours,active_hours,util_hours,vram_hi_hours,long_sessions,long_idle
+2026-08-11,(no student),(no student),0.167,0.0,0.0,0.0,0,0
+2026-08-11,gpu-demo,gpu-demo,11.333,0.0,0.0,0.0,0,0
+2026-08-12,(no student),(no student),0.083,0.0,0.0,0.0,0,0
+2026-08-12,gpu-demo,gpu-demo,2.583,0.0,0.0,0.0,0,0
+2026-08-13,(no student),(no student),0.083,0.0,0.0,0.0,0,0
+2026-08-13,york,"York College, CUNY",1.333,0.0,0.0,0.0,0,0
+2026-08-14,(no student),(no student),0.167,0.0,0.0,0.0,0,0
+2026-08-14,york,"York College, CUNY",4.167,0.0,0.0,0.0,0,0
+2026-08-15,(no student),(no student),0.083,0.0,0.0,0.0,0,0
+2026-08-15,oit,Oregon Institute of Technology,0.167,0.0,0.0,0.0,0,0
+2026-08-17,(no student),(no student),0.167,0.0,0.0,0.0,0,0
+2026-08-17,monmouth,Monmouth University,0.417,0.0,0.0,0.0,0,0
+2026-08-18,(no student),(no student),5.5,0.083,0.01,0.0,0,0
+2026-08-18,clarku,Clark University,0.167,0.0,0.0,0.0,0,0
+2026-08-18,monmouth,Monmouth University,5.667,0.083,0.016,0.0,0,0
+2026-08-18,sou,Southern Oregon University,0.542,0.0,0.0,0.0,0,0
+2026-08-18,tntech,Tennessee Technological University,0.708,0.0,0.0,0.0,0,0
+2026-08-19,(no student),(no student),21.417,0.0,0.0,0.0,0,0
+2026-08-19,clarku,Clark University,2.583,0.0,0.0,0.0,0,0
+2026-08-20,(no student),(no student),15.083,0.0,0.0,0.0,0,0
+2026-08-20,clarku,Clark University,1.75,0.0,0.0,0.0,0,0
+2026-08-20,emich,Eastern Michigan University,2.0,0.0,0.0,0.0,0,0
+2026-08-20,tntech,Tennessee Technological University,1.583,0.0,0.0,0.0,0,0
+2026-08-21,(no student),(no student),0.167,0.0,0.0,0.0,0,0
+2026-08-21,clarku,Clark University,0.083,0.0,0.0,0.0,0,0
+2026-08-21,emich,Eastern Michigan University,6.917,0.417,0.166,0.0,1,1
+2026-08-22,(no student),(no student),0.083,0.0,0.0,0.0,0,0
+2026-08-22,emich,Eastern Michigan University,4.667,0.5,0.071,0.0,1,1
+2026-08-23,(no student),(no student),0.083,0.0,0.0,0.0,0,0
+2026-08-23,emich,Eastern Michigan University,6.917,2.5,0.639,0.0,1,0
+2026-08-24,(no student),(no student),0.083,0.0,0.0,0.0,0,0
+2026-08-25,(no student),(no student),0.667,0.0,0.0,0.0,0,0
+2026-08-25,clarku,Clark University,1.417,0.0,0.0,0.0,0,0
+2026-08-25,emich,Eastern Michigan University,2.333,0.0,0.0,0.0,0,0
+2026-08-26,(no student),(no student),0.333,0.0,0.0,0.0,0,0
+2026-08-26,clarku,Clark University,4.417,0.0,0.0,0.0,1,1
+2026-08-27,(no student),(no student),79.333,0.0,0.0,0.0,0,0
+2026-08-27,clarku,Clark University,9.833,0.0,0.0,0.0,1,1
+2026-08-27,emich,Eastern Michigan University,0.5,0.0,0.0,0.0,0,0
+2026-08-28,(no student),(no student),1.083,0.0,0.0,0.0,0,0
+2026-08-28,clarku,Clark University,13.25,0.0,0.0,0.0,1,1
+2026-08-29,(no student),(no student),1.0,0.0,0.0,0.0,0,0
+2026-08-29,clarku,Clark University,1.167,0.0,0.0,0.0,0,0
+2026-08-29,gpu-demo,gpu-demo,0.417,0.0,0.0,0.0,0,0
+2026-08-30,(no student),(no student),7.5,0.0,0.0,0.0,0,0
+2026-08-30,epcc,El Paso Community College,0.25,0.083,0.003,0.0,0,0
+2026-08-31,(no student),(no student),0.25,0.0,0.0,0.0,0,0
+2026-08-31,clarku,Clark University,10.708,0.0,0.0,0.0,2,2
+2026-08-31,cmu,Carnegie Mellon University,0.792,0.0,0.0,0.0,0,0
+2026-08-31,gpu-demo,gpu-demo,0.083,0.0,0.0,0.0,0,0
+2026-09-01,(no student),(no student),41.417,0.0,0.0,0.0,0,0
+2026-09-01,clarku,Clark University,10.417,0.0,0.0,0.0,1,1
+2026-09-01,monmouth,Monmouth University,2.833,0.25,0.035,0.0,0,0
+2026-09-02,(no student),(no student),0.167,0.0,0.0,0.0,0,0
+2026-09-02,clarku,Clark University,0.083,0.0,0.0,0.0,0,0
+2026-09-02,emich,Eastern Michigan University,12.458,0.0,0.0,0.0,2,2
+2026-09-02,monmouth,Monmouth University,1.375,0.0,0.0,0.0,0,0
+2026-09-03,(no student),(no student),56.083,0.0,0.0,0.0,0,0
+2026-09-03,emich,Eastern Michigan University,4.833,0.0,0.0,0.0,0,0
+2026-09-04,(no student),(no student),0.5,0.0,0.0,0.0,0,0
+2026-09-04,clarku,Clark University,16.958,0.0,0.0,0.0,3,3
+2026-09-04,emich,Eastern Michigan University,0.792,0.0,0.0,0.0,0,0
+2026-09-05,(no student),(no student),0.417,0.0,0.0,0.0,0,0
+2026-09-05,emich,Eastern Michigan University,4.0,0.0,0.0,0.0,0,0
+2026-09-05,monmouth,Monmouth University,0.083,0.0,0.0,0.0,0,0
+2026-09-06,(no student),(no student),0.25,0.0,0.0,0.0,0,0
+2026-09-06,emich,Eastern Michigan University,7.167,0.0,0.0,0.0,1,1
+2026-09-07,(no student),(no student),0.25,0.083,0.004,0.0,0,0
+2026-09-07,emich,Eastern Michigan University,1.583,0.0,0.0,0.0,0,0
+2026-09-07,monmouth,Monmouth University,0.167,0.0,0.0,0.0,0,0
+2026-09-08,(no student),(no student),53.333,0.0,0.0,0.0,0,0
+2026-09-08,cmu,Carnegie Mellon University,2.25,0.0,0.0,0.0,1,1
+2026-09-08,emich,Eastern Michigan University,5.625,0.0,0.0,0.0,1,1
+2026-09-08,monmouth,Monmouth University,0.875,0.0,0.0,0.0,0,0
+2026-09-09,(no student),(no student),31.333,0.0,0.0,0.0,0,0
+2026-09-09,clarku,Clark University,2.625,0.667,0.265,0.0,1,0
+2026-09-09,csusm,CSU San Marcos,5.042,0.0,0.0,0.0,1,1
+2026-09-09,emich,Eastern Michigan University,21.0,0.75,0.272,0.0,4,3
+2026-09-09,epcc,El Paso Community College,7.625,0.042,0.002,0.0,0,0
+2026-09-09,monmouth,Monmouth University,2.375,0.292,0.026,0.0,1,1
+2026-09-10,(no student),(no student),55.667,0.0,0.0,0.0,0,0
+2026-09-10,clarku,Clark University,2.25,0.0,0.0,0.0,0,0
+2026-09-10,csusm,CSU San Marcos,6.208,0.0,0.0,0.0,1,1
+2026-09-10,emich,Eastern Michigan University,29.208,0.0,0.0,0.0,5,5
+2026-09-11,(no student),(no student),12.917,0.0,0.0,0.0,0,0
+2026-09-11,clarku,Clark University,17.833,0.0,0.0,0.0,4,4
+2026-09-11,csusm,CSU San Marcos,0.125,0.0,0.0,0.0,0,0
+2026-09-11,emich,Eastern Michigan University,12.292,0.0,0.0,0.0,2,2
+2026-09-12,(no student),(no student),0.25,0.0,0.0,0.0,0,0
+2026-09-12,emich,Eastern Michigan University,8.0,0.083,0.002,0.0,0,0
+2026-09-13,(no student),(no student),0.333,0.0,0.0,0.0,0,0
+2026-09-13,clarku,Clark University,0.708,0.0,0.0,0.0,0,0
+2026-09-13,emich,Eastern Michigan University,3.125,0.167,0.117,0.0,0,0
+2026-09-13,york,"York College, CUNY",1.833,0.0,0.0,0.0,0,0
+2026-09-14,(no student),(no student),27.667,0.0,0.0,0.0,0,0
+2026-09-14,clarku,Clark University,2.625,0.0,0.0,0.0,0,0
+2026-09-14,emich,Eastern Michigan University,4.958,0.0,0.0,0.0,2,2
+2026-09-14,monmouth,Monmouth University,3.167,0.0,0.0,0.0,1,1
+2026-09-15,(no student),(no student),32.0,0.0,0.0,0.0,0,0
+2026-09-15,clarku,Clark University,7.375,1.125,0.642,0.5,3,1
+2026-09-15,emich,Eastern Michigan University,24.625,0.0,0.0,0.0,3,3
+2026-09-15,monmouth,Monmouth University,2.25,0.042,0.008,0.5,1,1
+2026-09-16,(no student),(no student),27.083,0.0,0.0,0.0,0,0
+2026-09-16,clarku,Clark University,10.417,3.583,2.09,0.708,2,1
+2026-09-16,elcamino,El Camino Community College,0.042,0.0,0.0,0.042,0,0
+2026-09-16,emich,Eastern Michigan University,18.875,2.625,0.615,0.583,4,2
+2026-09-16,monmouth,Monmouth University,5.75,1.375,0.182,1.333,1,0
+2026-09-17,(no student),(no student),12.083,0.083,0.03,0.0,0,0
+2026-09-17,clarku,Clark University,10.222,0.417,0.054,0.0,2,2
+2026-09-17,emich,Eastern Michigan University,26.931,2.375,0.646,0.25,3,2
+2026-09-17,monmouth,Monmouth University,9.389,0.792,0.059,1.417,1,1
+2026-09-17,nova,Nova SouthEastern University,9.708,4.75,2.345,0.0,1,0
+2026-09-18,(no student),(no student),8.75,0.0,0.0,0.0,0,0
+2026-09-18,clarku,Clark University,18.625,1.833,0.948,0.0,3,3
+2026-09-18,emich,Eastern Michigan University,4.333,0.375,0.224,0.0,1,1
+2026-09-18,monmouth,Monmouth University,2.083,1.583,0.763,1.125,0,0
+2026-09-18,nova,Nova SouthEastern University,9.375,8.792,4.362,1.125,1,0
+2026-09-19,(no student),(no student),0.417,0.0,0.0,0.0,0,0
+2026-09-19,clarku,Clark University,8.792,0.0,0.0,0.0,3,3
+2026-09-19,emich,Eastern Michigan University,3.75,0.042,0.012,0.0,0,0
+2026-09-19,monmouth,Monmouth University,0.583,0.0,0.0,0.0,0,0
+2026-09-19,nova,Nova SouthEastern University,8.458,0.042,0.012,0.0,1,1
+2026-09-20,(no student),(no student),0.5,0.0,0.0,0.0,0,0
+2026-09-20,clarku,Clark University,14.625,0.042,0.005,0.0,2,2
+2026-09-20,elcamino,El Camino Community College,2.333,0.5,0.241,0.0,1,0
+2026-09-20,emich,Eastern Michigan University,20.625,4.583,0.839,1.333,3,1
+2026-09-20,monmouth,Monmouth University,2.667,0.292,0.021,1.333,1,1
+2026-09-20,nova,Nova SouthEastern University,0.75,0.0,0.0,0.0,0,0
+2026-09-21,(no student),(no student),18.75,0.0,0.0,0.0,0,0
+2026-09-21,clarku,Clark University,12.417,0.167,0.02,0.0,3,3
+2026-09-21,elcamino,El Camino Community College,3.125,0.292,0.027,0.0,1,1
+2026-09-21,emich,Eastern Michigan University,14.958,0.792,0.162,0.0,5,4
+2026-09-21,nova,Nova SouthEastern University,4.5,0.25,0.059,0.0,1,1
+2026-09-22,(no student),(no student),4.583,0.083,0.007,0.0,0,0
+2026-09-22,clarku,Clark University,9.167,1.542,0.437,0.0,1,0
+2026-09-22,elcamino,El Camino Community College,4.0,0.0,0.0,0.0,1,1
+2026-09-22,emich,Eastern Michigan University,25.458,2.792,0.863,0.0,4,3
+2026-09-22,monmouth,Monmouth University,4.375,0.208,0.022,0.0,2,2
+2026-09-22,nova,Nova SouthEastern University,30.5,0.125,0.027,0.0,9,9
+2026-09-23,(no student),(no student),17.083,0.0,0.0,0.0,0,0
+2026-09-23,clarku,Clark University,31.042,0.208,0.103,0.0,6,6
+2026-09-23,csusm,CSU San Marcos,7.292,0.083,0.011,0.0,2,2
+2026-09-23,elcamino,El Camino Community College,1.375,0.0,0.0,0.0,0,0
+2026-09-23,emich,Eastern Michigan University,11.5,0.917,0.399,0.417,2,2
+2026-09-23,monmouth,Monmouth University,1.75,0.375,0.068,0.417,0,0
+2026-09-23,nova,Nova SouthEastern University,9.458,0.0,0.0,0.0,1,1
+2026-09-24,(no student),(no student),4.833,0.0,0.0,0.0,0,0
+2026-09-24,clarku,Clark University,39.833,1.708,0.73,0.583,8,7
+2026-09-24,csusm,CSU San Marcos,0.625,0.0,0.0,0.0,0,0
+2026-09-24,elcamino,El Camino Community College,3.125,0.125,0.047,0.0,0,0
+2026-09-24,emich,Eastern Michigan University,48.125,10.833,2.714,1.5,13,6
+2026-09-24,monmouth,Monmouth University,14.625,3.042,0.615,1.583,2,1
+2026-09-24,nova,Nova SouthEastern University,1.417,0.375,0.107,0.0,0,0
+2026-09-25,(no student),(no student),5.25,0.083,0.038,0.0,0,0
+2026-09-25,clarku,Clark University,45.181,0.958,0.272,0.0,8,8
+2026-09-25,emich,Eastern Michigan University,17.736,1.083,0.397,0.0,4,4
+2026-09-25,monmouth,Monmouth University,1.917,0.125,0.023,0.0,1,1
+2026-09-25,nova,Nova SouthEastern University,4.292,0.0,0.0,0.0,1,1
+2026-09-25,sou,Southern Oregon University,0.708,0.0,0.0,0.0,0,0
+2026-09-26,(no student),(no student),0.25,0.083,0.006,0.0,0,0
+2026-09-26,clarku,Clark University,12.875,1.5,0.39,0.0,2,1
+2026-09-26,emich,Eastern Michigan University,17.708,6.583,1.612,0.0,3,0
+2026-09-26,monmouth,Monmouth University,2.5,0.0,0.0,0.0,1,1
+2026-09-27,(no student),(no student),0.167,0.0,0.0,0.0,0,0
+2026-09-27,clarku,Clark University,12.458,4.0,2.166,0.0,2,1
+2026-09-27,emich,Eastern Michigan University,5.5,0.667,0.169,0.0,0,0
+2026-09-27,monmouth,Monmouth University,1.25,0.0,0.0,0.0,0,0
+2026-09-27,nova,Nova SouthEastern University,6.125,0.917,0.445,0.0,1,0
+2026-09-28,(no student),(no student),14.75,0.0,0.0,0.0,0,0
+2026-09-28,clarku,Clark University,6.375,0.458,0.133,0.0,1,1
+2026-09-28,emich,Eastern Michigan University,11.042,2.0,0.35,0.0,2,1
+2026-09-28,monmouth,Monmouth University,1.375,0.042,0.002,0.0,0,0
+2026-09-28,nova,Nova SouthEastern University,8.958,0.083,0.043,0.0,2,2
+2026-09-29,(no student),(no student),5.417,0.0,0.0,0.0,0,0
+2026-09-29,clarku,Clark University,6.0,0.0,0.0,0.0,1,1
+2026-09-29,elcamino,El Camino Community College,1.931,0.0,0.0,0.0,0,0
+2026-09-29,emich,Eastern Michigan University,24.514,1.5,0.265,4.083,3,3
+2026-09-29,monmouth,Monmouth University,5.639,0.417,0.018,0.0,1,1
+2026-09-30,(no student),(no student),15.75,0.0,0.0,0.0,0,0
+2026-09-30,clarku,Clark University,8.458,1.375,1.1,0.0,2,1
+2026-09-30,emich,Eastern Michigan University,0.889,0.0,0.0,0.0,0,0
+2026-09-30,monmouth,Monmouth University,10.361,0.792,0.602,0.0,1,0
+2026-09-30,york,"York College, CUNY",4.125,0.0,0.0,0.0,1,1
+2026-10-01,(no student),(no student),13.833,0.0,0.0,0.0,0,0
+2026-10-01,clarku,Clark University,24.083,2.125,1.448,0.0,6,5
+2026-10-01,cmu,Carnegie Mellon University,0.375,0.0,0.0,0.0,0,0
+2026-10-01,elcamino,El Camino Community College,1.708,0.0,0.0,0.0,1,1
+2026-10-01,emich,Eastern Michigan University,19.292,0.208,0.054,0.0,2,2
+2026-10-01,gpu-demo,gpu-demo,1.083,0.0,0.0,0.0,0,0
+2026-10-01,monmouth,Monmouth University,4.542,0.167,0.028,0.0,0,0
+2026-10-02,(no student),(no student),8.25,0.0,0.0,0.0,0,0
+2026-10-02,clarku,Clark University,26.083,0.0,0.0,0.0,5,5
+2026-10-02,elcamino,El Camino Community College,2.458,0.0,0.0,0.0,0,0
+2026-10-02,emich,Eastern Michigan University,7.625,0.75,0.183,0.0,1,1
+2026-10-03,(no student),(no student),0.083,0.0,0.0,0.0,0,0
+2026-10-03,clarku,Clark University,10.375,0.958,0.258,0.0,2,1
+2026-10-03,emich,Eastern Michigan University,1.583,0.958,0.258,0.0,1,0
+2026-10-03,monmouth,Monmouth University,7.625,0.083,0.001,0.0,1,1
+2026-10-04,(no student),(no student),0.417,0.0,0.0,0.0,0,0
+2026-10-04,clarku,Clark University,10.125,0.417,0.095,0.0,3,2
+2026-10-04,cmu,Carnegie Mellon University,5.167,0.403,0.059,0.0,1,1
+2026-10-04,emich,Eastern Michigan University,4.708,1.097,0.197,0.0,3,0
+2026-10-04,sou,Southern Oregon University,1.417,0.0,0.0,0.0,1,1
+2026-10-05,(no student),(no student),21.333,0.0,0.0,0.0,0,0
+2026-10-05,clarku,Clark University,8.292,0.917,0.196,0.0,3,3
+2026-10-05,cmu,Carnegie Mellon University,1.375,0.0,0.0,0.0,1,1
+2026-10-05,elcamino,El Camino Community College,0.583,0.0,0.0,0.0,0,0
+2026-10-05,emich,Eastern Michigan University,30.125,5.625,1.107,0.875,6,3
+2026-10-05,monmouth,Monmouth University,4.042,0.125,0.02,0.875,1,1
+2026-10-06,(no student),(no student),10.0,0.0,0.0,0.0,0,0
+2026-10-06,clarku,Clark University,13.75,1.083,0.195,0.0,3,3
+2026-10-06,cmu,Carnegie Mellon University,5.333,0.0,0.0,0.0,1,1
+2026-10-06,emich,Eastern Michigan University,55.5,11.333,2.46,0.0,11,6
+2026-10-06,monmouth,Monmouth University,6.5,0.083,0.002,0.0,1,1
+2026-10-07,(no student),(no student),12.417,0.0,0.001,0.0,0,0
+2026-10-07,clarku,Clark University,7.625,0.167,0.045,0.0,1,1
+2026-10-07,cmu,Carnegie Mellon University,6.625,0.0,0.0,0.0,0,0
+2026-10-07,emich,Eastern Michigan University,24.917,5.583,0.697,0.0,3,2
+2026-10-07,monmouth,Monmouth University,13.292,0.875,0.12,0.0,2,2
+2026-10-07,sou,Southern Oregon University,0.708,0.125,0.003,0.0,0,0
+2026-10-08,(no student),(no student),19.333,0.083,0.006,0.0,0,0
+2026-10-08,clarku,Clark University,7.958,1.708,0.111,0.0,2,0
+2026-10-08,cmu,Carnegie Mellon University,2.75,0.042,0.005,0.0,1,1
+2026-10-08,csusm,CSU San Marcos,3.792,0.167,0.014,0.0,0,0
+2026-10-08,elcamino,El Camino Community College,1.083,0.0,0.0,0.0,0,0
+2026-10-08,emich,Eastern Michigan University,13.292,3.375,0.227,0.0,2,0
+2026-10-08,monmouth,Monmouth University,8.625,0.375,0.056,0.0,0,0
+2026-10-09,(no student),(no student),10.25,0.0,0.0,0.0,0,0
+2026-10-09,clarku,Clark University,11.25,0.25,0.026,0.0,2,2
+2026-10-09,emich,Eastern Michigan University,7.0,2.0,0.351,0.0,1,0
+2026-10-09,monmouth,Monmouth University,1.833,0.5,0.052,0.0,0,0
+2026-10-09,ric,Rhode Island College,1.75,0.0,0.0,0.0,0,0
+2026-10-10,(no student),(no student),0.167,0.0,0.0,0.0,0,0
+2026-10-10,clarku,Clark University,3.75,0.0,0.0,0.0,1,1
+2026-10-10,emich,Eastern Michigan University,3.75,0.0,0.0,0.0,1,1
+2026-10-11,(no student),(no student),0.167,0.0,0.0,0.0,0,0
+2026-10-11,clarku,Clark University,11.958,0.0,0.0,0.0,1,1
+2026-10-11,emich,Eastern Michigan University,1.917,0.0,0.0,0.0,1,1
+2026-10-11,fgcu,Florida Gulf Coast University,0.625,0.0,0.0,0.0,0,0
+2026-10-12,(no student),(no student),19.25,0.0,0.0,0.0,0,0
+2026-10-12,clarku,Clark University,5.417,0.0,0.0,0.0,1,1
+2026-10-13,(no student),(no student),17.0,0.0,0.0,0.0,0,0
+2026-10-13,clarku,Clark University,11.958,0.375,0.016,0.0,3,3
+2026-10-13,csusm,CSU San Marcos,0.042,0.042,0.001,0.0,0,0
+2026-10-13,emich,Eastern Michigan University,3.833,0.083,0.011,0.0,1,1
+2026-10-14,(no student),(no student),13.333,0.0,0.0,0.0,0,0
+2026-10-14,clarku,Clark University,19.542,0.5,0.028,0.0,4,4
+2026-10-14,csusm,CSU San Marcos,2.083,0.0,0.0,0.0,1,1
+2026-10-14,emich,Eastern Michigan University,5.042,0.25,0.021,0.0,1,1
+2026-10-14,monmouth,Monmouth University,0.083,0.0,0.0,0.0,0,0
+2026-10-15,(no student),(no student),19.167,0.083,0.009,0.0,0,0
+2026-10-15,clarku,Clark University,22.708,0.458,0.047,0.0,6,6
+2026-10-15,csusm,CSU San Marcos,13.458,0.208,0.006,0.0,3,3
+2026-10-15,emich,Eastern Michigan University,19.167,0.958,0.117,0.0,3,3
+2026-10-15,monmouth,Monmouth University,5.417,0.208,0.016,0.0,1,1
+2026-10-16,(no student),(no student),10.583,0.0,0.0,0.0,0,0
+2026-10-16,clarku,Clark University,24.333,0.0,0.0,0.0,3,3
+2026-10-16,csusm,CSU San Marcos,0.333,0.0,0.0,0.0,0,0
+2026-10-16,emich,Eastern Michigan University,2.583,0.167,0.015,0.042,0,0
+2026-10-16,monmouth,Monmouth University,1.25,0.083,0.009,0.042,0,0
+2026-10-17,(no student),(no student),0.25,0.0,0.0,0.0,0,0
+2026-10-17,clarku,Clark University,7.292,0.542,0.226,0.375,1,1
+2026-10-17,emich,Eastern Michigan University,6.042,1.375,0.424,0.375,3,2
+2026-10-17,gpu-demo,gpu-demo,4.667,0.0,0.0,0.0,1,1
+2026-10-18,(no student),(no student),0.417,0.0,0.0,0.0,0,0
+2026-10-18,clarku,Clark University,14.25,0.0,0.0,0.0,3,3
+2026-10-18,csusm,CSU San Marcos,10.833,0.0,0.001,0.0,2,2
+2026-10-18,emich,Eastern Michigan University,0.417,0.0,0.0,0.0,0,0
+2026-10-18,gpu-demo,gpu-demo,6.0,0.0,0.0,0.0,0,0
+2026-10-19,(no student),(no student),20.667,0.083,0.001,0.0,0,0
+2026-10-19,clarku,Clark University,36.208,1.292,0.237,0.0,7,7
+2026-10-19,cmu,Carnegie Mellon University,1.542,0.0,0.0,0.0,1,1
+2026-10-19,csusm,CSU San Marcos,4.625,0.042,0.011,0.0,1,1
+2026-10-19,monmouth,Monmouth University,1.042,0.0,0.0,0.0,0,0

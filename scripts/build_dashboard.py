@@ -356,6 +356,94 @@ def hub_cost_block(min_usd=1.0):
 </section>"""
 
 
+def gpu_util_block(today=None):
+    """How much of the GPU pool's time the GPUs did work, last complete week + weekly trend."""
+    g = read_data("gpu_util.csv")
+    if g.empty:
+        return None
+    pr = read_data("pricing.csv")
+    pr = pr[pr["pool"] == "nb-gpu-t4"].sort_values("date")
+    rate = float(pr["node_usd_hr"].iloc[-1]) if len(pr) else 0.0
+
+    g["date"] = pd.to_datetime(g["date"])
+    newest = g["date"].max().date()
+    sunday = newest - timedelta(days=(newest.weekday() + 1) % 7)
+    week = g[(g["date"].dt.date > sunday - timedelta(days=7)) & (g["date"].dt.date <= sunday)]
+    span = f"{sunday - timedelta(days=6):%b %-d} – {sunday:%b %-d, %Y}"
+
+    nh = week["node_hours"].sum() or 1.0
+    empty = week.loc[week["hub"] == "(no student)", "node_hours"].sum()
+    active = week["active_hours"].sum()
+    vram = week["vram_hi_hours"].sum()
+    cards = [
+        ("GPU node-hours", f"{nh:,.0f}", f"{money(nh * rate, 0)} at {money(rate)}/node-hour"),
+        ("GPU working", f"{active / nh:.0%}", f"{active:,.0f} h with duty cycle 1%+"),
+        ("No student on node", f"{empty / nh:.0%}", f"{empty:,.0f} h · {money(empty * rate, 0)}"),
+        ("Shared GPU memory >90%", f"{vram:,.1f} h", "two students on one T4"),
+    ]
+    stats = "".join(
+        f"<div class='stat'><span class='k'>{escape(k)}</span>"
+        f"<span class='v'>{escape(v)}</span><span class='s'>{escape(s)}</span></div>"
+        for k, v, s in cards
+    )
+
+    by_hub = week.groupby(["hub", "college"])[
+        ["node_hours", "active_hours", "util_hours", "vram_hi_hours", "long_sessions", "long_idle"]
+    ].sum().reset_index().sort_values("node_hours", ascending=False)
+    rows = ""
+    for _, r in by_hub.iterrows():
+        if r["node_hours"] < 0.5:
+            continue
+        idle_cost = (r["node_hours"] - r["active_hours"]) * rate
+        name = "No student on the node" if r["hub"] == "(no student)" else r["college"]
+        sessions = (f"{int(r['long_idle'])} of {int(r['long_sessions'])}"
+                    if r["long_sessions"] else "—")
+        rows += (
+            f"<tr><th scope='row'>{escape(str(name))}</th>"
+            f"<td class='num'>{r['node_hours']:,.1f}</td>"
+            f"<td class='num'>{r['active_hours'] / r['node_hours']:.0%}</td>"
+            f"<td class='num'>{r['util_hours'] / r['node_hours']:.1%}</td>"
+            f"<td class='num'>{sessions}</td>"
+            f"<td class='num'>{r['vram_hi_hours']:,.1f}</td>"
+            f"<td class='num strong'>{money(idle_cost)}</td></tr>"
+        )
+
+    g["week"] = g["date"] + pd.to_timedelta(6 - g["date"].dt.weekday, unit="D")
+    g["empty"] = g["node_hours"].where(g["hub"] == "(no student)", 0.0)
+    wk = g[g["date"].dt.date <= sunday].groupby("week")[
+        ["node_hours", "active_hours", "empty", "long_sessions", "long_idle"]
+    ].sum().tail(8).sort_index(ascending=False)
+    trend = "".join(
+        f"<tr><th scope='row'>{w - timedelta(days=6):%b %-d} – {w:%b %-d}</th>"
+        f"<td class='num'>{r['node_hours']:,.0f}</td>"
+        f"<td class='num'>{r['active_hours'] / r['node_hours']:.0%}</td>"
+        f"<td class='num'>{r['empty'] / r['node_hours']:.0%}</td>"
+        f"<td class='num'>{int(r['long_idle'])} of {int(r['long_sessions'])}</td>"
+        f"<td class='num strong'>{money((r['node_hours'] - r['active_hours']) * rate, 0)}</td></tr>"
+        for w, r in wk.iterrows() if r["node_hours"]
+    )
+    return f"""
+<section>
+  <h2>GPU utilization</h2>
+  <p class="sub">Whether the T4s did any work while they were running, week of {escape(span)}.</p>
+  <div class="stats" style="margin-top:12px">{stats}</div>
+  <h3>By institution, week of {escape(span)}</h3>
+  <div class="tablewrap"><table class="sortable"><thead><tr><th>Institution</th><th>GPU hours</th>
+  <th>GPU working</th><th>Mean utilization</th><th>Idle 3h+ sessions</th><th>Memory &gt;90% (h)</th>
+  <th>Idle cost</th></tr></thead><tbody>{rows}</tbody></table></div>
+  <h3>Weekly trend</h3>
+  <div class="tablewrap"><table><thead><tr><th>Week (Mon–Sun)</th><th>GPU node-hours</th>
+  <th>GPU working</th><th>No student</th><th>Idle 3h+ sessions</th><th>Idle cost</th></tr></thead>
+  <tbody>{trend}</tbody></table></div>
+  <p class="muted">From GKE's per-GPU metrics in Cloud Monitoring, joined to the GPU notebooks on each
+     node every 5 minutes. A node's hours are split evenly between the students on it; hours with
+     nobody on the node are pre-warm time and the scale-down tail. "Working" means the GPU's
+     duty cycle averaged 1% or more over the 5 minutes. Mean utilization is the average duty
+     cycle. An idle 3h+ session is a notebook that ran 3 hours or more with the GPU idle at least
+     80% of that time. Idle cost is the hours the GPU did no work, at list price.</p>
+</section>"""
+
+
 def current_term(today=None):
     """(label, start_date) for the academic term `today` falls in.
 
@@ -699,6 +787,7 @@ def build():
     base_table, _ = base_breakdown(costs)
     billed_html, billed = billed_block(daily)
     hub_html = hub_cost_block()
+    gpu_html = gpu_util_block()
     yoy_html = yoy_block()
 
     last7 = daily.tail(7)
@@ -875,6 +964,8 @@ footer{color:var(--muted);font-size:12px;border-top:1px solid var(--rule);paddin
 
 {hub_html or ""}
 
+{gpu_html or ""}
+
 <div class="note">
   <b>The charts are modeled figures.</b> Cost is measured node-hours &times; Cloud
   Billing Catalog list price, which is the only figure for the last 1–2 days.
@@ -933,7 +1024,7 @@ footer{color:var(--muted);font-size:12px;border-top:1px solid var(--rule);paddin
   Sources: CloudBank Prometheus (node-hours, 5-minute samples anchored to Pacific
   midnight) · Cloud Billing Catalog API (list prices) · <code>gcloud compute disks</code>
   (provisioned storage) · CloudBank billing export in BigQuery (billed) ·
-  JupyterHub REST API (users) · Firestore (Otter).
+  JupyterHub REST API (users) · Firestore (Otter) · Cloud Monitoring (GPU utilization).
   Built by <code>cloudbank-classroom-usage</code>.
 </footer>
 
