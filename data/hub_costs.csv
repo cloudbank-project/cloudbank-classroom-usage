@@ -2732,3 +2732,64 @@ date,hub,college,gpu_pod_hours,cpu_gb_hours,gpu_usd,cpu_usd
 2026-10-19,unc-chapel-hill,University of North Carolina at Chapel Hill,0.0,1262.72,0.0,24.9536
 2026-10-19,willamette,Willamette University,0.0,0.04,0.0,0.0009
 2026-10-19,york,"York College, CUNY",0.0,6.98,0.0,0.1379
+2026-10-20,bcc,Berkeley CC,0.0,9.83,0.0,0.1619
+2026-10-20,boise,Boise State University,0.0,20.18,0.0,0.3322
+2026-10-20,ccsf,Community College San Francisco,0.0,46.84,0.0,0.7713
+2026-10-20,chabot,Chabot CC,0.0,0.09,0.0,0.0015
+2026-10-20,chaffey,Chaffey College,0.0,6.38,0.0,0.105
+2026-10-20,clarku,Clark University,3.5,0.0,7.0851,0.0
+2026-10-20,cmu,Carnegie Mellon University,5.92,13.69,11.9772,0.2254
+2026-10-20,csm,College of San Mateo,0.0,5.67,0.0,0.0934
+2026-10-20,csusm,CSU San Marcos,2.17,5.19,4.386,0.0855
+2026-10-20,elcamino,El Camino Community College,0.0,60.58,0.0,0.9975
+2026-10-20,evc,Evergreen Community College,0.0,16.91,0.0,0.2785
+2026-10-20,foothill,Foothill Community College,0.0,14.88,0.0,0.2449
+2026-10-20,fresno,Fresno Community College,0.0,0.78,0.0,0.0129
+2026-10-20,glendale,Glendale Community College,0.0,12.73,0.0,0.2096
+2026-10-20,gpu-demo,gpu-demo,1.42,0.0,2.8678,0.0
+2026-10-20,gwu,George Washington University,0.0,23.49,0.0,0.3868
+2026-10-20,humboldt,Cal Poly Humboldt,0.0,79.77,0.0,1.3135
+2026-10-20,iecc,Illinois Eastern Community Colleges,0.0,3.4,0.0,0.056
+2026-10-20,iub,Indiana University Bloomington,0.0,5.41,0.0,0.0891
+2026-10-20,lacc,Los Angeles Community College,0.0,2.42,0.0,0.0398
+2026-10-20,laney,Laney Community College,0.0,19.57,0.0,0.3223
+2026-10-20,lavc,LA Valley College,0.0,0.02,0.0,0.0004
+2026-10-20,lbcc,Long Beach Community College,0.0,19.13,0.0,0.3149
+2026-10-20,maine,University of Maine,0.0,38.65,0.0,0.6365
+2026-10-20,merced,Merced College,0.0,0.07,0.0,0.0011
+2026-10-20,monmouth,Monmouth University,1.0,0.0,2.0243,0.0
+2026-10-20,moreno,Moreno Community College,0.0,7.15,0.0,0.1177
+2026-10-20,norco,Norco Community College,0.0,3.67,0.0,0.0604
+2026-10-20,ocu,Oakland City University,0.0,0.04,0.0,0.0007
+2026-10-20,orangecoast,Orange Coast College,0.0,0.04,0.0,0.0007
+2026-10-20,ornl,Oak Ridge National Laboratory,0.0,0.04,0.0,0.0007
+2026-10-20,palomar,Palomar Community College,0.0,0.02,0.0,0.0004
+2026-10-20,pasadena,Pasadena Community College,0.0,8.32,0.0,0.137
+2026-10-20,psu,Pennsylvania State University,0.0,4.52,0.0,0.0744
+2026-10-20,redwoods,College of the Redwoods,0.0,0.03,0.0,0.0006
+2026-10-20,reedley,Reedley Community College,0.0,0.03,0.0,0.0006
+2026-10-20,riohondo,Rio Hondo Community College,0.0,0.03,0.0,0.0006
+2026-10-20,saddleback,SaddleBack Community College,0.0,1.28,0.0,0.021
+2026-10-20,santiago,Santiago Canyon College,0.0,0.47,0.0,0.0077
+2026-10-20,sbcc,Santa Barbara City College,0.0,14.74,0.0,0.2427
+2026-10-20,shasta,Shasta College,0.0,2.28,0.0,0.0376
+2026-10-20,sierra,Sierra Community College,0.0,3.33,0.0,0.0549
+2026-10-20,sjcc,San Jose Community College,0.0,0.02,0.0,0.0004
+2026-10-20,skyline,Skyline Community College,0.0,0.17,0.0,0.0028
+2026-10-20,smc,Santa Monica College,0.0,9.04,0.0,0.1488
+2026-10-20,sou,Southern Oregon University,0.0,5.55,0.0,0.0913
+2026-10-20,spelman,Spelman College,0.0,1.81,0.0,0.0298
+2026-10-20,srjc,Santa Rosa Junior College,0.0,11.81,0.0,0.1945
+2026-10-20,toledo,University of Toledo,0.0,0.18,0.0,0.0029
+2026-10-20,tuskegee,Tuskegee University,0.0,0.02,0.0,0.0004
+2026-10-20,uams,University of Arkansas for Medical Sciences,0.0,11.81,0.0,0.1945
+2026-10-20,umd,University of Maryland,0.0,1.52,0.0,0.025
+2026-10-20,unc-chapel-hill,University of North Carolina at Chapel Hill,0.0,733.37,0.0,12.0757
+2026-10-20,uncw,University of North Carolina at Wilmington,0.0,0.04,0.0,0.0007
+2026-10-20,uta,University of Texas at Arlington,0.0,0.1,0.0,0.0017
+2026-10-20,utpb,University of Texas at Permian Basin,0.0,0.04,0.0,0.0007
+2026-10-20,uwyo,University of Wyoming,0.0,0.54,0.0,0.0088
+2026-10-20,whitman,Whitman College,0.0,0.27,0.0,0.0044
+2026-10-20,willamette,Willamette University,0.0,0.04,0.0,0.0007
+2026-10-20,wlac,West LA College,0.0,0.02,0.0,0.0004
+2026-10-20,york,"York College, CUNY",0.0,44.74,0.0,0.7367

@@ -273,3 +273,9 @@ date,hub,college,node_hours,active_hours,util_hours,vram_hi_hours,long_sessions,
 2026-10-19,cmu,Carnegie Mellon University,1.542,0.0,0.0,0.0,1,1
 2026-10-19,csusm,CSU San Marcos,4.625,0.042,0.011,0.0,1,1
 2026-10-19,monmouth,Monmouth University,1.042,0.0,0.0,0.0,0,0
+2026-10-20,(no student),(no student),19.25,0.0,0.0,0.0,0,0
+2026-10-20,clarku,Clark University,3.5,0.0,0.0,0.0,0,0
+2026-10-20,cmu,Carnegie Mellon University,4.583,0.583,0.274,0.0,1,1
+2026-10-20,csusm,CSU San Marcos,1.0,0.0,0.0,0.0,0,0
+2026-10-20,gpu-demo,gpu-demo,0.958,0.042,0.001,0.0,0,0
+2026-10-20,monmouth,Monmouth University,0.708,0.125,0.005,0.0,0,0
