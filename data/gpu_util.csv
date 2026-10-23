@@ -282,3 +282,8 @@ date,hub,college,node_hours,active_hours,util_hours,vram_hi_hours,long_sessions,
 2026-10-21,(no student),(no student),21.0,0.0,0.0,0.0,0,0
 2026-10-21,clarku,Clark University,5.542,0.042,0.001,0.0,1,1
 2026-10-21,csusm,CSU San Marcos,7.625,0.375,0.015,0.0,2,2
+2026-10-22,(no student),(no student),30.917,0.0,0.0,0.0,0,0
+2026-10-22,clarku,Clark University,8.583,0.083,0.002,0.0,2,2
+2026-10-22,cmu,Carnegie Mellon University,0.792,0.0,0.0,0.0,0,0
+2026-10-22,csusm,CSU San Marcos,16.458,0.25,0.042,0.0,1,1
+2026-10-22,emich,Eastern Michigan University,0.75,0.0,0.0,0.0,0,0

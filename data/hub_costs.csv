@@ -2831,3 +2831,40 @@ date,hub,college,gpu_pod_hours,cpu_gb_hours,gpu_usd,cpu_usd
 2026-10-21,uams,University of Arkansas for Medical Sciences,0.0,1.7,0.0,0.0301
 2026-10-21,unc-chapel-hill,University of North Carolina at Chapel Hill,0.0,1252.52,0.0,22.1814
 2026-10-21,york,"York College, CUNY",0.0,10.56,0.0,0.187
+2026-10-22,bcc,Berkeley CC,0.0,6.41,0.0,0.106
+2026-10-22,boise,Boise State University,0.0,20.76,0.0,0.3432
+2026-10-22,ccsf,Community College San Francisco,0.0,42.35,0.0,0.7001
+2026-10-22,chaffey,Chaffey College,0.0,6.68,0.0,0.1104
+2026-10-22,clarku,Clark University,11.58,1.97,14.0931,0.0325
+2026-10-22,cmu,Carnegie Mellon University,1.58,0.0,1.9264,0.0
+2026-10-22,csm,College of San Mateo,0.0,8.22,0.0,0.1359
+2026-10-22,csusm,CSU San Marcos,27.75,14.5,33.7626,0.2396
+2026-10-22,demo,demo,0.0,0.27,0.0,0.0044
+2026-10-22,elcamino,El Camino Community College,0.0,102.01,0.0,1.6864
+2026-10-22,emich,Eastern Michigan University,1.5,0.0,1.825,0.0
+2026-10-22,evc,Evergreen Community College,0.0,20.97,0.0,0.3467
+2026-10-22,foothill,Foothill Community College,0.0,18.28,0.0,0.3021
+2026-10-22,glendale,Glendale Community College,0.0,2.73,0.0,0.0451
+2026-10-22,gwu,George Washington University,0.0,23.39,0.0,0.3866
+2026-10-22,humboldt,Cal Poly Humboldt,0.0,14.32,0.0,0.2367
+2026-10-22,iecc,Illinois Eastern Community Colleges,0.0,30.06,0.0,0.497
+2026-10-22,lacc,Los Angeles Community College,0.0,3.98,0.0,0.0658
+2026-10-22,laney,Laney Community College,0.0,7.85,0.0,0.1298
+2026-10-22,lbcc,Long Beach Community College,0.0,9.9,0.0,0.1636
+2026-10-22,maine,University of Maine,0.0,144.96,0.0,2.3964
+2026-10-22,moreno,Moreno Community College,0.0,8.86,0.0,0.1464
+2026-10-22,norco,Norco Community College,0.0,5.82,0.0,0.0962
+2026-10-22,nova,Nova SouthEastern University,0.0,3.13,0.0,0.0518
+2026-10-22,pasadena,Pasadena Community College,0.0,5.34,0.0,0.0882
+2026-10-22,psu,Pennsylvania State University,0.0,9.48,0.0,0.1568
+2026-10-22,saddleback,SaddleBack Community College,0.0,3.12,0.0,0.0516
+2026-10-22,sbcc,Santa Barbara City College,0.0,16.55,0.0,0.2737
+2026-10-22,shasta,Shasta College,0.0,3.85,0.0,0.0636
+2026-10-22,sierra,Sierra Community College,0.0,0.6,0.0,0.01
+2026-10-22,smc,Santa Monica College,0.0,5.15,0.0,0.0851
+2026-10-22,sou,Southern Oregon University,0.0,4.21,0.0,0.0695
+2026-10-22,spelman,Spelman College,0.0,1.74,0.0,0.0288
+2026-10-22,srjc,Santa Rosa Junior College,0.0,16.01,0.0,0.2646
+2026-10-22,uams,University of Arkansas for Medical Sciences,0.0,6.71,0.0,0.1109
+2026-10-22,unc-chapel-hill,University of North Carolina at Chapel Hill,0.0,972.99,0.0,16.0855
+2026-10-22,york,"York College, CUNY",0.0,35.08,0.0,0.5799
