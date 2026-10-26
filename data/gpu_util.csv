@@ -293,6 +293,11 @@ date,hub,college,node_hours,active_hours,util_hours,vram_hi_hours,long_sessions,
 2026-10-23,emich,Eastern Michigan University,2.0,0.0,0.0,0.0,0,0
 2026-10-23,monmouth,Monmouth University,0.208,0.042,0.001,0.0,0,0
 2026-10-24,(no student),(no student),0.417,0.0,0.0,0.0,0,0
-2026-10-24,csusm,CSU San Marcos,17.208,1.167,0.098,0.25,1,1
+2026-10-24,csusm,CSU San Marcos,17.208,1.167,0.098,0.25,2,2
 2026-10-24,gpu-demo,gpu-demo,1.25,0.0,0.0,0.0,0,0
 2026-10-24,monmouth,Monmouth University,6.625,2.0,0.303,0.0,1,0
+2026-10-25,(no student),(no student),0.583,0.0,0.0,0.0,0,0
+2026-10-25,clarku,Clark University,4.0,0.0,0.0,0.0,1,1
+2026-10-25,cmu,Carnegie Mellon University,8.208,0.042,0.001,0.0,1,1
+2026-10-25,csusm,CSU San Marcos,30.042,2.583,0.824,0.0,7,5
+2026-10-25,emich,Eastern Michigan University,5.25,2.208,0.978,0.0,2,0
