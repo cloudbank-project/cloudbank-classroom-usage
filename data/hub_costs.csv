@@ -3090,3 +3090,49 @@ date,hub,college,gpu_pod_hours,cpu_gb_hours,gpu_usd,cpu_usd
 2026-10-25,uams,University of Arkansas for Medical Sciences,0.0,8.32,0.0,0.1523
 2026-10-25,unc-chapel-hill,University of North Carolina at Chapel Hill,0.0,465.11,0.0,8.5148
 2026-10-25,york,"York College, CUNY",0.0,1.43,0.0,0.0262
+2026-10-26,bcc,Berkeley CC,0.0,49.69,0.0,0.9473
+2026-10-26,boise,Boise State University,0.0,17.36,0.0,0.3309
+2026-10-26,ccsf,Community College San Francisco,0.0,14.63,0.0,0.2789
+2026-10-26,chaffey,Chaffey College,0.0,22.38,0.0,0.4266
+2026-10-26,clarku,Clark University,8.25,7.96,4.7591,0.1518
+2026-10-26,cloud-county,Cloud County Community College,0.0,1.57,0.0,0.0298
+2026-10-26,cmu,Carnegie Mellon University,3.67,23.98,2.1152,0.4571
+2026-10-26,csm,College of San Mateo,0.0,2.75,0.0,0.0524
+2026-10-26,csusm,CSU San Marcos,16.17,1.61,9.3259,0.0307
+2026-10-26,demo,demo,0.0,0.31,0.0,0.006
+2026-10-26,elcamino,El Camino Community College,0.0,33.55,0.0,0.6396
+2026-10-26,emich,Eastern Michigan University,12.25,1.16,7.0666,0.0222
+2026-10-26,evc,Evergreen Community College,0.0,4.13,0.0,0.0787
+2026-10-26,foothill,Foothill Community College,0.0,52.57,0.0,1.0021
+2026-10-26,fresno,Fresno Community College,0.0,0.89,0.0,0.0171
+2026-10-26,glendale,Glendale Community College,0.0,10.18,0.0,0.194
+2026-10-26,gpu-demo,gpu-demo,0.0,2.42,0.0,0.0461
+2026-10-26,gwu,George Washington University,0.0,18.02,0.0,0.3435
+2026-10-26,humboldt,Cal Poly Humboldt,0.0,92.48,0.0,1.7628
+2026-10-26,iecc,Illinois Eastern Community Colleges,0.0,12.35,0.0,0.2354
+2026-10-26,iub,Indiana University Bloomington,0.0,1.34,0.0,0.0256
+2026-10-26,lacc,Los Angeles Community College,0.0,2.51,0.0,0.0478
+2026-10-26,laney,Laney Community College,0.0,4.16,0.0,0.0793
+2026-10-26,lbcc,Long Beach Community College,0.0,11.48,0.0,0.2188
+2026-10-26,maine,University of Maine,0.0,28.19,0.0,0.5373
+2026-10-26,miracosta,MiraCosta College,0.0,6.89,0.0,0.1313
+2026-10-26,mission,Mission College,0.0,0.47,0.0,0.009
+2026-10-26,monmouth,Monmouth University,0.0,7.34,0.0,0.1399
+2026-10-26,moreno,Moreno Community College,0.0,9.46,0.0,0.1804
+2026-10-26,norco,Norco Community College,0.0,5.32,0.0,0.1015
+2026-10-26,pasadena,Pasadena Community College,0.0,5.67,0.0,0.1081
+2026-10-26,psu,Pennsylvania State University,0.0,10.56,0.0,0.2013
+2026-10-26,riohondo,Rio Hondo Community College,0.0,0.91,0.0,0.0173
+2026-10-26,saddleback,SaddleBack Community College,0.0,2.99,0.0,0.0569
+2026-10-26,santiago,Santiago Canyon College,0.0,0.7,0.0,0.0134
+2026-10-26,sbcc,Santa Barbara City College,0.0,11.54,0.0,0.22
+2026-10-26,sierra,Sierra Community College,0.0,4.27,0.0,0.0814
+2026-10-26,skyline,Skyline Community College,0.0,24.46,0.0,0.4663
+2026-10-26,smc,Santa Monica College,0.0,12.08,0.0,0.2303
+2026-10-26,sou,Southern Oregon University,0.0,6.35,0.0,0.1211
+2026-10-26,spelman,Spelman College,0.0,9.97,0.0,0.19
+2026-10-26,srjc,Santa Rosa Junior College,0.0,8.39,0.0,0.1599
+2026-10-26,tntech,Tennessee Technological University,0.0,2.77,0.0,0.0529
+2026-10-26,uams,University of Arkansas for Medical Sciences,0.0,9.75,0.0,0.1859
+2026-10-26,unc-chapel-hill,University of North Carolina at Chapel Hill,0.0,1459.57,0.0,27.8227
+2026-10-26,york,"York College, CUNY",0.0,3.85,0.0,0.0733
