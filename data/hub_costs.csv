@@ -3326,3 +3326,37 @@ date,hub,college,gpu_pod_hours,cpu_gb_hours,gpu_usd,cpu_usd
 2026-10-30,willamette,Willamette University,0.0,0.04,0.0,0.0009
 2026-10-30,wlac,West LA College,0.0,0.02,0.0,0.0004
 2026-10-30,york,"York College, CUNY",0.0,1.25,0.0,0.0246
+2026-10-31,bcc,Berkeley CC,0.0,14.6,0.0,0.4765
+2026-10-31,boise,Boise State University,0.0,12.97,0.0,0.4236
+2026-10-31,ccsf,Community College San Francisco,0.0,25.8,0.0,0.8424
+2026-10-31,clarku,Clark University,14.58,0.0,10.4953,0.0
+2026-10-31,cmu,Carnegie Mellon University,1.25,0.0,0.8996,0.0
+2026-10-31,csm,College of San Mateo,0.0,4.93,0.0,0.161
+2026-10-31,csusm,CSU San Marcos,3.0,0.0,2.159,0.0
+2026-10-31,elcamino,El Camino Community College,0.0,13.96,0.0,0.4557
+2026-10-31,evc,Evergreen Community College,0.0,55.53,0.0,1.8129
+2026-10-31,foothill,Foothill Community College,0.0,21.79,0.0,0.7113
+2026-10-31,glendale,Glendale Community College,0.0,1.16,0.0,0.038
+2026-10-31,gwu,George Washington University,0.0,2.82,0.0,0.092
+2026-10-31,humboldt,Cal Poly Humboldt,0.0,11.01,0.0,0.3593
+2026-10-31,iecc,Illinois Eastern Community Colleges,0.0,17.36,0.0,0.5667
+2026-10-31,iub,Indiana University Bloomington,0.0,17.43,0.0,0.5689
+2026-10-31,laney,Laney Community College,0.0,3.58,0.0,0.1168
+2026-10-31,lbcc,Long Beach Community College,0.0,8.86,0.0,0.2892
+2026-10-31,maine,University of Maine,0.0,12.88,0.0,0.4206
+2026-10-31,miracosta,MiraCosta College,0.0,4.7,0.0,0.1534
+2026-10-31,monmouth,Monmouth University,0.0,9.66,0.0,0.3155
+2026-10-31,moreno,Moreno Community College,0.0,7.25,0.0,0.2366
+2026-10-31,norco,Norco Community College,0.0,7.78,0.0,0.2541
+2026-10-31,pasadena,Pasadena Community College,0.0,5.23,0.0,0.1709
+2026-10-31,psu,Pennsylvania State University,0.0,4.79,0.0,0.1563
+2026-10-31,saddleback,SaddleBack Community College,0.0,3.22,0.0,0.1052
+2026-10-31,sbcc,Santa Barbara City College,0.0,7.65,0.0,0.2498
+2026-10-31,sierra,Sierra Community College,0.0,1.07,0.0,0.0351
+2026-10-31,skyline,Skyline Community College,0.0,3.02,0.0,0.0986
+2026-10-31,smc,Santa Monica College,0.0,26.58,0.0,0.8676
+2026-10-31,sou,Southern Oregon University,0.0,7.25,0.0,0.2366
+2026-10-31,spelman,Spelman College,0.0,0.6,0.0,0.0197
+2026-10-31,srjc,Santa Rosa Junior College,0.0,3.56,0.0,0.1161
+2026-10-31,unc-chapel-hill,University of North Carolina at Chapel Hill,0.0,98.07,0.0,3.2016
+2026-10-31,york,"York College, CUNY",0.0,0.36,0.0,0.0117
