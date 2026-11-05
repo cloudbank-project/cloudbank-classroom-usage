@@ -345,3 +345,8 @@ date,hub,college,node_hours,active_hours,util_hours,vram_hi_hours,long_sessions,
 2026-11-03,elcamino,El Camino Community College,1.167,0.0,0.0,0.0,0,0
 2026-11-03,emich,Eastern Michigan University,10.792,1.167,0.112,0.0,1,1
 2026-11-03,gpu-demo,gpu-demo,2.0,0.333,0.1,0.0,0,0
+2026-11-04,(no student),(no student),0.5,0.0,0.0,0.0,0,0
+2026-11-04,clarku,Clark University,11.25,0.167,0.04,0.0,2,2
+2026-11-04,csusm,CSU San Marcos,15.375,0.083,0.011,0.0,2,2
+2026-11-04,emich,Eastern Michigan University,9.375,0.625,0.07,0.0,1,1
+2026-11-04,monmouth,Monmouth University,0.25,0.125,0.035,0.0,0,0
