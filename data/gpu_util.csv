@@ -360,3 +360,6 @@ date,hub,college,node_hours,active_hours,util_hours,vram_hi_hours,long_sessions,
 2026-11-06,clarku,Clark University,4.958,0.0,0.0,0.0,0,0
 2026-11-06,csusm,CSU San Marcos,0.208,0.0,0.0,0.0,0,0
 2026-11-06,emich,Eastern Michigan University,2.167,0.0,0.0,0.0,0,0
+2026-11-07,(no student),(no student),0.167,0.0,0.0,0.0,0,0
+2026-11-07,clarku,Clark University,5.167,0.083,0.009,0.0,1,1
+2026-11-07,monmouth,Monmouth University,0.583,0.0,0.0,0.0,0,0
