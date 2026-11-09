@@ -3716,3 +3716,36 @@ date,hub,college,gpu_pod_hours,cpu_gb_hours,gpu_usd,cpu_usd
 2026-11-07,srjc,Santa Rosa Junior College,0.0,1.21,0.0,0.0265
 2026-11-07,unc-chapel-hill,University of North Carolina at Chapel Hill,0.0,465.82,0.0,10.2
 2026-11-07,york,"York College, CUNY",0.0,3.04,0.0,0.0666
+2026-11-08,bcc,Berkeley CC,0.0,3.52,0.0,0.0583
+2026-11-08,boise,Boise State University,0.0,15.17,0.0,0.2509
+2026-11-08,ccsf,Community College San Francisco,0.0,31.27,0.0,0.5174
+2026-11-08,clarku,Clark University,5.08,0.0,3.1186,0.0
+2026-11-08,csm,College of San Mateo,0.0,3.69,0.0,0.0611
+2026-11-08,elcamino,El Camino Community College,0.0,18.34,0.0,0.3035
+2026-11-08,emich,Eastern Michigan University,12.17,0.0,7.4641,0.0
+2026-11-08,evc,Evergreen Community College,0.0,32.58,0.0,0.5391
+2026-11-08,foothill,Foothill Community College,0.0,28.03,0.0,0.4638
+2026-11-08,glendale,Glendale Community College,0.0,6.96,0.0,0.1151
+2026-11-08,gwu,George Washington University,0.0,2.89,0.0,0.0477
+2026-11-08,humboldt,Cal Poly Humboldt,0.0,23.53,0.0,0.3894
+2026-11-08,iecc,Illinois Eastern Community Colleges,0.0,44.74,0.0,0.7402
+2026-11-08,lacc,Los Angeles Community College,0.0,0.74,0.0,0.0122
+2026-11-08,laney,Laney Community College,0.0,3.18,0.0,0.0526
+2026-11-08,lbcc,Long Beach Community College,0.0,8.32,0.0,0.1377
+2026-11-08,maine,University of Maine,0.0,56.1,0.0,0.9282
+2026-11-08,moreno,Moreno Community College,0.0,7.38,0.0,0.1221
+2026-11-08,norco,Norco Community College,0.0,13.33,0.0,0.2206
+2026-11-08,nova,Nova SouthEastern University,0.0,1.16,0.0,0.0192
+2026-11-08,pasadena,Pasadena Community College,0.0,31.74,0.0,0.5252
+2026-11-08,saddleback,SaddleBack Community College,0.0,24.39,0.0,0.4036
+2026-11-08,santiago,Santiago Canyon College,0.0,1.07,0.0,0.0178
+2026-11-08,sbcc,Santa Barbara City College,0.0,6.11,0.0,0.101
+2026-11-08,sierra,Sierra Community College,0.0,0.18,0.0,0.003
+2026-11-08,skyline,Skyline Community College,0.0,2.42,0.0,0.04
+2026-11-08,smc,Santa Monica College,0.0,15.66,0.0,0.2591
+2026-11-08,sou,Southern Oregon University,0.0,3.4,0.0,0.0563
+2026-11-08,spelman,Spelman College,0.0,4.19,0.0,0.0694
+2026-11-08,srjc,Santa Rosa Junior College,0.0,4.8,0.0,0.0794
+2026-11-08,tntech,Tennessee Technological University,0.0,2.51,0.0,0.0415
+2026-11-08,unc-chapel-hill,University of North Carolina at Chapel Hill,0.0,727.46,0.0,12.0361
+2026-11-08,york,"York College, CUNY",0.0,5.19,0.0,0.0859
