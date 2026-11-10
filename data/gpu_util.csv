@@ -366,3 +366,7 @@ date,hub,college,node_hours,active_hours,util_hours,vram_hi_hours,long_sessions,
 2026-11-08,(no student),(no student),0.167,0.0,0.0,0.0,0,0
 2026-11-08,clarku,Clark University,2.583,2.125,1.504,0.208,1,0
 2026-11-08,emich,Eastern Michigan University,9.5,2.792,1.809,0.208,1,0
+2026-11-09,(no student),(no student),0.5,0.0,0.0,0.0,0,0
+2026-11-09,clarku,Clark University,7.708,0.375,0.146,0.583,1,1
+2026-11-09,csusm,CSU San Marcos,1.542,0.125,0.062,0.708,0,0
+2026-11-09,emich,Eastern Michigan University,10.167,2.167,1.089,1.292,1,0
