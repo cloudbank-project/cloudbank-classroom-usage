@@ -375,3 +375,9 @@ date,hub,college,node_hours,active_hours,util_hours,vram_hi_hours,long_sessions,
 2026-11-10,csusm,CSU San Marcos,0.833,0.0,0.0,0.0,0,0
 2026-11-10,emich,Eastern Michigan University,15.625,0.333,0.129,0.0,2,2
 2026-11-10,monmouth,Monmouth University,1.167,0.0,0.0,0.0,0,0
+2026-11-11,(no student),(no student),1.0,0.0,0.0,0.0,0,0
+2026-11-11,clarku,Clark University,4.292,0.125,0.003,0.0,0,0
+2026-11-11,csusm,CSU San Marcos,17.083,1.5,0.333,0.0,4,4
+2026-11-11,emich,Eastern Michigan University,25.833,6.458,1.064,0.917,5,2
+2026-11-11,greenriver,Green River College,1.875,0.417,0.074,0.0,0,0
+2026-11-11,monmouth,Monmouth University,3.667,0.917,0.163,0.0,1,0
