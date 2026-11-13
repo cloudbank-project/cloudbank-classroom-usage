@@ -381,3 +381,11 @@ date,hub,college,node_hours,active_hours,util_hours,vram_hi_hours,long_sessions,
 2026-11-11,emich,Eastern Michigan University,25.833,6.458,1.064,0.917,5,2
 2026-11-11,greenriver,Green River College,1.875,0.417,0.074,0.0,0,0
 2026-11-11,monmouth,Monmouth University,3.667,0.917,0.163,0.0,1,0
+2026-11-12,(no student),(no student),17.667,0.083,0.009,0.0,0,0
+2026-11-12,clarku,Clark University,8.167,0.375,0.047,0.0,1,1
+2026-11-12,csusm,CSU San Marcos,4.792,0.0,0.0,0.0,0,0
+2026-11-12,emich,Eastern Michigan University,21.458,5.5,1.802,1.125,5,0
+2026-11-12,gpu-demo,gpu-demo,2.083,0.0,0.0,0.0,0,0
+2026-11-12,greenriver,Green River College,0.583,0.083,0.012,0.0,0,0
+2026-11-12,monmouth,Monmouth University,8.417,1.208,0.264,0.875,1,1
+2026-11-12,weber,Weber State University,2.917,0.083,0.005,0.0,0,0
