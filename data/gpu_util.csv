@@ -389,3 +389,8 @@ date,hub,college,node_hours,active_hours,util_hours,vram_hi_hours,long_sessions,
 2026-11-12,greenriver,Green River College,0.583,0.083,0.012,0.0,0,0
 2026-11-12,monmouth,Monmouth University,8.417,1.208,0.264,0.875,1,1
 2026-11-12,weber,Weber State University,2.917,0.083,0.005,0.0,0,0
+2026-11-13,(no student),(no student),11.417,0.083,0.004,0.0,0,0
+2026-11-13,clarku,Clark University,4.583,0.167,0.021,0.0,1,1
+2026-11-13,emich,Eastern Michigan University,9.25,4.292,0.606,0.0,2,0
+2026-11-13,greenriver,Green River College,0.917,0.167,0.021,0.0,0,0
+2026-11-13,monmouth,Monmouth University,1.417,0.292,0.017,0.0,0,0
