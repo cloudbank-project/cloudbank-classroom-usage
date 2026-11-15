@@ -394,3 +394,7 @@ date,hub,college,node_hours,active_hours,util_hours,vram_hi_hours,long_sessions,
 2026-11-13,emich,Eastern Michigan University,9.25,4.292,0.606,0.0,2,0
 2026-11-13,greenriver,Green River College,0.917,0.167,0.021,0.0,0,0
 2026-11-13,monmouth,Monmouth University,1.417,0.292,0.017,0.0,0,0
+2026-11-14,(no student),(no student),0.417,0.0,0.0,0.0,0,0
+2026-11-14,emich,Eastern Michigan University,6.208,3.167,1.561,0.0,2,0
+2026-11-14,monmouth,Monmouth University,5.792,2.75,1.315,0.0,1,0
+2026-11-14,tntech,Tennessee Technological University,1.083,0.0,0.0,0.0,0,0
