@@ -398,3 +398,9 @@ date,hub,college,node_hours,active_hours,util_hours,vram_hi_hours,long_sessions,
 2026-11-14,emich,Eastern Michigan University,6.208,3.167,1.561,0.0,2,0
 2026-11-14,monmouth,Monmouth University,5.792,2.75,1.315,0.0,1,0
 2026-11-14,tntech,Tennessee Technological University,1.083,0.0,0.0,0.0,0,0
+2026-11-15,(no student),(no student),0.5,0.0,0.0,0.0,0,0
+2026-11-15,clarku,Clark University,1.292,0.042,0.001,0.0,0,0
+2026-11-15,emich,Eastern Michigan University,7.625,2.667,0.471,0.0,1,0
+2026-11-15,gpu-demo,gpu-demo,1.417,0.5,0.022,0.0,0,0
+2026-11-15,monmouth,Monmouth University,5.625,0.417,0.066,0.0,1,1
+2026-11-15,tntech,Tennessee Technological University,2.958,0.125,0.019,0.0,1,1
