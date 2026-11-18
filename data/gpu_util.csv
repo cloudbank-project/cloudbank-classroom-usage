@@ -408,3 +408,7 @@ date,hub,college,node_hours,active_hours,util_hours,vram_hi_hours,long_sessions,
 2026-11-16,clarku,Clark University,9.542,0.083,0.06,0.0,2,2
 2026-11-16,emich,Eastern Michigan University,12.292,0.917,0.602,0.0,2,1
 2026-11-16,monmouth,Monmouth University,0.167,0.0,0.0,0.0,0,0
+2026-11-17,(no student),(no student),23.5,0.0,0.0,0.0,0,0
+2026-11-17,clarku,Clark University,3.208,0.0,0.0,0.0,0,0
+2026-11-17,emich,Eastern Michigan University,7.708,4.083,1.589,0.0,1,0
+2026-11-17,monmouth,Monmouth University,3.167,0.75,0.333,0.0,1,1
