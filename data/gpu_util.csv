@@ -418,3 +418,10 @@ date,hub,college,node_hours,active_hours,util_hours,vram_hi_hours,long_sessions,
 2026-11-18,csusm,CSU San Marcos,0.542,0.0,0.0,0.0,0,0
 2026-11-18,emich,Eastern Michigan University,2.125,0.042,0.003,0.0,0,0
 2026-11-18,epcc,El Paso Community College,2.125,0.0,0.0,0.0,1,1
+2026-11-19,(no student),(no student),10.333,0.0,0.0,0.0,0,0
+2026-11-19,clarku,Clark University,13.292,2.583,2.117,1.375,3,1
+2026-11-19,cmu,Carnegie Mellon University,16.75,7.125,5.14,1.333,6,2
+2026-11-19,csusm,CSU San Marcos,1.083,0.0,0.0,0.0,0,0
+2026-11-19,emich,Eastern Michigan University,18.0,1.708,0.941,0.125,1,0
+2026-11-19,miamioh,Miami University,0.625,0.417,0.356,0.0,0,0
+2026-11-19,monmouth,Monmouth University,1.75,0.667,0.069,0.0,0,0
