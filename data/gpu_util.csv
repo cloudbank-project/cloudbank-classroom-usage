@@ -442,8 +442,14 @@ date,hub,college,node_hours,active_hours,util_hours,vram_hi_hours,long_sessions,
 2026-11-22,tntech,Tennessee Technological University,4.083,0.5,0.02,0.0,0,0
 2026-11-23,(no student),(no student),0.75,0.0,0.0,0.0,0,0
 2026-11-23,clarku,Clark University,11.875,0.167,0.01,0.0,2,2
-2026-11-23,csusm,CSU San Marcos,4.25,0.542,0.267,0.0,0,0
+2026-11-23,csusm,CSU San Marcos,4.25,0.542,0.267,0.0,1,0
 2026-11-23,elcamino,El Camino Community College,0.542,0.0,0.0,0.0,0,0
 2026-11-23,emich,Eastern Michigan University,15.708,4.417,1.608,0.125,3,0
 2026-11-23,tntech,Tennessee Technological University,3.208,0.292,0.044,0.125,0,0
 2026-11-23,weber,Weber State University,0.917,0.0,0.0,0.0,0,0
+2026-11-24,(no student),(no student),8.333,0.0,0.0,0.0,0,0
+2026-11-24,clarku,Clark University,7.708,0.417,0.205,0.0,1,1
+2026-11-24,csusm,CSU San Marcos,14.292,3.958,1.523,1.583,2,0
+2026-11-24,elcamino,El Camino Community College,3.792,0.667,0.483,0.0,0,0
+2026-11-24,emich,Eastern Michigan University,49.583,11.625,6.422,4.833,11,6
+2026-11-24,weber,Weber State University,0.542,0.0,0.0,0.0,0,0
