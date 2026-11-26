@@ -449,7 +449,12 @@ date,hub,college,node_hours,active_hours,util_hours,vram_hi_hours,long_sessions,
 2026-11-23,weber,Weber State University,0.917,0.0,0.0,0.0,0,0
 2026-11-24,(no student),(no student),8.333,0.0,0.0,0.0,0,0
 2026-11-24,clarku,Clark University,7.708,0.417,0.205,0.0,1,1
-2026-11-24,csusm,CSU San Marcos,14.292,3.958,1.523,1.583,2,0
+2026-11-24,csusm,CSU San Marcos,14.292,3.958,1.523,1.583,3,0
 2026-11-24,elcamino,El Camino Community College,3.792,0.667,0.483,0.0,0,0
 2026-11-24,emich,Eastern Michigan University,49.583,11.625,6.422,4.833,11,6
 2026-11-24,weber,Weber State University,0.542,0.0,0.0,0.0,0,0
+2026-11-25,(no student),(no student),0.333,0.0,0.0,0.0,0,0
+2026-11-25,clarku,Clark University,0.042,0.0,0.0,0.0,0,0
+2026-11-25,cmu,Carnegie Mellon University,0.792,0.0,0.0,0.0,0,0
+2026-11-25,csusm,CSU San Marcos,30.25,12.667,8.019,0.75,9,4
+2026-11-25,emich,Eastern Michigan University,31.667,14.083,6.187,1.0,5,1
